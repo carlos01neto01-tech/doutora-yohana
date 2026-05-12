@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odontologia Estética | Hero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="site-wrapper">
+    <section class="hero" id="inicio">
+      <header class="header">
+        <nav class="nav" aria-label="Navegação principal">
+          <a href="#sobre">Sobre mim</a>
+          <a href="#tratamentos">Tratamentos</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#depoimentos">Depoimentos</a>
+        </nav>
+        <a class="contact-pill magnetic" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Contato</a>
+      </header>
+
+      <div class="hero-content">
+        <div class="eyebrow reveal-text">
+          <span></span>
+          <p>Odontologia Estética</p>
+        </div>
+
+        <h1 class="reveal-text">Tratamentos que<br>revelam sua essência!</h1>
+
+        <p class="hero-subtitle reveal-text">
+          Naturalidade, sofisticação e precisão<br class="desktop-break">
+          em cada detalhe do seu sorriso. Um<br class="desktop-break">
+          atendimento pensado para valorizar<br class="desktop-break">
+          sua autoestima de forma leve,<br class="desktop-break">
+          moderna e personalizada.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary glow-btn magnetic" href="https://wa.me/5500000000000" target="_blank" rel="noopener">
+            Agende sua consulta
+          </a>
+          <a class="btn btn-secondary glow-btn magnetic" href="#trabalho">
+            Conheça meu trabalho
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const items = document.querySelectorAll('.reveal-text, .glow-btn, .contact-pill');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.2 });
+    items.forEach((item) => observer.observe(item));
+
+    document.querySelectorAll('.magnetic').forEach((el) => {
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        el.style.transform = `translate(${x * 0.045}px, ${y * 0.12}px)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = 'translate(0, 0)';
+      });
+    });
+  </script>
+</body>
+</html>
