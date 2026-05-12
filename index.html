@@ -925,3 +925,417 @@ document.querySelectorAll(".before-after-card").forEach((card) => {
   }
 }
 </style>
+<!-- ===================== SESSÕES 07, 08 E 09 ===================== -->
+
+<section class="target-section" id="para-quem">
+  <div class="target-card">
+    <h2>Para quem é</h2>
+
+    <div class="target-list">
+      <div><span>✓</span>Para quem sente incômodo com linhas de expressão</div>
+      <div><span>✓</span>Para quem deseja melhorar firmeza e flacidez facial</div>
+      <div><span>✓</span>Para quem busca mais definição e harmonização facial</div>
+      <div><span>✓</span>Para quem deseja prevenir sinais do envelhecimento</div>
+      <div><span>✓</span>Para quem procura resultados naturais</div>
+      <div><span>✓</span>Para quem busca mais autoestima e confiança</div>
+    </div>
+
+    <p>
+      “Cada paciente possui objetivos diferentes — por isso, cada tratamento
+      deve fazer sentido para quem você é, e não seguir padrões prontos.”
+    </p>
+  </div>
+</section>
+
+<section class="work-section">
+  <div class="work-container">
+    <div class="work-text">
+      <span>UM POUCO DO NOSSO TRABALHO</span>
+      <h2>Cada procedimento começa com um olhar individual.</h2>
+      <p>
+        A harmonização facial exige mais do que técnica. Exige escuta,
+        planejamento e sensibilidade para entender o que realmente combina
+        com cada paciente.
+      </p>
+    </div>
+
+    <div class="work-pills">
+      <div>Avaliação personalizada</div>
+      <div>Planejamento estratégico</div>
+      <div>Execução com precisão</div>
+      <div>Acompanhamento</div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section" id="depoimentos">
+  <div class="testimonials-heading">
+    <span>DEPOIMENTOS</span>
+    <h2>Quem é atendido por mim não se arrepende</h2>
+  </div>
+
+  <div class="testimonials-carousel">
+    <div class="testimonials-track">
+      <img src="assets/DEPOIMENTO 1(1).webp" alt="Depoimento de paciente">
+      <img src="assets/DEPOIMENTO 2.webp" alt="Depoimento de paciente">
+      <img src="assets/DEPOIMENTO 3(1).webp" alt="Depoimento de paciente">
+      <img src="assets/DEPOIMENTO 4.webp" alt="Depoimento de paciente">
+
+      <img src="assets/DEPOIMENTO 1(1).webp" alt="Depoimento de paciente">
+      <img src="assets/DEPOIMENTO 2.webp" alt="Depoimento de paciente">
+      <img src="assets/DEPOIMENTO 3(1).webp" alt="Depoimento de paciente">
+      <img src="assets/DEPOIMENTO 4.webp" alt="Depoimento de paciente">
+    </div>
+  </div>
+</section>
+
+<style>
+/* ===================== PARA QUEM É ===================== */
+
+.target-section {
+  background: #f8f7f4;
+  padding: 90px 5% 70px;
+}
+
+.target-card {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 110px 58px;
+  border-radius: 20px;
+  border: 2px solid #22150f;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(191, 146, 102, .72), transparent 38%),
+    linear-gradient(135deg, #8f6239 0%, #5a3924 72%);
+  text-align: center;
+  box-shadow: 0 28px 65px rgba(60, 37, 24, 0.16);
+}
+
+.target-card h2 {
+  margin: 0 0 52px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 58px;
+  line-height: 1;
+  font-weight: 500;
+  color: #fff;
+}
+
+.target-list {
+  display: grid;
+  gap: 14px;
+}
+
+.target-list div {
+  height: 82px;
+  border-radius: 999px;
+  background: #dedede;
+  color: #5a3928;
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  align-items: center;
+  padding: 0 42px 0 34px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  line-height: 1;
+  transition: all .35s ease;
+}
+
+.target-list div:hover {
+  transform: translateX(8px);
+  background: #f1eee9;
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+}
+
+.target-list span {
+  font-family: Arial, sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: #5a3928;
+  text-align: left;
+}
+
+.target-card p {
+  max-width: 700px;
+  margin: 48px auto 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 20px;
+  line-height: .95;
+  color: rgba(255,255,255,.86);
+}
+
+/* ===================== NOSSO TRABALHO ===================== */
+
+.work-section {
+  background: #f8f7f4;
+  padding: 40px 5% 100px;
+}
+
+.work-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: .95fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.work-text span,
+.testimonials-heading span {
+  display: block;
+  margin-bottom: 24px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 7px;
+  color: #2d211a;
+}
+
+.work-text h2,
+.testimonials-heading h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  color: #4a3023;
+}
+
+.work-text h2 {
+  max-width: 560px;
+  font-size: 62px;
+  line-height: .88;
+}
+
+.work-text p {
+  max-width: 540px;
+  margin: 34px 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  line-height: .94;
+  color: #181818;
+}
+
+.work-pills {
+  display: grid;
+  gap: 16px;
+}
+
+.work-pills div {
+  height: 68px;
+  border-radius: 999px;
+  background: #dedede;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  color: #141414;
+  transition: all .35s ease;
+}
+
+.work-pills div:hover {
+  transform: translateX(-8px);
+  background: linear-gradient(135deg, #e6e2dd, #c6b6a7);
+  box-shadow: 0 18px 38px rgba(82, 51, 34, .16);
+}
+
+/* ===================== DEPOIMENTOS ===================== */
+
+.testimonials-section {
+  background: #f8f7f4;
+  padding: 20px 0 120px;
+  overflow: hidden;
+}
+
+.testimonials-heading {
+  max-width: 1120px;
+  margin: 0 auto 58px;
+  padding: 0 5%;
+}
+
+.testimonials-heading span {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.testimonials-heading h2 {
+  text-align: center;
+  font-size: 58px;
+  line-height: .95;
+}
+
+.testimonials-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.testimonials-carousel::before,
+.testimonials-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  width: 180px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.testimonials-carousel::before {
+  left: 0;
+  background: linear-gradient(90deg, #f8f7f4 0%, rgba(248,247,244,.72) 38%, transparent 100%);
+  backdrop-filter: blur(2px);
+}
+
+.testimonials-carousel::after {
+  right: 0;
+  background: linear-gradient(270deg, #f8f7f4 0%, rgba(248,247,244,.72) 38%, transparent 100%);
+  backdrop-filter: blur(2px);
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  animation: testimonialMarquee 24s linear infinite;
+}
+
+.testimonials-track:hover {
+  animation-play-state: paused;
+}
+
+.testimonials-track img {
+  width: 270px;
+  height: 480px;
+  object-fit: cover;
+  flex: 0 0 auto;
+  box-shadow: 0 20px 45px rgba(0,0,0,.13);
+  transition: all .4s ease;
+}
+
+.testimonials-track img:hover {
+  transform: translateY(-8px) scale(1.025);
+  box-shadow: 0 28px 60px rgba(79, 48, 31, .22);
+}
+
+@keyframes testimonialMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 9px));
+  }
+}
+
+/* ===================== MOBILE ===================== */
+
+@media (max-width: 768px) {
+  .target-section {
+    padding: 58px 20px 62px;
+  }
+
+  .target-card {
+    padding: 34px 14px 38px;
+    border-radius: 17px;
+  }
+
+  .target-card h2 {
+    font-size: 45px;
+    margin-bottom: 28px;
+  }
+
+  .target-list {
+    gap: 8px;
+  }
+
+  .target-list div {
+    height: 62px;
+    grid-template-columns: 0 1fr;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .target-list span {
+    display: none;
+  }
+
+  .target-card p {
+    margin-top: 30px;
+    font-size: 17px;
+    line-height: .9;
+  }
+
+  .work-section {
+    padding: 26px 22px 78px;
+  }
+
+  .work-container {
+    display: block;
+  }
+
+  .work-text span {
+    font-size: 13px;
+    letter-spacing: 6px;
+    margin-bottom: 16px;
+  }
+
+  .work-text h2 {
+    font-size: 42px;
+    line-height: .86;
+  }
+
+  .work-text p {
+    margin-top: 20px;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 17px;
+    line-height: .96;
+  }
+
+  .work-pills {
+    margin-top: 22px;
+    gap: 10px;
+  }
+
+  .work-pills div {
+    height: 54px;
+    font-size: 18px;
+  }
+
+  .testimonials-section {
+    padding: 24px 0 92px;
+  }
+
+  .testimonials-heading {
+    margin-bottom: 38px;
+    padding: 0 28px;
+  }
+
+  .testimonials-heading span {
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 6px;
+    margin-bottom: 14px;
+  }
+
+  .testimonials-heading h2 {
+    text-align: left;
+    font-size: 43px;
+    line-height: .88;
+    max-width: 340px;
+  }
+
+  .testimonials-carousel::before,
+  .testimonials-carousel::after {
+    width: 46px;
+    backdrop-filter: blur(3px);
+  }
+
+  .testimonials-track {
+    gap: 14px;
+    animation-duration: 20s;
+  }
+
+  .testimonials-track img {
+    width: 260px;
+    height: 462px;
+  }
+}
+</style>
