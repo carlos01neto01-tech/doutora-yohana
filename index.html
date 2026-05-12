@@ -73,3 +73,404 @@
   </script>
 </body>
 </html>
+<!-- ===================== SESSÃO 02 — RESULTADOS ===================== -->
+<section class="resultados-section" id="resultados">
+  <div class="resultados-container">
+    <span class="section-kicker">RESULTADO</span>
+
+    <h2>Transformações naturais e sofisticadas.</h2>
+
+    <p class="resultados-subtitle">
+      Cada resultado é planejado para harmonizar estética, funcionalidade e
+      personalidade, sempre respeitando as características de cada paciente.
+    </p>
+
+    <div class="resultados-grid">
+      <!-- CASO 01 -->
+      <div class="before-after-card">
+        <span class="ba-label ba-before">ANTES</span>
+        <span class="ba-label ba-after">DEPOIS</span>
+
+        <div class="before-after-wrapper">
+          <img src="assets/ANTES 1.png" alt="Antes do tratamento" class="ba-img ba-img-before">
+          <img src="assets/DEPOIS  1.png" alt="Depois do tratamento" class="ba-img ba-img-after">
+
+          <div class="ba-divider"></div>
+          <button class="ba-handle" aria-label="Arraste para comparar">
+            ‹ ›
+          </button>
+
+          <input type="range" min="0" max="100" value="50" class="ba-range">
+        </div>
+      </div>
+
+      <!-- CASO 02 -->
+      <div class="before-after-card">
+        <span class="ba-label ba-before">ANTES</span>
+        <span class="ba-label ba-after">DEPOIS</span>
+
+        <div class="before-after-wrapper">
+          <img src="assets/ANTES 2.png" alt="Antes do tratamento" class="ba-img ba-img-before">
+          <img src="assets/DEPOIS 2.webp" alt="Depois do tratamento" class="ba-img ba-img-after">
+
+          <div class="ba-divider"></div>
+          <button class="ba-handle" aria-label="Arraste para comparar">
+            ‹ ›
+          </button>
+
+          <input type="range" min="0" max="100" value="50" class="ba-range">
+        </div>
+      </div>
+
+      <!-- CASO 03 -->
+      <div class="before-after-card">
+        <span class="ba-label ba-before">ANTES</span>
+        <span class="ba-label ba-after">DEPOIS</span>
+
+        <div class="before-after-wrapper">
+          <img src="assets/ANTES 3(1).webp" alt="Antes do tratamento" class="ba-img ba-img-before">
+          <img src="assets/DEPOIS 3(1).webp" alt="Depois do tratamento" class="ba-img ba-img-after">
+
+          <div class="ba-divider"></div>
+          <button class="ba-handle" aria-label="Arraste para comparar">
+            ‹ ›
+          </button>
+
+          <input type="range" min="0" max="100" value="50" class="ba-range">
+        </div>
+      </div>
+
+      <!-- CASO 04 -->
+      <div class="before-after-card">
+        <span class="ba-label ba-before">ANTES</span>
+        <span class="ba-label ba-after">DEPOIS</span>
+
+        <div class="before-after-wrapper">
+          <img src="assets/ANTES 4(1).webp" alt="Antes do tratamento" class="ba-img ba-img-before">
+          <img src="assets/DEPOIS 4(1).webp" alt="Depois do tratamento" class="ba-img ba-img-after">
+
+          <div class="ba-divider"></div>
+          <button class="ba-handle" aria-label="Arraste para comparar">
+            ‹ ›
+          </button>
+
+          <input type="range" min="0" max="100" value="50" class="ba-range">
+        </div>
+      </div>
+    </div>
+
+    <a href="#contato" class="resultados-btn">VER TODOS OS CASOS</a>
+  </div>
+</section>
+
+<style>
+/* ===================== RESULTADOS ===================== */
+
+.resultados-section {
+  width: 100%;
+  background: #f8f7f4;
+  padding: 110px 5% 100px;
+  overflow: hidden;
+}
+
+.resultados-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-kicker {
+  display: block;
+  margin-bottom: 22px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 8px;
+  color: #3f2a1f;
+  font-weight: 500;
+}
+
+.resultados-container h2 {
+  margin: 0 auto;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(46px, 5vw, 72px);
+  line-height: 0.95;
+  font-weight: 500;
+  color: #4a3023;
+  max-width: 1000px;
+  transition: all 0.45s ease;
+}
+
+.resultados-container h2:hover {
+  text-shadow: 0 0 24px rgba(150, 111, 83, 0.22);
+  transform: translateY(-2px);
+}
+
+.resultados-subtitle {
+  max-width: 850px;
+  margin: 26px auto 58px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.05;
+  color: #1d1d1d;
+}
+
+.resultados-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.before-after-card {
+  position: relative;
+  overflow: hidden;
+  background: #eee;
+  aspect-ratio: 0.74 / 1;
+  transition: all 0.45s ease;
+}
+
+.before-after-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 45px rgba(66, 40, 26, 0.18);
+}
+
+.before-after-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ba-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+.ba-img-before {
+  z-index: 1;
+}
+
+.ba-img-after {
+  z-index: 2;
+  clip-path: inset(0 0 0 50%);
+}
+
+.ba-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 4;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateX(-50%);
+  box-shadow: 0 0 22px rgba(255, 255, 255, 0.35);
+}
+
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  transform: translate(-50%, -50%);
+  background: #60422f;
+  color: #fff;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: -2px;
+  cursor: grab;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.22),
+    0 0 0 8px rgba(96, 66, 47, 0.12);
+  transition: all 0.35s ease;
+}
+
+.before-after-card:hover .ba-handle {
+  background: linear-gradient(135deg, #6a4832, #b99778);
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(185, 151, 120, 0.65),
+    0 0 0 10px rgba(185, 151, 120, 0.14);
+}
+
+.ba-range {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+.ba-label {
+  position: absolute;
+  top: 16px;
+  z-index: 6;
+  padding: 8px 13px;
+  border-radius: 100px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: #fff;
+  background: rgba(70, 45, 31, 0.72);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all 0.35s ease;
+  pointer-events: none;
+}
+
+.ba-before {
+  left: 14px;
+}
+
+.ba-after {
+  right: 14px;
+}
+
+.before-after-card:hover .ba-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.resultados-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 64px;
+  width: min(100%, 360px);
+  height: 88px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #76553f, #c2a081);
+  color: #fff;
+  text-decoration: none;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.45s ease;
+  box-shadow: 0 18px 45px rgba(95, 66, 46, 0.22);
+}
+
+.resultados-btn::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, rgba(255,255,255,.65), transparent 45%);
+  transform: translateX(-70%);
+  opacity: 0;
+  transition: all 0.7s ease;
+}
+
+.resultados-btn:hover {
+  transform: translateY(-5px) scale(1.02);
+  filter: blur(0);
+  box-shadow:
+    0 22px 55px rgba(95, 66, 46, 0.34),
+    0 0 32px rgba(194, 160, 129, 0.45);
+}
+
+.resultados-btn:hover::before {
+  transform: translateX(70%);
+  opacity: 1;
+}
+
+/* ===================== MOBILE ===================== */
+
+@media (max-width: 768px) {
+  .resultados-section {
+    padding: 74px 22px 78px;
+    background: #fbfaf8;
+  }
+
+  .resultados-container {
+    text-align: left;
+  }
+
+  .section-kicker {
+    font-size: 13px;
+    letter-spacing: 7px;
+    margin-bottom: 16px;
+  }
+
+  .resultados-container h2 {
+    font-size: 44px;
+    line-height: 0.92;
+    max-width: 340px;
+    margin: 0;
+  }
+
+  .resultados-subtitle {
+    margin: 18px 0 34px;
+    font-size: 18px;
+    line-height: 0.95;
+    max-width: 340px;
+  }
+
+  .resultados-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  .before-after-card {
+    width: 100%;
+    aspect-ratio: 0.73 / 1;
+  }
+
+  .ba-label {
+    opacity: 1;
+    transform: translateY(0);
+    font-size: 10px;
+    padding: 7px 11px;
+  }
+
+  .ba-handle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .resultados-btn {
+    width: 100%;
+    height: 78px;
+    margin-top: 38px;
+    font-size: 22px;
+  }
+}
+</style>
+
+<script>
+/* ===================== BEFORE / AFTER INTERATIVO ===================== */
+
+document.querySelectorAll(".before-after-card").forEach((card) => {
+  const range = card.querySelector(".ba-range");
+  const afterImg = card.querySelector(".ba-img-after");
+  const divider = card.querySelector(".ba-divider");
+  const handle = card.querySelector(".ba-handle");
+
+  function updateSlider(value) {
+    afterImg.style.clipPath = `inset(0 0 0 ${value}%)`;
+    divider.style.left = `${value}%`;
+    handle.style.left = `${value}%`;
+  }
+
+  range.addEventListener("input", (e) => {
+    updateSlider(e.target.value);
+  });
+
+  updateSlider(range.value);
+});
+</script>
