@@ -3,1788 +3,1806 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Odontologia Estética | Hero</title>
+  <title>Dra. Yohana Castro | Odontologia Estética</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: "OFL Sorts Mill Goudy TT";
+      src: url("assets/OFLGoudyStM.otf") format("opentype");
+      font-display: swap;
+    }
+
+    :root {
+      --title-font: "OFL Sorts Mill Goudy TT", "Cormorant Garamond", serif;
+      --text-font: "Alexandria", Arial, sans-serif;
+      --bg: #f8f7f4;
+      --gray: #d9d9d9;
+      --brown: #5a3928;
+      --brown-dark: #3f2719;
+      --gold: #c2a081;
+      --black: #111;
+      --white: #fff;
+      --title-size: clamp(46px, 5vw, 72px);
+      --title-size-mobile: 43px;
+      --desc-size: 18px;
+      --desc-size-mobile: 15px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      overflow-x: hidden;
+      font-family: var(--text-font);
+      color: var(--black);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    h1, h2, h3, .title-font {
+      font-family: var(--title-font);
+      font-weight: 500;
+      color: var(--brown);
+    }
+
+    p, a, button, span, li {
+      font-family: var(--text-font);
+    }
+
+    .section-kicker,
+    .about-kicker,
+    .services-kicker,
+    .work-text span,
+    .testimonials-heading span {
+      display: block;
+      font-family: var(--text-font);
+      font-size: 14px;
+      letter-spacing: 7px;
+      color: #2d211a;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: var(--title-font);
+      font-size: var(--title-size);
+      line-height: .92;
+      color: var(--brown);
+      font-weight: 500;
+    }
+
+    .section-description {
+      font-family: var(--text-font);
+      font-size: var(--desc-size);
+      line-height: 1.35;
+      color: var(--black);
+      font-weight: 300;
+    }
+
+    .site-wrapper {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* HEADER / HERO */
+
+    .hero {
+      min-height: 100vh;
+      background: url("assets/PARTE 1 SITE DOUTORA.webp") center center / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(248,247,244,0) 68%, var(--bg) 100%);
+      pointer-events: none;
+    }
+
+    .header {
+      position: absolute;
+      top: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(92%, 1180px);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+      padding: 18px 28px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.42);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.55);
+    }
+
+    .nav a {
+      font-size: 14px;
+      color: #24160f;
+      transition: all .35s ease;
+    }
+
+    .nav a:hover {
+      color: var(--brown);
+      text-shadow: 0 0 18px rgba(90,57,40,.28);
+    }
+
+    .contact-pill {
+      height: 56px;
+      padding: 0 30px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #76553f, #c2a081);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 18px 36px rgba(95,66,46,.24);
+      transition: all .35s ease;
+    }
+
+    .contact-pill:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 50px rgba(95,66,46,.38), 0 0 28px rgba(194,160,129,.45);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      width: min(92%, 1180px);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner {
+      width: 52%;
+      padding-top: 80px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow span {
+      width: 5px;
+      height: 52px;
+      border-radius: 999px;
+      background: linear-gradient(to bottom, #e6d3bc, #8d6445);
+    }
+
+    .eyebrow p {
+      font-family: var(--text-font);
+      letter-spacing: 4px;
+      font-size: 15px;
+      color: #111;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(64px, 7vw, 92px);
+      line-height: .88;
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .hero-subtitle {
+      max-width: 560px;
+      font-family: var(--text-font);
+      font-size: 20px;
+      line-height: 1.32;
+      font-weight: 300;
+      color: #111;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 22px;
+      margin-top: 44px;
+    }
+
+    .btn {
+      width: 330px;
+      height: 82px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      transition: all .45s ease;
+      font-size: 19px;
+      font-weight: 400;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      background: radial-gradient(circle, rgba(255,255,255,.75), transparent 42%);
+      opacity: 0;
+      transform: translateX(-60%);
+      transition: all .7s ease;
+    }
+
+    .btn:hover::before {
+      opacity: 1;
+      transform: translateX(60%);
+    }
+
+    .btn:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #76553f, #c2a081);
+      color: #fff;
+      box-shadow: 0 18px 45px rgba(95,66,46,.26);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 24px 58px rgba(95,66,46,.42), 0 0 32px rgba(194,160,129,.48);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.56);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.72);
+      color: var(--brown);
+    }
+
+    .reveal-text {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: all .7s ease;
+    }
+
+    .reveal-text.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESULTADOS */
+
+    .resultados-section {
+      background: var(--bg);
+      padding: 110px 5% 100px;
+      overflow: hidden;
+    }
+
+    .resultados-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .resultados-container h2 {
+      font-size: var(--title-size);
+      line-height: .95;
+      max-width: 980px;
+      margin: 0 auto;
+      transition: all .45s ease;
+    }
+
+    .resultados-container h2:hover {
+      text-shadow: 0 0 24px rgba(150,111,83,.22);
+      transform: translateY(-2px);
+    }
+
+    .resultados-subtitle {
+      max-width: 780px;
+      margin: 26px auto 58px;
+      font-size: var(--desc-size);
+      line-height: 1.35;
+      font-weight: 300;
+      color: #1d1d1d;
+    }
+
+    .resultados-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .before-after-card {
+      position: relative;
+      overflow: hidden;
+      background: #eee;
+      aspect-ratio: .74 / 1;
+      transition: all .45s ease;
+    }
+
+    .before-after-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 45px rgba(66,40,26,.18);
+    }
+
+    .before-after-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .ba-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .ba-img-before {
+      z-index: 1;
+    }
+
+    .ba-img-after {
+      z-index: 2;
+      clip-path: inset(0 0 0 50%);
+    }
+
+    .ba-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      z-index: 4;
+      width: 2px;
+      background: rgba(255,255,255,.3);
+      transform: translateX(-50%);
+      box-shadow: 0 0 22px rgba(255,255,255,.35);
+    }
+
+    .ba-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 5;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: none;
+      transform: translate(-50%, -50%);
+      background: #60422f;
+      color: #fff;
+      font-size: 18px;
+      letter-spacing: -2px;
+      cursor: grab;
+      box-shadow: 0 12px 30px rgba(0,0,0,.22), 0 0 0 8px rgba(96,66,47,.12);
+      transition: all .35s ease;
+    }
+
+    .before-after-card:hover .ba-handle {
+      background: linear-gradient(135deg, #6a4832, #b99778);
+      box-shadow: 0 14px 36px rgba(0,0,0,.28), 0 0 28px rgba(185,151,120,.65), 0 0 0 10px rgba(185,151,120,.14);
+    }
+
+    .ba-range {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: ew-resize;
+    }
+
+    .ba-label {
+      position: absolute;
+      top: 16px;
+      z-index: 6;
+      padding: 8px 13px;
+      border-radius: 100px;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      color: #fff;
+      background: rgba(70,45,31,.72);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: all .35s ease;
+      pointer-events: none;
+    }
+
+    .ba-before {
+      left: 14px;
+    }
+
+    .ba-after {
+      right: 14px;
+    }
+
+    .before-after-card:hover .ba-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .resultados-btn,
+    .final-cta a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 64px;
+      width: min(100%, 360px);
+      height: 84px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #76553f, #c2a081);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,.65);
+      position: relative;
+      overflow: hidden;
+      transition: all .45s ease;
+      box-shadow: 0 18px 45px rgba(95,66,46,.22);
+    }
+
+    .resultados-btn:hover,
+    .final-cta a:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 22px 55px rgba(95,66,46,.34), 0 0 32px rgba(194,160,129,.45);
+    }
+
+    /* SOBRE */
+
+    .about-section {
+      background: var(--bg);
+      padding: 90px 5% 95px;
+      overflow: hidden;
+    }
+
+    .about-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .95fr 1fr;
+      gap: 76px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: var(--title-size);
+      line-height: .9;
+      margin-bottom: 36px;
+    }
+
+    .about-text p {
+      margin: 0 0 20px;
+      font-size: var(--desc-size);
+      line-height: 1.35;
+      font-weight: 300;
+      max-width: 540px;
+    }
+
+    .about-image-box {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      justify-self: end;
+      border-radius: 105px 0 105px 0;
+      animation: softFloat 5s ease-in-out infinite;
+    }
+
+    .about-image-box img {
+      width: 100%;
+      border-radius: 105px 0 105px 0;
+      object-fit: cover;
+      box-shadow: 0 28px 55px rgba(55,32,20,.16);
+    }
+
+    @keyframes softFloat {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* SERVIÇOS */
+
+    .services-section {
+      background: var(--bg);
+      padding: 40px 5% 105px;
+      overflow: hidden;
+    }
+
+    .services-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .services-container h2 {
+      max-width: 980px;
+      margin: 0 auto;
+      font-size: var(--title-size);
+      line-height: .95;
+    }
+
+    .services-subtitle {
+      margin: 26px auto 62px;
+      max-width: 780px;
+      font-size: var(--desc-size);
+      line-height: 1.35;
+      font-weight: 300;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .service-card {
+      min-height: 280px;
+      padding: 24px 18px 20px;
+      border: 2px solid var(--brown);
+      border-radius: 14px;
+      background: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all .45s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      background: #f6f1ec;
+      box-shadow: 0 22px 45px rgba(74,48,35,.18), 0 0 28px rgba(187,151,119,.28);
+    }
+
+    .service-card img {
+      width: 82px;
+      height: 82px;
+      object-fit: contain;
+      margin-bottom: 22px;
+      transition: all .45s ease;
+    }
+
+    .service-card:hover img {
+      transform: scale(1.08) rotate(-2deg);
+      filter: drop-shadow(0 8px 12px rgba(91,60,39,.22));
+    }
+
+    .service-card h3 {
+      margin: 0 0 18px;
+      font-family: var(--title-font);
+      font-size: 31px;
+      line-height: .82;
+      color: var(--brown);
+    }
+
+    .service-card p {
+      max-width: 210px;
+      font-size: 13px;
+      line-height: 1.25;
+      font-weight: 300;
+    }
+
+    /* PARA QUEM É */
+
+    .target-section {
+      background: var(--bg);
+      padding: 90px 5% 70px;
+    }
+
+    .target-card {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 72px 110px 58px;
+      border-radius: 20px;
+      border: 2px solid #22150f;
+      background: radial-gradient(circle at 50% 0%, rgba(191,146,102,.72), transparent 38%), linear-gradient(135deg, #8f6239 0%, #5a3924 72%);
+      text-align: center;
+      box-shadow: 0 28px 65px rgba(60,37,24,.16);
+    }
+
+    .target-card h2 {
+      margin: 0 0 52px;
+      font-size: var(--title-size);
+      line-height: 1;
+      color: #fff;
+    }
+
+    .target-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .target-list div {
+      height: 82px;
+      border-radius: 999px;
+      background: #dedede;
+      color: var(--brown);
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      align-items: center;
+      padding: 0 42px 0 34px;
+      font-family: var(--text-font);
+      font-size: 18px;
+      line-height: 1.25;
+      transition: all .35s ease;
+    }
+
+    .target-list div:hover {
+      transform: translateX(8px);
+      background: #f1eee9;
+      box-shadow: 0 14px 34px rgba(0,0,0,.18);
+    }
+
+    .target-list span {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--brown);
+      text-align: left;
+    }
+
+    .target-card p {
+      max-width: 700px;
+      margin: 48px auto 0;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 300;
+      color: rgba(255,255,255,.86);
+    }
+
+    /* TRABALHO */
+
+    .work-section {
+      background: var(--bg);
+      padding: 40px 5% 100px;
+    }
+
+    .work-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .95fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .work-text h2 {
+      max-width: 560px;
+      font-size: var(--title-size);
+      line-height: .88;
+    }
+
+    .work-text p {
+      max-width: 540px;
+      margin: 28px 0 0;
+      font-size: var(--desc-size);
+      line-height: 1.35;
+      font-weight: 300;
+    }
+
+    .work-pills {
+      display: grid;
+      gap: 16px;
+    }
+
+    .work-pills div {
+      height: 68px;
+      border-radius: 999px;
+      background: #dedede;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #141414;
+      transition: all .35s ease;
+    }
+
+    .work-pills div:hover {
+      transform: translateX(-8px);
+      background: linear-gradient(135deg, #e6e2dd, #c6b6a7);
+      box-shadow: 0 18px 38px rgba(82,51,34,.16);
+    }
+
+    /* DEPOIMENTOS */
+
+    .testimonials-section {
+      background: var(--bg);
+      padding: 20px 0 120px;
+      overflow: hidden;
+    }
+
+    .testimonials-heading {
+      max-width: 1120px;
+      margin: 0 auto 58px;
+      padding: 0 5%;
+    }
+
+    .testimonials-heading span {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .testimonials-heading h2 {
+      text-align: center;
+      font-size: var(--title-size);
+      line-height: .95;
+    }
+
+    .testimonials-carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .testimonials-carousel::before,
+    .testimonials-carousel::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      z-index: 3;
+      width: 180px;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .testimonials-carousel::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--bg) 0%, rgba(248,247,244,.72) 38%, transparent 100%);
+      backdrop-filter: blur(2px);
+    }
+
+    .testimonials-carousel::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--bg) 0%, rgba(248,247,244,.72) 38%, transparent 100%);
+      backdrop-filter: blur(2px);
+    }
+
+    .testimonials-track {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+      animation: testimonialMarquee 24s linear infinite;
+    }
+
+    .testimonials-track:hover {
+      animation-play-state: paused;
+    }
+
+    .testimonials-track img {
+      width: 270px;
+      height: 480px;
+      object-fit: cover;
+      flex: 0 0 auto;
+      box-shadow: 0 20px 45px rgba(0,0,0,.13);
+      transition: all .4s ease;
+    }
+
+    .testimonials-track img:hover {
+      transform: translateY(-8px) scale(1.025);
+      box-shadow: 0 28px 60px rgba(79,48,31,.22);
+    }
+
+    @keyframes testimonialMarquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-50% - 9px)); }
+    }
+
+    /* POR QUE */
+
+    .why-section {
+      background: var(--bg);
+      padding: 88px 5% 110px;
+    }
+
+    .why-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .why-container h2 {
+      margin: 0 0 68px;
+      font-size: var(--title-size);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .why-card {
+      height: 170px;
+      border-radius: 13px;
+      border: 2px solid #2c1b12;
+      background: radial-gradient(circle at top, rgba(184,127,76,.72), transparent 48%), linear-gradient(135deg, #8d5f37, #563620);
+      cursor: pointer;
+      padding: 20px;
+      transition: all .4s ease;
+      overflow: hidden;
+    }
+
+    .why-card span {
+      display: block;
+      font-family: var(--title-font);
+      font-size: 29px;
+      line-height: .86;
+      color: #fff;
+      transition: all .3s ease;
+    }
+
+    .why-card p {
+      max-height: 0;
+      opacity: 0;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.25;
+      font-weight: 300;
+      color: var(--brown);
+      transition: all .35s ease;
+    }
+
+    .why-card.active,
+    .why-card:hover {
+      background: var(--bg);
+      border-color: var(--brown);
+      box-shadow: 0 20px 38px rgba(74,48,35,.16);
+    }
+
+    .why-card.active span,
+    .why-card:hover span {
+      color: var(--brown);
+      margin-bottom: 16px;
+    }
+
+    .why-card.active p,
+    .why-card:hover p {
+      max-height: 90px;
+      opacity: 1;
+    }
+
+    .final-cta {
+      margin-top: 88px;
+    }
+
+    .final-cta h3 {
+      font-size: var(--title-size);
+      line-height: .95;
+    }
+
+    .final-cta p {
+      margin: 18px auto 42px;
+      font-size: var(--desc-size);
+      line-height: 1.35;
+      font-weight: 300;
+      max-width: 780px;
+    }
+
+    /* FAQ */
+
+    .faq-section {
+      background: var(--gray);
+      padding: 96px 5% 120px;
+    }
+
+    .faq-container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .faq-container h2 {
+      margin: 0 0 62px;
+      text-align: center;
+      font-size: var(--title-size);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .faq-item {
+      border: 3px solid var(--brown);
+      border-radius: 999px;
+      overflow: hidden;
+      transition: all .3s ease;
+    }
+
+    .faq-item button {
+      position: relative;
+      width: 100%;
+      height: 78px;
+      border: none;
+      background: transparent;
+      padding: 0 70px 0 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 22px;
+      color: #111;
+    }
+
+    .faq-item button span {
+      position: absolute;
+      right: 54px;
+      font-size: 42px;
+      color: var(--brown);
+      font-weight: 800;
+      transition: transform .3s ease;
+    }
+
+    .faq-item p {
+      max-height: 0;
+      opacity: 0;
+      margin: 0 auto;
+      padding: 0 54px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 300;
+      color: #3b2a21;
+      transition: all .35s ease;
+    }
+
+    .faq-item.active {
+      border-radius: 36px;
+      background: rgba(255,255,255,.24);
+    }
+
+    .faq-item.active button span {
+      transform: rotate(180deg);
+    }
+
+    .faq-item.active p {
+      max-height: 130px;
+      opacity: 1;
+      padding-bottom: 28px;
+    }
+
+    /* FOOTER */
+
+    .footer-section {
+      background: #54351f;
+      padding: 78px 5% 70px;
+      text-align: center;
+    }
+
+    .footer-section p {
+      margin: 0 0 28px;
+      font-size: 18px;
+      line-height: 1.35;
+      color: #fff;
+      font-weight: 300;
+    }
+
+    .footer-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* WHATSAPP IA */
+
+    .ai-whatsapp {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 9999;
+    }
+
+    .ai-trigger {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #25d366, #0d8b42);
+      box-shadow: 0 18px 40px rgba(0,0,0,.22), 0 0 35px rgba(37,211,102,.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .4s ease;
+    }
+
+    .ai-trigger:hover {
+      transform: scale(1.08);
+    }
+
+    .ai-trigger img {
+      width: 36px;
+    }
+
+    .ai-chat {
+      position: absolute;
+      right: 0;
+      bottom: 98px;
+      width: 370px;
+      background: #fff;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(0,0,0,.2);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all .4s ease;
+    }
+
+    .ai-chat.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .ai-top {
+      padding: 24px;
+      background: linear-gradient(135deg, #25d366, #0d8b42);
+      color: #fff;
+    }
+
+    .ai-top h3 {
+      font-size: 34px;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .ai-top p {
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 300;
+    }
+
+    .ai-options {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ai-options button {
+      border: 1px solid rgba(90,57,40,.12);
+      background: #f4f4f4;
+      border-radius: 16px;
+      padding: 17px;
+      text-align: left;
+      cursor: pointer;
+      transition: all .3s ease;
+    }
+
+    .ai-options button:hover {
+      background: #eee8e2;
+      transform: translateX(4px);
+      border-color: rgba(90,57,40,.28);
+    }
+
+    .ai-options button strong {
+      display: block;
+      font-family: var(--title-font);
+      font-size: 23px;
+      line-height: 1;
+      color: var(--brown);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .ai-options button span {
+      display: block;
+      font-size: 13px;
+      color: #444;
+      line-height: 1.35;
+      font-weight: 300;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+      .header {
+        display: none;
+      }
+
+      .hero {
+        min-height: 100vh;
+        background-image: url("assets/PARTE 1 SITE DOUTORA  MOBILE.webp");
+        background-position: center top;
+      }
+
+      .hero-content {
+        width: 100%;
+        padding: 0 24px 68px;
+        align-items: flex-end;
+      }
+
+      .hero-inner {
+        width: 100%;
+        padding-top: 520px;
+      }
+
+      .eyebrow {
+        margin-bottom: 18px;
+      }
+
+      .eyebrow span {
+        height: 40px;
+      }
+
+      .eyebrow p {
+        font-size: 12px;
+        letter-spacing: 3px;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+        line-height: .88;
+        margin-bottom: 18px;
+      }
+
+      .hero-subtitle {
+        font-size: 15px;
+        line-height: 1.35;
+        max-width: 340px;
+      }
+
+      .desktop-break {
+        display: none;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        width: 100%;
+        height: 70px;
+        font-size: 16px;
+      }
+
+      .resultados-section,
+      .about-section,
+      .services-section,
+      .target-section,
+      .work-section,
+      .why-section,
+      .faq-section {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .resultados-section {
+        padding-top: 74px;
+        padding-bottom: 78px;
+      }
+
+      .resultados-container,
+      .services-container,
+      .why-container,
+      .testimonials-heading,
+      .faq-container {
+        text-align: left;
+      }
+
+      .section-kicker {
+        font-size: 12px;
+        letter-spacing: 6px;
+        margin-bottom: 16px;
+      }
+
+      .resultados-container h2,
+      .about-text h2,
+      .services-container h2,
+      .target-card h2,
+      .work-text h2,
+      .testimonials-heading h2,
+      .why-container h2,
+      .faq-container h2,
+      .final-cta h3 {
+        font-size: var(--title-size-mobile);
+        line-height: .9;
+        text-align: left;
+      }
+
+      .resultados-subtitle,
+      .about-text p,
+      .services-subtitle,
+      .target-card p,
+      .work-text p,
+      .final-cta p {
+        font-size: var(--desc-size-mobile);
+        line-height: 1.35;
+      }
+
+      .resultados-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 34px;
+      }
+
+      .before-after-card {
+        width: 100%;
+        aspect-ratio: .73 / 1;
+      }
+
+      .ba-label {
+        opacity: 1;
+        transform: translateY(0);
+        font-size: 10px;
+      }
+
+      .resultados-btn {
+        width: 100%;
+        height: 72px;
+        margin-top: 38px;
+      }
+
+      .about-section {
+        padding-top: 42px;
+        padding-bottom: 68px;
+      }
+
+      .about-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 38px;
+      }
+
+      .about-image-box,
+      .about-image-box img {
+        max-width: 100%;
+        border-radius: 70px 0 70px 0;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .service-card {
+        min-height: 205px;
+        padding: 18px 12px 16px;
+        text-align: center;
+      }
+
+      .service-card img {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 18px;
+      }
+
+      .service-card h3 {
+        font-size: 25px;
+      }
+
+      .service-card p {
+        font-size: 10px;
+      }
+
+      .target-card {
+        padding: 34px 14px 38px;
+      }
+
+      .target-card h2 {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 28px;
+      }
+
+      .target-list div {
+        height: 62px;
+        grid-template-columns: 1fr;
+        padding: 0 18px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .target-list span {
+        display: none;
+      }
+
+      .work-container {
+        display: block;
+      }
+
+      .work-pills {
+        margin-top: 22px;
+      }
+
+      .work-pills div {
+        height: 54px;
+        font-size: 15px;
+      }
+
+      .testimonials-section {
+        padding: 24px 0 92px;
+      }
+
+      .testimonials-heading {
+        padding: 0 28px;
+      }
+
+      .testimonials-heading span {
+        text-align: left;
+      }
+
+      .testimonials-carousel::before,
+      .testimonials-carousel::after {
+        width: 46px;
+        backdrop-filter: blur(3px);
+      }
+
+      .testimonials-track {
+        gap: 14px;
+        animation-duration: 20s;
+      }
+
+      .testimonials-track img {
+        width: 260px;
+        height: 462px;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .why-card {
+        height: 177px;
+      }
+
+      .why-card span {
+        font-size: 32px;
+        text-align: center;
+      }
+
+      .why-card p {
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .final-cta a {
+        width: 100%;
+        height: 70px;
+      }
+
+      .faq-item {
+        border-width: 2px;
+      }
+
+      .faq-item button {
+        height: 60px;
+        padding: 0 50px 0 22px;
+        font-size: 14px;
+      }
+
+      .faq-item button span {
+        right: 22px;
+        font-size: 34px;
+      }
+
+      .faq-item p {
+        font-size: 13px;
+        padding: 0 24px;
+      }
+
+      .faq-item.active {
+        border-radius: 28px;
+      }
+
+      .faq-item.active p {
+        padding-bottom: 22px;
+      }
+
+      .footer-section {
+        padding: 54px 22px 48px;
+      }
+
+      .footer-section p {
+        font-size: 15px;
+      }
+
+      .ai-whatsapp {
+        right: 18px;
+        bottom: 18px;
+      }
+
+      .ai-trigger {
+        width: 66px;
+        height: 66px;
+      }
+
+      .ai-trigger img {
+        width: 31px;
+      }
+
+      .ai-chat {
+        width: calc(100vw - 36px);
+        right: -2px;
+        bottom: 86px;
+        border-radius: 24px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <main class="site-wrapper">
+
     <section class="hero" id="inicio">
       <header class="header">
-        <nav class="nav" aria-label="Navegação principal">
+        <nav class="nav">
           <a href="#sobre">Sobre mim</a>
           <a href="#tratamentos">Tratamentos</a>
           <a href="#resultados">Resultados</a>
           <a href="#depoimentos">Depoimentos</a>
         </nav>
-        <a class="contact-pill magnetic" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Contato</a>
+        <a class="contact-pill magnetic" href="https://wa.me/5541991545744" target="_blank">Contato</a>
       </header>
 
       <div class="hero-content">
-        <div class="eyebrow reveal-text">
-          <span></span>
-          <p>Odontologia Estética</p>
-        </div>
+        <div class="hero-inner">
+          <div class="eyebrow reveal-text">
+            <span></span>
+            <p>Odontologia Estética</p>
+          </div>
 
-        <h1 class="reveal-text">Tratamentos que<br>revelam sua essência!</h1>
+          <h1 class="reveal-text">Tratamentos que<br>revelam sua essência!</h1>
 
-        <p class="hero-subtitle reveal-text">
-          Naturalidade, sofisticação e precisão<br class="desktop-break">
-          em cada detalhe do seu sorriso. Um<br class="desktop-break">
-          atendimento pensado para valorizar<br class="desktop-break">
-          sua autoestima de forma leve,<br class="desktop-break">
-          moderna e personalizada.
-        </p>
+          <p class="hero-subtitle reveal-text">
+            Naturalidade, sofisticação e precisão em cada detalhe do seu sorriso.
+            Um atendimento pensado para valorizar sua autoestima de forma leve,
+            moderna e personalizada.
+          </p>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary glow-btn magnetic" href="https://wa.me/5500000000000" target="_blank" rel="noopener">
-            Agende sua consulta
-          </a>
-          <a class="btn btn-secondary glow-btn magnetic" href="#trabalho">
-            Conheça meu trabalho
-          </a>
+          <div class="hero-actions">
+            <a class="btn btn-primary magnetic" href="https://wa.me/5541991545744" target="_blank">Agende sua consulta</a>
+            <a class="btn btn-secondary magnetic" href="#depoimentos">Conheça meu trabalho</a>
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="resultados-section" id="resultados">
+      <div class="resultados-container">
+        <span class="section-kicker">Resultado</span>
+        <h2>Transformações naturais e sofisticadas.</h2>
+        <p class="resultados-subtitle">
+          Cada resultado é planejado para harmonizar estética, funcionalidade e personalidade,
+          sempre respeitando as características de cada paciente.
+        </p>
+
+        <div class="resultados-grid">
+          <div class="before-after-card">
+            <span class="ba-label ba-before">ANTES</span>
+            <span class="ba-label ba-after">DEPOIS</span>
+            <div class="before-after-wrapper">
+              <img src="assets/ANTES 1.png" class="ba-img ba-img-before">
+              <img src="assets/DEPOIS  1.png" class="ba-img ba-img-after">
+              <div class="ba-divider"></div>
+              <button class="ba-handle">‹ ›</button>
+              <input type="range" min="0" max="100" value="50" class="ba-range">
+            </div>
+          </div>
+
+          <div class="before-after-card">
+            <span class="ba-label ba-before">ANTES</span>
+            <span class="ba-label ba-after">DEPOIS</span>
+            <div class="before-after-wrapper">
+              <img src="assets/ANTES 2.png" class="ba-img ba-img-before">
+              <img src="assets/DEPOIS 2.webp" class="ba-img ba-img-after">
+              <div class="ba-divider"></div>
+              <button class="ba-handle">‹ ›</button>
+              <input type="range" min="0" max="100" value="50" class="ba-range">
+            </div>
+          </div>
+
+          <div class="before-after-card">
+            <span class="ba-label ba-before">ANTES</span>
+            <span class="ba-label ba-after">DEPOIS</span>
+            <div class="before-after-wrapper">
+              <img src="assets/ANTES 3.webp" class="ba-img ba-img-before">
+              <img src="assets/DEPOIS 3.webp" class="ba-img ba-img-after">
+              <div class="ba-divider"></div>
+              <button class="ba-handle">‹ ›</button>
+              <input type="range" min="0" max="100" value="50" class="ba-range">
+            </div>
+          </div>
+
+          <div class="before-after-card">
+            <span class="ba-label ba-before">ANTES</span>
+            <span class="ba-label ba-after">DEPOIS</span>
+            <div class="before-after-wrapper">
+              <img src="assets/ANTES 4.webp" class="ba-img ba-img-before">
+              <img src="assets/DEPOIS 4.webp" class="ba-img ba-img-after">
+              <div class="ba-divider"></div>
+              <button class="ba-handle">‹ ›</button>
+              <input type="range" min="0" max="100" value="50" class="ba-range">
+            </div>
+          </div>
+        </div>
+
+        <a href="#contato" class="resultados-btn">VER TODOS OS CASOS</a>
+      </div>
+    </section>
+
+    <section class="about-section" id="sobre">
+      <div class="about-container">
+        <div class="about-text">
+          <span class="about-kicker">Dra. Yohana Castro</span>
+          <h2>Sobre mim</h2>
+          <p>Desde cedo, sempre existiu uma paixão muito forte por pessoas, comunicação e transformação.</p>
+          <p>A odontologia surgiu inicialmente por influência familiar, mas foi ao longo da trajetória profissional que nasceu uma verdadeira conexão com a área estética.</p>
+          <p>Após atuar como cirurgiã-dentista clínica geral, o interesse pela harmonização facial e pela odontologia estética despertou uma nova visão sobre a profissão.</p>
+          <p>A busca constante por aperfeiçoamento, estudo e evolução profissional faz parte dessa caminhada até hoje.</p>
+        </div>
+
+        <div class="about-image-box">
+          <img src="assets/SOBRE NOS.webp" alt="Dra. Yohana Castro">
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="tratamentos">
+      <div class="services-container">
+        <span class="services-kicker">Serviços</span>
+        <h2>Tratamentos voltados para rejuvenescimento e harmonização facial.</h2>
+        <p class="services-subtitle">Tecnologia, precisão e planejamento individual para resultados modernos e naturais.</p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <img src="assets/ICONE 1.webp">
+            <h3>Bioestimuladores<br>de colágeno</h3>
+            <p>Estimula a produção natural de colágeno, melhora firmeza e auxilia na prevenção da flacidez facial.</p>
+          </div>
+
+          <div class="service-card">
+            <img src="assets/ICONE 2.webp">
+            <h3>Preenchimento<br>com ácido hialurônico</h3>
+            <p>Procedimento voltado para reposição de volume facial e definição de contornos.</p>
+          </div>
+
+          <div class="service-card">
+            <img src="assets/ICONE 3.webp">
+            <h3>Toxina botulínica<br>Botox</h3>
+            <p>Auxilia na prevenção e suavização de linhas de expressão.</p>
+          </div>
+
+          <div class="service-card">
+            <img src="assets/ICONE 4.webp">
+            <h3>Ultrassom micro<br>e macrofocado</h3>
+            <p>Melhora sustentação, firmeza e efeito lifting sem cirurgia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="target-section" id="para-quem">
+      <div class="target-card">
+        <h2>Para quem é</h2>
+        <div class="target-list">
+          <div><span>✓</span>Para quem sente incômodo com linhas de expressão</div>
+          <div><span>✓</span>Para quem deseja melhorar firmeza e flacidez facial</div>
+          <div><span>✓</span>Para quem busca mais definição e harmonização facial</div>
+          <div><span>✓</span>Para quem deseja prevenir sinais do envelhecimento</div>
+          <div><span>✓</span>Para quem procura resultados naturais</div>
+          <div><span>✓</span>Para quem busca mais autoestima e confiança</div>
+        </div>
+        <p>“Cada tratamento deve fazer sentido para quem você é, e não seguir padrões prontos.”</p>
+      </div>
+    </section>
+
+    <section class="work-section">
+      <div class="work-container">
+        <div class="work-text">
+          <span>Um pouco do nosso trabalho</span>
+          <h2>Cada procedimento começa com um olhar individual.</h2>
+          <p>A harmonização facial exige mais do que técnica. Exige escuta, planejamento e sensibilidade.</p>
+        </div>
+
+        <div class="work-pills">
+          <div>Avaliação personalizada</div>
+          <div>Planejamento estratégico</div>
+          <div>Execução com precisão</div>
+          <div>Acompanhamento</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section" id="depoimentos">
+      <div class="testimonials-heading">
+        <span>Depoimentos</span>
+        <h2>Quem é atendido por mim não se arrepende</h2>
+      </div>
+
+      <div class="testimonials-carousel">
+        <div class="testimonials-track">
+          <img src="assets/DEPOIMENTO 1.webp">
+          <img src="assets/DEPOIMENTO 2.webp">
+          <img src="assets/DEPOIMENTO 3.webp">
+          <img src="assets/DEPOIMENTO 4.webp">
+          <img src="assets/DEPOIMENTO 1.webp">
+          <img src="assets/DEPOIMENTO 2.webp">
+          <img src="assets/DEPOIMENTO 3.webp">
+          <img src="assets/DEPOIMENTO 4.webp">
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section" id="porque">
+      <div class="why-container">
+        <h2>Por que me escolher</h2>
+
+        <div class="why-grid">
+          <button class="why-card"><span>Atendimento<br>Humanizado</span><p>Escuta, acolhimento e planejamento para cada paciente.</p></button>
+          <button class="why-card"><span>Resultados sem<br>exageros</span><p>Tratamentos pensados para valorizar sua beleza natural.</p></button>
+          <button class="why-card"><span>Técnicas<br>atualizadas</span><p>Procedimentos modernos com foco em segurança e precisão.</p></button>
+          <button class="why-card"><span>Ambiente<br>acolhedor</span><p>Uma experiência confortável do atendimento ao pós-procedimento.</p></button>
+        </div>
+
+        <div class="final-cta">
+          <h3>Seu rosto não precisa de padrões.</h3>
+          <p>Precisa de um plano pensado para você. Descubra quais tratamentos fazem sentido para seus objetivos.</p>
+          <a href="#contato">AGENDAR SUA CONSULTA</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="faq-container">
+        <h2>Perguntas Frequentes</h2>
+
+        <div class="faq-list">
+          <div class="faq-item"><button>Os resultados ficam naturais?<span>⌄</span></button><p>Sim. O objetivo é valorizar seus traços com equilíbrio e sem exageros.</p></div>
+          <div class="faq-item"><button>Qual procedimento é ideal para mim?<span>⌄</span></button><p>Isso depende da avaliação individual e dos seus objetivos.</p></div>
+          <div class="faq-item"><button>Botox deixa o rosto paralisado?<span>⌄</span></button><p>Quando bem aplicado, não. A proposta é suavizar expressões mantendo naturalidade.</p></div>
+          <div class="faq-item"><button>Preenchimento aumenta muito o rosto?<span>⌄</span></button><p>Não necessariamente. Pode ser usado de forma sutil para harmonizar e repor volume.</p></div>
+          <div class="faq-item"><button>Bioestimulador aparece na hora?<span>⌄</span></button><p>O resultado é progressivo, estimulando colágeno ao longo do tempo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-section" id="contato">
+      <p>INFORMAÇÕES DE CONTATO<br>WhatsApp: (41) 9 9154-5744</p>
+      <p>Endereço: Avenida República Argentina 1336, sala 516</p>
+    </footer>
   </main>
 
+  <div class="ai-whatsapp">
+    <div class="ai-chat" id="aiChat">
+      <div class="ai-top">
+        <h3>Assistente IA</h3>
+        <p>Escolha o que mais te incomoda e fale direto pelo WhatsApp com uma mensagem pronta.</p>
+      </div>
+
+      <div class="ai-options">
+        <button onclick="sendWhats('linhas de expressão e rejuvenescimento facial')">
+          <strong>Linhas de expressão</strong>
+          <span>Quero suavizar marcas e deixar o rosto mais leve.</span>
+        </button>
+
+        <button onclick="sendWhats('harmonização facial natural')">
+          <strong>Harmonização facial</strong>
+          <span>Quero melhorar definição sem exageros.</span>
+        </button>
+
+        <button onclick="sendWhats('flacidez e firmeza da pele')">
+          <strong>Flacidez facial</strong>
+          <span>Quero melhorar firmeza e sustentação.</span>
+        </button>
+
+        <button onclick="sendWhats('bioestimulador de colágeno e prevenção do envelhecimento')">
+          <strong>Estimular colágeno</strong>
+          <span>Quero prevenir envelhecimento e melhorar textura.</span>
+        </button>
+      </div>
+    </div>
+
+    <button class="ai-trigger" id="openAI">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </button>
+  </div>
+
   <script>
-    const items = document.querySelectorAll('.reveal-text, .glow-btn, .contact-pill');
+    const items = document.querySelectorAll(".reveal-text, .btn, .contact-pill");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
       });
     }, { threshold: 0.2 });
+
     items.forEach((item) => observer.observe(item));
 
-    document.querySelectorAll('.magnetic').forEach((el) => {
-      el.addEventListener('mousemove', (e) => {
+    document.querySelectorAll(".magnetic").forEach((el) => {
+      el.addEventListener("mousemove", (e) => {
         const rect = el.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
         el.style.transform = `translate(${x * 0.045}px, ${y * 0.12}px)`;
       });
-      el.addEventListener('mouseleave', () => {
-        el.style.transform = 'translate(0, 0)';
+
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = "translate(0, 0)";
       });
     });
+
+    document.querySelectorAll(".before-after-card").forEach((card) => {
+      const range = card.querySelector(".ba-range");
+      const afterImg = card.querySelector(".ba-img-after");
+      const divider = card.querySelector(".ba-divider");
+      const handle = card.querySelector(".ba-handle");
+
+      function updateSlider(value) {
+        afterImg.style.clipPath = `inset(0 0 0 ${value}%)`;
+        divider.style.left = `${value}%`;
+        handle.style.left = `${value}%`;
+      }
+
+      range.addEventListener("input", (e) => {
+        updateSlider(e.target.value);
+      });
+
+      updateSlider(range.value);
+    });
+
+    document.querySelectorAll(".why-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        document.querySelectorAll(".why-card").forEach((item) => {
+          if (item !== card) item.classList.remove("active");
+        });
+
+        card.classList.toggle("active");
+      });
+    });
+
+    document.querySelectorAll(".faq-item button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const item = button.parentElement;
+
+        document.querySelectorAll(".faq-item").forEach((faq) => {
+          if (faq !== item) faq.classList.remove("active");
+        });
+
+        item.classList.toggle("active");
+      });
+    });
+
+    const openAI = document.getElementById("openAI");
+    const aiChat = document.getElementById("aiChat");
+
+    openAI.addEventListener("click", () => {
+      aiChat.classList.toggle("active");
+    });
+
+    function sendWhats(problem) {
+      const number = "5541991545744";
+      const message = `Olá Dra. Yohana, vi o site e gostaria de entender melhor sobre tratamentos para ${problem}.`;
+      window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
+    }
   </script>
 </body>
 </html>
-<!-- ===================== SESSÃO 02 — RESULTADOS ===================== -->
-<section class="resultados-section" id="resultados">
-  <div class="resultados-container">
-    <span class="section-kicker">RESULTADO</span>
-
-    <h2>Transformações naturais e sofisticadas.</h2>
-
-    <p class="resultados-subtitle">
-      Cada resultado é planejado para harmonizar estética, funcionalidade e
-      personalidade, sempre respeitando as características de cada paciente.
-    </p>
-
-    <div class="resultados-grid">
-      <!-- CASO 01 -->
-      <div class="before-after-card">
-        <span class="ba-label ba-before">ANTES</span>
-        <span class="ba-label ba-after">DEPOIS</span>
-
-        <div class="before-after-wrapper">
-          <img src="assets/ANTES 1.png" alt="Antes do tratamento" class="ba-img ba-img-before">
-          <img src="assets/DEPOIS  1.png" alt="Depois do tratamento" class="ba-img ba-img-after">
-
-          <div class="ba-divider"></div>
-          <button class="ba-handle" aria-label="Arraste para comparar">
-            ‹ ›
-          </button>
-
-          <input type="range" min="0" max="100" value="50" class="ba-range">
-        </div>
-      </div>
-
-      <!-- CASO 02 -->
-      <div class="before-after-card">
-        <span class="ba-label ba-before">ANTES</span>
-        <span class="ba-label ba-after">DEPOIS</span>
-
-        <div class="before-after-wrapper">
-          <img src="assets/ANTES 2.png" alt="Antes do tratamento" class="ba-img ba-img-before">
-          <img src="assets/DEPOIS 2.webp" alt="Depois do tratamento" class="ba-img ba-img-after">
-
-          <div class="ba-divider"></div>
-          <button class="ba-handle" aria-label="Arraste para comparar">
-            ‹ ›
-          </button>
-
-          <input type="range" min="0" max="100" value="50" class="ba-range">
-        </div>
-      </div>
-
-      <!-- CASO 03 -->
-      <div class="before-after-card">
-        <span class="ba-label ba-before">ANTES</span>
-        <span class="ba-label ba-after">DEPOIS</span>
-
-        <div class="before-after-wrapper">
-          <img src="assets/ANTES 3.webp" alt="Antes do tratamento" class="ba-img ba-img-before">
-          <img src="assets/DEPOIS 3.webp" alt="Depois do tratamento" class="ba-img ba-img-after">
-
-          <div class="ba-divider"></div>
-          <button class="ba-handle" aria-label="Arraste para comparar">
-            ‹ ›
-          </button>
-
-          <input type="range" min="0" max="100" value="50" class="ba-range">
-        </div>
-      </div>
-
-      <!-- CASO 04 -->
-      <div class="before-after-card">
-        <span class="ba-label ba-before">ANTES</span>
-        <span class="ba-label ba-after">DEPOIS</span>
-
-        <div class="before-after-wrapper">
-          <img src="assets/ANTES 4.webp" alt="Antes do tratamento" class="ba-img ba-img-before">
-          <img src="assets/DEPOIS 4.webp" alt="Depois do tratamento" class="ba-img ba-img-after">
-
-          <div class="ba-divider"></div>
-          <button class="ba-handle" aria-label="Arraste para comparar">
-            ‹ ›
-          </button>
-
-          <input type="range" min="0" max="100" value="50" class="ba-range">
-        </div>
-      </div>
-    </div>
-
-    <a href="#contato" class="resultados-btn">VER TODOS OS CASOS</a>
-  </div>
-</section>
-
-<style>
-/* ===================== RESULTADOS ===================== */
-
-.resultados-section {
-  width: 100%;
-  background: #f8f7f4;
-  padding: 110px 5% 100px;
-  overflow: hidden;
-}
-
-.resultados-container {
-  max-width: 1180px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.section-kicker {
-  display: block;
-  margin-bottom: 22px;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 14px;
-  letter-spacing: 8px;
-  color: #3f2a1f;
-  font-weight: 500;
-}
-
-.resultados-container h2 {
-  margin: 0 auto;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(46px, 5vw, 72px);
-  line-height: 0.95;
-  font-weight: 500;
-  color: #4a3023;
-  max-width: 1000px;
-  transition: all 0.45s ease;
-}
-
-.resultados-container h2:hover {
-  text-shadow: 0 0 24px rgba(150, 111, 83, 0.22);
-  transform: translateY(-2px);
-}
-
-.resultados-subtitle {
-  max-width: 850px;
-  margin: 26px auto 58px;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 24px;
-  line-height: 1.05;
-  color: #1d1d1d;
-}
-
-.resultados-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  align-items: stretch;
-}
-
-.before-after-card {
-  position: relative;
-  overflow: hidden;
-  background: #eee;
-  aspect-ratio: 0.74 / 1;
-  transition: all 0.45s ease;
-}
-
-.before-after-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 45px rgba(66, 40, 26, 0.18);
-}
-
-.before-after-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.ba-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  user-select: none;
-  pointer-events: none;
-}
-
-.ba-img-before {
-  z-index: 1;
-}
-
-.ba-img-after {
-  z-index: 2;
-  clip-path: inset(0 0 0 50%);
-}
-
-.ba-divider {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  z-index: 4;
-  width: 2px;
-  background: rgba(255, 255, 255, 0.28);
-  transform: translateX(-50%);
-  box-shadow: 0 0 22px rgba(255, 255, 255, 0.35);
-}
-
-.ba-handle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 5;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  border: none;
-  transform: translate(-50%, -50%);
-  background: #60422f;
-  color: #fff;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 18px;
-  letter-spacing: -2px;
-  cursor: grab;
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.22),
-    0 0 0 8px rgba(96, 66, 47, 0.12);
-  transition: all 0.35s ease;
-}
-
-.before-after-card:hover .ba-handle {
-  background: linear-gradient(135deg, #6a4832, #b99778);
-  box-shadow:
-    0 14px 36px rgba(0, 0, 0, 0.28),
-    0 0 28px rgba(185, 151, 120, 0.65),
-    0 0 0 10px rgba(185, 151, 120, 0.14);
-}
-
-.ba-range {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: ew-resize;
-}
-
-.ba-label {
-  position: absolute;
-  top: 16px;
-  z-index: 6;
-  padding: 8px 13px;
-  border-radius: 100px;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  color: #fff;
-  background: rgba(70, 45, 31, 0.72);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: all 0.35s ease;
-  pointer-events: none;
-}
-
-.ba-before {
-  left: 14px;
-}
-
-.ba-after {
-  right: 14px;
-}
-
-.before-after-card:hover .ba-label {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.resultados-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 64px;
-  width: min(100%, 360px);
-  height: 88px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #76553f, #c2a081);
-  color: #fff;
-  text-decoration: none;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.45s ease;
-  box-shadow: 0 18px 45px rgba(95, 66, 46, 0.22);
-}
-
-.resultados-btn::before {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  background: radial-gradient(circle, rgba(255,255,255,.65), transparent 45%);
-  transform: translateX(-70%);
-  opacity: 0;
-  transition: all 0.7s ease;
-}
-
-.resultados-btn:hover {
-  transform: translateY(-5px) scale(1.02);
-  filter: blur(0);
-  box-shadow:
-    0 22px 55px rgba(95, 66, 46, 0.34),
-    0 0 32px rgba(194, 160, 129, 0.45);
-}
-
-.resultados-btn:hover::before {
-  transform: translateX(70%);
-  opacity: 1;
-}
-
-/* ===================== MOBILE ===================== */
-
-@media (max-width: 768px) {
-  .resultados-section {
-    padding: 74px 22px 78px;
-    background: #fbfaf8;
-  }
-
-  .resultados-container {
-    text-align: left;
-  }
-
-  .section-kicker {
-    font-size: 13px;
-    letter-spacing: 7px;
-    margin-bottom: 16px;
-  }
-
-  .resultados-container h2 {
-    font-size: 44px;
-    line-height: 0.92;
-    max-width: 340px;
-    margin: 0;
-  }
-
-  .resultados-subtitle {
-    margin: 18px 0 34px;
-    font-size: 18px;
-    line-height: 0.95;
-    max-width: 340px;
-  }
-
-  .resultados-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 34px;
-  }
-
-  .before-after-card {
-    width: 100%;
-    aspect-ratio: 0.73 / 1;
-  }
-
-  .ba-label {
-    opacity: 1;
-    transform: translateY(0);
-    font-size: 10px;
-    padding: 7px 11px;
-  }
-
-  .ba-handle {
-    width: 48px;
-    height: 48px;
-  }
-
-  .resultados-btn {
-    width: 100%;
-    height: 78px;
-    margin-top: 38px;
-    font-size: 22px;
-  }
-}
-</style>
-
-<script>
-/* ===================== BEFORE / AFTER INTERATIVO ===================== */
-
-document.querySelectorAll(".before-after-card").forEach((card) => {
-  const range = card.querySelector(".ba-range");
-  const afterImg = card.querySelector(".ba-img-after");
-  const divider = card.querySelector(".ba-divider");
-  const handle = card.querySelector(".ba-handle");
-
-  function updateSlider(value) {
-    afterImg.style.clipPath = `inset(0 0 0 ${value}%)`;
-    divider.style.left = `${value}%`;
-    handle.style.left = `${value}%`;
-  }
-
-  range.addEventListener("input", (e) => {
-    updateSlider(e.target.value);
-  });
-
-  updateSlider(range.value);
-});
-</script>
-
-<!-- ===================== SESSÃO 03 — SOBRE MIM ===================== -->
-<section class="about-section" id="sobre">
-  <div class="about-container">
-    <div class="about-text">
-      <span class="about-kicker">DR. YOHANA CASTRO</span>
-
-      <h2>Sobre mim</h2>
-
-      <p>
-        Desde cedo, sempre existiu uma paixão muito forte por pessoas,
-        comunicação e transformação.
-      </p>
-
-      <p>
-        A odontologia surgiu inicialmente por influência familiar, mas foi ao
-        longo da trajetória profissional que nasceu uma verdadeira conexão com
-        a área estética e com o impacto que ela pode gerar na autoestima de
-        cada paciente.
-      </p>
-
-      <p>
-        Após atuar como cirurgiã-dentista clínica geral, o interesse pela
-        harmonização facial e pela odontologia estética despertou uma nova
-        visão sobre a profissão: unir técnica, naturalidade e confiança em cada
-        atendimento.
-      </p>
-
-      <p>
-        A busca constante por aperfeiçoamento, estudo e evolução profissional
-        faz parte dessa caminhada até hoje, sempre com o objetivo de
-        proporcionar uma experiência mais humana, acolhedora e personalizada.
-      </p>
-    </div>
-
-    <div class="about-image-box">
-<img src="assets/SOBRE NOS.webp" alt="Dra. Yohana Castro" />
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SESSÃO 04 — SERVIÇOS ===================== -->
-<section class="services-section" id="tratamentos">
-  <div class="services-container">
-    <span class="services-kicker">SERVIÇOS</span>
-
-    <h2>Tratamentos voltados para rejuvenescimento e harmonização facial.</h2>
-
-    <p class="services-subtitle">
-      Tecnologia, precisão e planejamento individual para resultados modernos e naturais.
-    </p>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <img src="assets/ICONE 1.webp" alt="Bioestimuladores de colágeno" />
-        <h3>Bioestimuladores<br>de colágeno</h3>
-        <p>
-          Estimula a produção natural de colágeno, melhora firmeza,
-          textura e auxilia na prevenção da flacidez facial.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <img src="assets/ICONE 2.webp" alt="Preenchimento com ácido hialurônico" />
-        <h3>Preenchimento<br>com ácido<br>hialurônico</h3>
-        <p>
-          Tecnologia utilizada para estímulo profundo de colágeno,
-          melhora da flacidez e efeito lifting sem cirurgia.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <img src="assets/ICONE 3.webp" alt="Toxina botulínica" />
-        <h3>Toxina botulínica<br>(Botox)</h3>
-        <p>
-          Auxilia na prevenção e suavização de linhas de expressão,
-          proporcionando aspecto mais descansado e leve.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <img src="assets/ICONE 4.webp" alt="Ultrassom micro e macrofocado" />
-        <h3>Ultrassom micro<br>e macrofocado</h3>
-        <p>
-          Procedimento voltado para reposição de volume facial e definição
-          de contornos de forma equilibrada e sofisticada.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-/* ===================== SESSÃO 03 — SOBRE MIM ===================== */
-
-.about-section {
-  width: 100%;
-  background: #f8f7f4;
-  padding: 90px 5% 95px;
-  overflow: hidden;
-}
-
-.about-container {
-  max-width: 1160px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 0.95fr 1fr;
-  gap: 76px;
-  align-items: center;
-}
-
-.about-kicker,
-.services-kicker {
-  display: block;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 16px;
-  letter-spacing: 7px;
-  color: #2d211a;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.about-text h2,
-.services-container h2 {
-  margin: 0;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  color: #4a3023;
-}
-
-.about-text h2 {
-  font-size: clamp(56px, 6vw, 82px);
-  line-height: 0.9;
-  margin-bottom: 36px;
-}
-
-.about-text p {
-  margin: 0 0 24px;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 25px;
-  line-height: 0.92;
-  color: #161616;
-  max-width: 540px;
-}
-
-.about-image-box {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
-  justify-self: end;
-  border-radius: 105px 0 105px 0;
-  overflow: visible;
-  animation: softFloat 5s ease-in-out infinite;
-}
-
-.about-image-box img {
-  display: block;
-  width: 100%;
-  border-radius: 105px 0 105px 0;
-  object-fit: cover;
-  box-shadow: 0 28px 55px rgba(55, 32, 20, 0.16);
-}
-
-.cro-badge {
-  position: absolute;
-  z-index: 4;
-  top: -34px;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 255px;
-  height: 70px;
-  padding: 0 32px;
-  border-radius: 22px;
-  background: linear-gradient(180deg, #d8ad8a 0%, #8c674d 54%, #5a3b28 100%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow:
-    inset 0 1px 12px rgba(255,255,255,.35),
-    0 18px 35px rgba(54, 32, 20, 0.24);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 31px;
-  color: #fff;
-  white-space: nowrap;
-}
-
-.about-text h2:hover,
-.services-container h2:hover,
-.about-text p:hover,
-.service-card:hover h3 {
-  text-shadow: 0 0 24px rgba(151, 111, 82, 0.24);
-}
-
-@keyframes softFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-/* ===================== SESSÃO 04 — SERVIÇOS ===================== */
-
-.services-section {
-  width: 100%;
-  background: #f8f7f4;
-  padding: 40px 5% 105px;
-  overflow: hidden;
-}
-
-.services-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.services-kicker {
-  margin-bottom: 22px;
-}
-
-.services-container h2 {
-  max-width: 980px;
-  margin: 0 auto;
-  font-size: clamp(52px, 5.2vw, 74px);
-  line-height: 0.95;
-}
-
-.services-subtitle {
-  margin: 26px auto 62px;
-  max-width: 930px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 31px;
-  line-height: 1;
-  color: #1f1f1f;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-.service-card {
-  min-height: 280px;
-  padding: 24px 18px 20px;
-  border: 2px solid #5a3928;
-  border-radius: 14px;
-  background: #eeeeee;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  transition: all 0.45s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.service-card::before {
-  content: "";
-  position: absolute;
-  inset: -45%;
-  background: radial-gradient(circle, rgba(255,255,255,.75), transparent 46%);
-  opacity: 0;
-  transform: translateX(-50%);
-  transition: all 0.7s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  background: #f6f1ec;
-  box-shadow:
-    0 22px 45px rgba(74, 48, 35, 0.18),
-    0 0 28px rgba(187, 151, 119, 0.28);
-}
-
-.service-card:hover::before {
-  opacity: 1;
-  transform: translateX(45%);
-}
-
-.service-card img {
-  width: 82px;
-  height: 82px;
-  object-fit: contain;
-  margin-bottom: 22px;
-  position: relative;
-  z-index: 1;
-  transition: all 0.45s ease;
-}
-
-.service-card:hover img {
-  transform: scale(1.08) rotate(-2deg);
-  filter: drop-shadow(0 8px 12px rgba(91, 60, 39, 0.22));
-}
-
-.service-card h3 {
-  margin: 0 0 18px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 31px;
-  font-weight: 500;
-  line-height: 0.82;
-  color: #5a3928;
-  position: relative;
-  z-index: 1;
-}
-
-.service-card p {
-  margin: 0;
-  max-width: 210px;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 0.95;
-  color: #1f1f1f;
-  position: relative;
-  z-index: 1;
-}
-
-/* ===================== MOBILE ===================== */
-
-@media (max-width: 768px) {
-  .about-section {
-    padding: 42px 14px 68px;
-  }
-
-  .about-container {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 38px;
-    align-items: stretch;
-  }
-
-  .about-image-box {
-    max-width: 100%;
-    border-radius: 70px 0 70px 0;
-  }
-
-  .about-image-box img {
-    border-radius: 70px 0 70px 0;
-  }
-
-  .cro-badge {
-    top: -32px;
-    min-width: 200px;
-    height: 64px;
-    border-radius: 21px;
-    font-size: 24px;
-  }
-
-  .about-kicker,
-  .services-kicker {
-    font-size: 14px;
-    letter-spacing: 6px;
-    margin-bottom: 18px;
-  }
-
-  .about-text {
-    padding: 0 6px;
-  }
-
-  .about-text h2 {
-    font-size: 49px;
-    line-height: 0.9;
-    margin-bottom: 30px;
-  }
-
-  .about-text p {
-    font-size: 18px;
-    line-height: 0.88;
-    margin-bottom: 17px;
-    max-width: 100%;
-  }
-
-  .services-section {
-    padding: 50px 10px 70px;
-  }
-
-  .services-container {
-    text-align: left;
-  }
-
-  .services-kicker {
-    display: none;
-  }
-
-  .services-container h2 {
-    font-size: 42px;
-    line-height: 0.93;
-    max-width: 360px;
-    margin: 0;
-  }
-
-  .services-subtitle {
-    margin: 20px 0 34px;
-    font-family: "Montserrat", Arial, sans-serif;
-    font-size: 18px;
-    line-height: 0.96;
-    max-width: 350px;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  .service-card {
-    min-height: 205px;
-    padding: 18px 12px 16px;
-    border-radius: 13px;
-    text-align: center;
-  }
-
-  .service-card img {
-    width: 58px;
-    height: 58px;
-    margin-bottom: 18px;
-  }
-
-  .service-card h3 {
-    font-size: 25px;
-    line-height: 0.82;
-    margin-bottom: 14px;
-  }
-
-  .service-card p {
-    font-size: 10px;
-    line-height: 0.92;
-    max-width: 145px;
-  }
-}
-
-@media (max-width: 390px) {
-  .services-container h2 {
-    font-size: 38px;
-  }
-
-  .about-text h2 {
-    font-size: 46px;
-  }
-
-  .service-card h3 {
-    font-size: 23px;
-  }
-
-  .service-card {
-    min-height: 198px;
-  }
-}
-</style>
-<!-- ===================== SESSÕES 07, 08 E 09 ===================== -->
-
-<section class="target-section" id="para-quem">
-  <div class="target-card">
-    <h2>Para quem é</h2>
-
-    <div class="target-list">
-      <div><span>✓</span>Para quem sente incômodo com linhas de expressão</div>
-      <div><span>✓</span>Para quem deseja melhorar firmeza e flacidez facial</div>
-      <div><span>✓</span>Para quem busca mais definição e harmonização facial</div>
-      <div><span>✓</span>Para quem deseja prevenir sinais do envelhecimento</div>
-      <div><span>✓</span>Para quem procura resultados naturais</div>
-      <div><span>✓</span>Para quem busca mais autoestima e confiança</div>
-    </div>
-
-    <p>
-      “Cada paciente possui objetivos diferentes — por isso, cada tratamento
-      deve fazer sentido para quem você é, e não seguir padrões prontos.”
-    </p>
-  </div>
-</section>
-
-<section class="work-section">
-  <div class="work-container">
-    <div class="work-text">
-      <span>UM POUCO DO NOSSO TRABALHO</span>
-      <h2>Cada procedimento começa com um olhar individual.</h2>
-      <p>
-        A harmonização facial exige mais do que técnica. Exige escuta,
-        planejamento e sensibilidade para entender o que realmente combina
-        com cada paciente.
-      </p>
-    </div>
-
-    <div class="work-pills">
-      <div>Avaliação personalizada</div>
-      <div>Planejamento estratégico</div>
-      <div>Execução com precisão</div>
-      <div>Acompanhamento</div>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials-section" id="depoimentos">
-  <div class="testimonials-heading">
-    <span>DEPOIMENTOS</span>
-    <h2>Quem é atendido por mim não se arrepende</h2>
-  </div>
-
-  <div class="testimonials-carousel">
-    <div class="testimonials-track">
-      <img src="assets/DEPOIMENTO 1.webp" alt="Depoimento de paciente">
-      <img src="assets/DEPOIMENTO 2.webp" alt="Depoimento de paciente">
-      <img src="assets/DEPOIMENTO 3.webp" alt="Depoimento de paciente">
-      <img src="assets/DEPOIMENTO 4.webp" alt="Depoimento de paciente">
-
-      <img src="assets/DEPOIMENTO 1.webp" alt="Depoimento de paciente">
-      <img src="assets/DEPOIMENTO 2.webp" alt="Depoimento de paciente">
-      <img src="assets/DEPOIMENTO 3.webp" alt="Depoimento de paciente">
-      <img src="assets/DEPOIMENTO 4.webp" alt="Depoimento de paciente">
-    </div>
-  </div>
-</section>
-
-<style>
-/* ===================== PARA QUEM É ===================== */
-
-.target-section {
-  background: #f8f7f4;
-  padding: 90px 5% 70px;
-}
-
-.target-card {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 72px 110px 58px;
-  border-radius: 20px;
-  border: 2px solid #22150f;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(191, 146, 102, .72), transparent 38%),
-    linear-gradient(135deg, #8f6239 0%, #5a3924 72%);
-  text-align: center;
-  box-shadow: 0 28px 65px rgba(60, 37, 24, 0.16);
-}
-
-.target-card h2 {
-  margin: 0 0 52px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 58px;
-  line-height: 1;
-  font-weight: 500;
-  color: #fff;
-}
-
-.target-list {
-  display: grid;
-  gap: 14px;
-}
-
-.target-list div {
-  height: 82px;
-  border-radius: 999px;
-  background: #dedede;
-  color: #5a3928;
-  display: grid;
-  grid-template-columns: 58px 1fr;
-  align-items: center;
-  padding: 0 42px 0 34px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 26px;
-  line-height: 1;
-  transition: all .35s ease;
-}
-
-.target-list div:hover {
-  transform: translateX(8px);
-  background: #f1eee9;
-  box-shadow: 0 14px 34px rgba(0,0,0,.18);
-}
-
-.target-list span {
-  font-family: Arial, sans-serif;
-  font-size: 35px;
-  font-weight: 700;
-  color: #5a3928;
-  text-align: left;
-}
-
-.target-card p {
-  max-width: 700px;
-  margin: 48px auto 0;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 20px;
-  line-height: .95;
-  color: rgba(255,255,255,.86);
-}
-
-/* ===================== NOSSO TRABALHO ===================== */
-
-.work-section {
-  background: #f8f7f4;
-  padding: 40px 5% 100px;
-}
-
-.work-container {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: .95fr 1fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.work-text span,
-.testimonials-heading span {
-  display: block;
-  margin-bottom: 24px;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 14px;
-  letter-spacing: 7px;
-  color: #2d211a;
-}
-
-.work-text h2,
-.testimonials-heading h2 {
-  margin: 0;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  color: #4a3023;
-}
-
-.work-text h2 {
-  max-width: 560px;
-  font-size: 62px;
-  line-height: .88;
-}
-
-.work-text p {
-  max-width: 540px;
-  margin: 34px 0 0;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 27px;
-  line-height: .94;
-  color: #181818;
-}
-
-.work-pills {
-  display: grid;
-  gap: 16px;
-}
-
-.work-pills div {
-  height: 68px;
-  border-radius: 999px;
-  background: #dedede;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 26px;
-  color: #141414;
-  transition: all .35s ease;
-}
-
-.work-pills div:hover {
-  transform: translateX(-8px);
-  background: linear-gradient(135deg, #e6e2dd, #c6b6a7);
-  box-shadow: 0 18px 38px rgba(82, 51, 34, .16);
-}
-
-/* ===================== DEPOIMENTOS ===================== */
-
-.testimonials-section {
-  background: #f8f7f4;
-  padding: 20px 0 120px;
-  overflow: hidden;
-}
-
-.testimonials-heading {
-  max-width: 1120px;
-  margin: 0 auto 58px;
-  padding: 0 5%;
-}
-
-.testimonials-heading span {
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.testimonials-heading h2 {
-  text-align: center;
-  font-size: 58px;
-  line-height: .95;
-}
-
-.testimonials-carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.testimonials-carousel::before,
-.testimonials-carousel::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  z-index: 3;
-  width: 180px;
-  height: 100%;
-  pointer-events: none;
-}
-
-.testimonials-carousel::before {
-  left: 0;
-  background: linear-gradient(90deg, #f8f7f4 0%, rgba(248,247,244,.72) 38%, transparent 100%);
-  backdrop-filter: blur(2px);
-}
-
-.testimonials-carousel::after {
-  right: 0;
-  background: linear-gradient(270deg, #f8f7f4 0%, rgba(248,247,244,.72) 38%, transparent 100%);
-  backdrop-filter: blur(2px);
-}
-
-.testimonials-track {
-  display: flex;
-  gap: 18px;
-  width: max-content;
-  animation: testimonialMarquee 24s linear infinite;
-}
-
-.testimonials-track:hover {
-  animation-play-state: paused;
-}
-
-.testimonials-track img {
-  width: 270px;
-  height: 480px;
-  object-fit: cover;
-  flex: 0 0 auto;
-  box-shadow: 0 20px 45px rgba(0,0,0,.13);
-  transition: all .4s ease;
-}
-
-.testimonials-track img:hover {
-  transform: translateY(-8px) scale(1.025);
-  box-shadow: 0 28px 60px rgba(79, 48, 31, .22);
-}
-
-@keyframes testimonialMarquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(calc(-50% - 9px));
-  }
-}
-
-/* ===================== MOBILE ===================== */
-
-@media (max-width: 768px) {
-  .target-section {
-    padding: 58px 20px 62px;
-  }
-
-  .target-card {
-    padding: 34px 14px 38px;
-    border-radius: 17px;
-  }
-
-  .target-card h2 {
-    font-size: 45px;
-    margin-bottom: 28px;
-  }
-
-  .target-list {
-    gap: 8px;
-  }
-
-  .target-list div {
-    height: 62px;
-    grid-template-columns: 0 1fr;
-    padding: 0 20px;
-    text-align: center;
-    font-size: 17px;
-  }
-
-  .target-list span {
-    display: none;
-  }
-
-  .target-card p {
-    margin-top: 30px;
-    font-size: 17px;
-    line-height: .9;
-  }
-
-  .work-section {
-    padding: 26px 22px 78px;
-  }
-
-  .work-container {
-    display: block;
-  }
-
-  .work-text span {
-    font-size: 13px;
-    letter-spacing: 6px;
-    margin-bottom: 16px;
-  }
-
-  .work-text h2 {
-    font-size: 42px;
-    line-height: .86;
-  }
-
-  .work-text p {
-    margin-top: 20px;
-    font-family: "Montserrat", Arial, sans-serif;
-    font-size: 17px;
-    line-height: .96;
-  }
-
-  .work-pills {
-    margin-top: 22px;
-    gap: 10px;
-  }
-
-  .work-pills div {
-    height: 54px;
-    font-size: 18px;
-  }
-
-  .testimonials-section {
-    padding: 24px 0 92px;
-  }
-
-  .testimonials-heading {
-    margin-bottom: 38px;
-    padding: 0 28px;
-  }
-
-  .testimonials-heading span {
-    text-align: left;
-    font-size: 14px;
-    letter-spacing: 6px;
-    margin-bottom: 14px;
-  }
-
-  .testimonials-heading h2 {
-    text-align: left;
-    font-size: 43px;
-    line-height: .88;
-    max-width: 340px;
-  }
-
-  .testimonials-carousel::before,
-  .testimonials-carousel::after {
-    width: 46px;
-    backdrop-filter: blur(3px);
-  }
-
-  .testimonials-track {
-    gap: 14px;
-    animation-duration: 20s;
-  }
-
-  .testimonials-track img {
-    width: 260px;
-    height: 462px;
-  }
-}
-</style>
-
-<!-- ===================== SESSÕES FINAIS ===================== -->
-
-<section class="why-section" id="porque">
-  <div class="why-container">
-    <h2>Por que me escolher</h2>
-
-    <div class="why-grid">
-      <button class="why-card">
-        <span>Atendimento<br>Humanizado</span>
-        <p>Escuta, acolhimento e planejamento para cada paciente.</p>
-      </button>
-
-      <button class="why-card">
-        <span>Resultados sem<br>exageros</span>
-        <p>Tratamentos pensados para valorizar sua beleza natural.</p>
-      </button>
-
-      <button class="why-card">
-        <span>Técnicas<br>atualizadas</span>
-        <p>Procedimentos modernos com foco em segurança e precisão.</p>
-      </button>
-
-      <button class="why-card">
-        <span>Ambiente<br>acolhedor</span>
-        <p>Uma experiência confortável do atendimento ao pós-procedimento.</p>
-      </button>
-    </div>
-
-    <div class="final-cta">
-      <h3>Seu rosto não precisa de padrões.</h3>
-      <p>
-        Precisa de um plano pensado para você.<br>
-        Descubra quais tratamentos fazem sentido para seus objetivos e para a sua beleza natural.
-      </p>
-
-      <a href="#contato">AGENDAR SUA CONSULTA</a>
-    </div>
-  </div>
-</section>
-
-<section class="faq-section" id="faq">
-  <div class="faq-container">
-    <h2>Perguntas Frequentes</h2>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <button>Os resultados ficam naturais?<span>⌄</span></button>
-        <p>Sim. O objetivo é valorizar seus traços com equilíbrio, sem exageros e respeitando sua identidade facial.</p>
-      </div>
-
-      <div class="faq-item">
-        <button>Qual procedimento é ideal para mim?<span>⌄</span></button>
-        <p>Isso depende da avaliação individual. Cada plano é definido conforme suas necessidades, objetivos e características faciais.</p>
-      </div>
-
-      <div class="faq-item">
-        <button>Botox deixa o rosto paralisado?<span>⌄</span></button>
-        <p>Quando bem aplicado, não. A proposta é suavizar expressões mantendo naturalidade e movimento.</p>
-      </div>
-
-      <div class="faq-item">
-        <button>Preenchimento aumenta muito o rosto?<span>⌄</span></button>
-        <p>Não necessariamente. O preenchimento pode ser usado de forma sutil para harmonizar, repor volume e melhorar contornos.</p>
-      </div>
-
-      <div class="faq-item">
-        <button>Bioestimulador aparece na hora?<span>⌄</span></button>
-        <p>O resultado é progressivo. Ele estimula a produção de colágeno e melhora firmeza e qualidade da pele ao longo do tempo.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer-section" id="contato">
-  <p>
-    INFORMAÇÕES DE CONTATO<br>
-    WhatsApp: (41) 9 9154-5744
-  </p>
-
-  <p>
-    Endereço: Avenida Republica Argentina 1336, sala 516
-  </p>
-</footer>
-
-<style>
-/* ===================== POR QUE ME ESCOLHER ===================== */
-
-.why-section {
-  background: #f8f7f4;
-  padding: 88px 5% 110px;
-}
-
-.why-container {
-  max-width: 1160px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.why-container h2 {
-  margin: 0 0 68px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 58px;
-  font-weight: 500;
-  color: #4a3023;
-}
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.why-card {
-  height: 170px;
-  border-radius: 13px;
-  border: 2px solid #2c1b12;
-  background:
-    radial-gradient(circle at top, rgba(184, 127, 76, .72), transparent 48%),
-    linear-gradient(135deg, #8d5f37, #563620);
-  cursor: pointer;
-  padding: 20px;
-  transition: all .4s ease;
-  overflow: hidden;
-}
-
-.why-card span {
-  display: block;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 29px;
-  line-height: .86;
-  color: #fff;
-  transition: all .3s ease;
-}
-
-.why-card p {
-  max-height: 0;
-  opacity: 0;
-  margin: 0;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.05;
-  color: #5a3928;
-  transition: all .35s ease;
-}
-
-.why-card.active,
-.why-card:hover {
-  background: #f8f7f4;
-  border-color: #5a3928;
-  box-shadow: 0 20px 38px rgba(74, 48, 35, .16);
-}
-
-.why-card.active span,
-.why-card:hover span {
-  color: #5a3928;
-  margin-bottom: 16px;
-}
-
-.why-card.active p,
-.why-card:hover p {
-  max-height: 90px;
-  opacity: 1;
-}
-
-.final-cta {
-  margin-top: 88px;
-}
-
-.final-cta h3 {
-  margin: 0;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 58px;
-  line-height: .95;
-  font-weight: 500;
-  color: #4a3023;
-}
-
-.final-cta p {
-  margin: 18px auto 42px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 28px;
-  line-height: .9;
-  color: #111;
-}
-
-.final-cta a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 330px;
-  height: 84px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #76553f, #c2a081);
-  color: #fff;
-  text-decoration: none;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 22px;
-  font-weight: 600;
-  transition: all .4s ease;
-  box-shadow: 0 18px 40px rgba(95, 66, 46, .22);
-}
-
-.final-cta a:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 24px 55px rgba(95, 66, 46, .36);
-}
-
-/* ===================== FAQ ===================== */
-
-.faq-section {
-  background: #d9d9d9;
-  padding: 96px 5% 120px;
-}
-
-.faq-container {
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
-.faq-container h2 {
-  margin: 0 0 62px;
-  text-align: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 58px;
-  font-weight: 500;
-  color: #5a3928;
-}
-
-.faq-list {
-  display: grid;
-  gap: 18px;
-}
-
-.faq-item {
-  border: 3px solid #5a3928;
-  border-radius: 999px;
-  overflow: hidden;
-  transition: all .3s ease;
-}
-
-.faq-item button {
-  width: 100%;
-  height: 78px;
-  border: none;
-  background: transparent;
-  padding: 0 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 28px;
-  cursor: pointer;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 30px;
-  color: #111;
-}
-
-.faq-item button span {
-  position: absolute;
-  right: 54px;
-  font-size: 48px;
-  color: #5a3928;
-  font-weight: 800;
-  transition: transform .3s ease;
-}
-
-.faq-item p {
-  max-height: 0;
-  opacity: 0;
-  margin: 0 auto;
-  padding: 0 54px;
-  text-align: center;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.35;
-  color: #3b2a21;
-  transition: all .35s ease;
-}
-
-.faq-item.active {
-  border-radius: 36px;
-  background: rgba(255,255,255,.24);
-}
-
-.faq-item.active button span {
-  transform: rotate(180deg);
-}
-
-.faq-item.active p {
-  max-height: 130px;
-  opacity: 1;
-  padding-bottom: 28px;
-}
-
-/* ===================== FOOTER ===================== */
-
-.footer-section {
-  background: #54351f;
-  padding: 78px 5% 70px;
-  text-align: center;
-}
-
-.footer-section p {
-  margin: 0 0 28px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
-  line-height: 1.08;
-  color: #fff;
-}
-
-.footer-section p:last-child {
-  margin-bottom: 0;
-}
-
-/* ===================== MOBILE ===================== */
-
-@media (max-width: 768px) {
-  .why-section {
-    padding: 76px 28px 86px;
-  }
-
-  .why-container {
-    text-align: left;
-  }
-
-  .why-container h2 {
-    font-size: 43px;
-    margin-bottom: 38px;
-  }
-
-  .why-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .why-card {
-    height: 177px;
-    border-radius: 12px;
-  }
-
-  .why-card span {
-    font-size: 32px;
-    text-align: center;
-  }
-
-  .why-card p {
-    text-align: center;
-    font-size: 15px;
-  }
-
-  .final-cta {
-    margin-top: 82px;
-  }
-
-  .final-cta h3 {
-    font-size: 43px;
-    line-height: .9;
-  }
-
-  .final-cta p {
-    font-family: "Montserrat", Arial, sans-serif;
-    font-size: 13px;
-    line-height: 1;
-    margin: 12px 0 28px;
-  }
-
-  .final-cta a {
-    width: 100%;
-    height: 70px;
-    font-size: 22px;
-  }
-
-  .faq-section {
-    padding: 74px 22px 86px;
-  }
-
-  .faq-container h2 {
-    text-align: left;
-    font-size: 42px;
-    margin-bottom: 42px;
-  }
-
-  .faq-list {
-    gap: 12px;
-  }
-
-  .faq-item {
-    border-width: 2px;
-  }
-
-  .faq-item button {
-    height: 60px;
-    padding: 0 50px 0 22px;
-    justify-content: center;
-    font-size: 15px;
-    gap: 10px;
-  }
-
-  .faq-item button span {
-    right: 22px;
-    font-size: 34px;
-  }
-
-  .faq-item p {
-    font-size: 13px;
-    padding: 0 24px;
-  }
-
-  .faq-item.active {
-    border-radius: 28px;
-  }
-
-  .faq-item.active p {
-    padding-bottom: 22px;
-  }
-
-  .footer-section {
-    padding: 54px 22px 48px;
-  }
-
-  .footer-section p {
-    font-size: 18px;
-  }
-}
-</style>
-
-<script>
-document.querySelectorAll(".why-card").forEach((card) => {
-  card.addEventListener("click", () => {
-    document.querySelectorAll(".why-card").forEach((item) => {
-      if (item !== card) item.classList.remove("active");
-    });
-
-    card.classList.toggle("active");
-  });
-});
-
-document.querySelectorAll(".faq-item button").forEach((button) => {
-  button.addEventListener("click", () => {
-    const item = button.parentElement;
-
-    document.querySelectorAll(".faq-item").forEach((faq) => {
-      if (faq !== item) faq.classList.remove("active");
-    });
-
-    item.classList.toggle("active");
-  });
-});
-</script>
