@@ -3,25 +3,29 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>Dra. Yohana Castro</title>
+<title>Dra. Yohana Castro | Odontologia Estética</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600&family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
-  --bg:#f5f3f1;
-  --bg2:#e8e7e5;
-  --brown:#6a4427;
-  --brown2:#a87447;
-  --text:#2b2b2b;
-  --white:#ffffff;
-  --radius:34px;
-  --transition:.4s ease;
+  --bg:#f7f5f2;
+  --gray:#dedede;
+  --brown:#5a3928;
+  --brown-dark:#3b2519;
+  --gold:#c2a081;
+  --text:#151515;
+  --white:#fff;
+
+  --title-font:"Sorts Mill Goudy", serif;
+  --text-font:"Alexandria", sans-serif;
+
+  --title-size:clamp(46px,5vw,72px);
+  --title-mobile:43px;
+  --desc-size:18px;
+  --desc-mobile:15px;
 }
 
 *{
@@ -37,50 +41,39 @@ html{
 body{
   background:var(--bg);
   color:var(--text);
+  font-family:var(--text-font);
   overflow-x:hidden;
-  font-family:'Alexandria', sans-serif;
 }
 
 img{
-  max-width:100%;
   display:block;
+  max-width:100%;
 }
 
 a{
   text-decoration:none;
 }
 
-.container{
-  width:min(1200px,92%);
-  margin:auto;
+button{
+  font-family:var(--text-font);
 }
 
-/* TIPOGRAFIA */
-
-.section-tag{
-  font-size:15px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-  color:#473221;
-  margin-bottom:16px;
-}
-
-.section-title{
-  font-family:'Sorts Mill Goudy', serif;
-  font-size: clamp(42px, 5vw, 76px);
-  line-height: .95;
-  color:#5c3a22;
+h1,h2,h3{
+  font-family:var(--title-font);
   font-weight:400;
+  color:var(--brown);
 }
 
-.section-desc{
-  font-size:18px;
-  line-height:1.5;
-  max-width:720px;
-  margin-top:22px;
+.section-kicker{
+  display:block;
+  font-size:14px;
+  letter-spacing:7px;
+  text-transform:uppercase;
+  color:#2d211a;
+  margin-bottom:18px;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
   min-height:100vh;
@@ -93,1065 +86,1675 @@ a{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom, rgba(255,255,255,0) 68%, var(--bg) 100%);
+  background:linear-gradient(to bottom,rgba(247,245,242,0) 68%,var(--bg) 100%);
+  pointer-events:none;
 }
 
-header{
-  position:relative;
-  z-index:20;
-  padding:32px 0;
+.header{
+  position:absolute;
+  top:28px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(92%,1180px);
+  z-index:10;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:36px;
 }
 
 .nav{
   display:flex;
-  justify-content:flex-end;
+  gap:34px;
   align-items:center;
-  gap:50px;
 }
 
 .nav a{
-  color:#1d1d1d;
+  color:#20130d;
   font-size:14px;
-  transition:.3s;
+  text-transform:uppercase;
+  transition:.35s ease;
 }
 
 .nav a:hover{
-  opacity:.6;
+  color:var(--brown);
+  text-shadow:0 0 18px rgba(90,57,40,.25);
 }
 
-.nav-btn{
-  border:1px solid rgba(255,255,255,.7);
-  padding:18px 38px;
-  border-radius:100px;
-  background:rgba(255,255,255,.6);
-  backdrop-filter:blur(10px);
-}
-
-/* HERO CONTENT */
-
-.hero-content{
-  position:relative;
-  z-index:10;
-  min-height:calc(100vh - 100px);
+.contact-pill{
+  width:205px;
+  height:56px;
+  border-radius:999px;
+  background:rgba(255,255,255,.62);
+  color:var(--brown);
   display:flex;
   align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,.8);
+  backdrop-filter:blur(12px);
+  transition:.35s ease;
+}
+
+.contact-pill:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(90,57,40,.22);
+}
+
+.hero-content{
+  width:min(92%,1180px);
+  margin:0 auto;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  z-index:2;
 }
 
 .hero-text{
-  max-width:580px;
+  max-width:590px;
 }
 
 .hero-mini{
   display:flex;
   align-items:center;
-  gap:18px;
-  margin-bottom:26px;
+  gap:14px;
+  margin-bottom:28px;
 }
 
 .hero-mini span{
-  width:7px;
-  height:58px;
-  border-radius:50px;
-  background:linear-gradient(to bottom,#d4b391,#7a5335);
+  width:5px;
+  height:52px;
+  border-radius:100px;
+  background:linear-gradient(to bottom,#e6d3bc,#8d6445);
 }
 
 .hero-mini p{
-  letter-spacing:6px;
+  font-size:14px;
+  letter-spacing:4px;
   text-transform:uppercase;
-  font-size:17px;
 }
 
 .hero h1{
-  font-family:'Sorts Mill Goudy', serif;
-  font-size: clamp(55px, 6vw, 96px);
-  line-height:.92;
-  color:#5c3a22;
-  font-weight:400;
+  font-size:clamp(62px,7vw,92px);
+  line-height:.88;
+  margin-bottom:24px;
 }
 
-.hero p{
-  font-size:23px;
+.hero-desc{
+  font-size:20px;
   line-height:1.35;
   max-width:560px;
-  margin-top:22px;
+  font-weight:300;
 }
 
 .hero-buttons{
   display:flex;
-  gap:22px;
+  gap:18px;
   margin-top:42px;
-  flex-wrap:wrap;
 }
 
 .btn{
-  padding:24px 42px;
-  border-radius:100px;
-  font-size:24px;
-  transition:var(--transition);
+  width:340px;
+  height:82px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  text-transform:uppercase;
   position:relative;
   overflow:hidden;
-  cursor:pointer;
-  border:none;
+  transition:.45s ease;
 }
 
-.btn-primary{
-  background:linear-gradient(135deg,#8a623f,#c9ab8c);
-  color:white;
+.btn::before{
+  content:"";
+  position:absolute;
+  inset:-50%;
+  background:radial-gradient(circle,rgba(255,255,255,.75),transparent 42%);
+  opacity:0;
+  transform:translateX(-70%);
+  transition:.7s ease;
 }
 
-.btn-secondary{
-  background:rgba(255,255,255,.6);
-  backdrop-filter:blur(12px);
-  color:#5f4129;
+.btn:hover::before{
+  opacity:1;
+  transform:translateX(70%);
 }
 
 .btn:hover{
-  transform:translateY(-4px) scale(1.02);
-  box-shadow:0 20px 50px rgba(109,73,43,.25);
+  transform:translateY(-5px) scale(1.02);
 }
 
-/* RESULTADOS */
+.btn-primary{
+  background:linear-gradient(135deg,#76553f,#c2a081);
+  color:#fff;
+  box-shadow:0 18px 45px rgba(95,66,46,.28);
+}
+
+.btn-secondary{
+  background:rgba(255,255,255,.62);
+  color:var(--brown);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.75);
+}
+
+/* ================= RESULTADOS ================= */
 
 .results{
-  padding:120px 0;
+  background:var(--bg);
+  padding:110px 5% 100px;
 }
 
-.center{
+.results-container{
+  max-width:1180px;
+  margin:0 auto;
   text-align:center;
+}
+
+.results h2{
+  font-size:var(--title-size);
+  line-height:.95;
+  max-width:1000px;
+  margin:0 auto;
+}
+
+.results-desc{
+  max-width:780px;
+  margin:26px auto 58px;
+  font-size:var(--desc-size);
+  line-height:1.35;
+  font-weight:300;
 }
 
 .results-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:18px;
-  margin-top:60px;
+  gap:14px;
 }
 
-.before-after{
+.before-after-card{
   position:relative;
   overflow:hidden;
-  height:500px;
+  background:#eee;
+  aspect-ratio:.74 / 1;
+  transition:.45s ease;
 }
 
-.before-after img{
+.before-after-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 24px 45px rgba(66,40,26,.18);
+}
+
+.before-after-wrapper{
+  position:relative;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+.ba-img{
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
+  user-select:none;
+  pointer-events:none;
 }
 
-.before{
-  position:absolute;
-  inset:0;
-  width:50%;
-  overflow:hidden;
+.ba-before-img{
+  z-index:1;
 }
 
-.slider-line{
+.ba-after-img{
+  z-index:2;
+  clip-path:inset(0 0 0 50%);
+}
+
+.ba-divider{
   position:absolute;
   top:0;
+  bottom:0;
   left:50%;
+  z-index:4;
   width:2px;
-  height:100%;
-  background:white;
+  background:rgba(255,255,255,.32);
+  transform:translateX(-50%);
+  box-shadow:0 0 22px rgba(255,255,255,.4);
 }
 
-.slider-button{
+.ba-handle{
   position:absolute;
-  left:50%;
   top:50%;
-  transform:translate(-50%,-50%);
-  width:54px;
-  height:54px;
+  left:50%;
+  z-index:5;
+  width:46px;
+  height:46px;
   border-radius:50%;
-  background:#6a4427;
-  border:3px solid white;
+  border:none;
+  transform:translate(-50%,-50%);
+  background:#60422f;
+  color:#fff;
+  font-size:18px;
+  letter-spacing:-2px;
+  cursor:grab;
+  box-shadow:0 12px 30px rgba(0,0,0,.22),0 0 0 8px rgba(96,66,47,.12);
+  transition:.35s ease;
 }
 
-/* SOBRE */
+.before-after-card:hover .ba-handle{
+  background:linear-gradient(135deg,#6a4832,#b99778);
+  box-shadow:0 14px 36px rgba(0,0,0,.28),0 0 28px rgba(185,151,120,.65),0 0 0 10px rgba(185,151,120,.14);
+}
+
+.ba-range{
+  position:absolute;
+  inset:0;
+  z-index:10;
+  width:100%;
+  height:100%;
+  opacity:0;
+  cursor:ew-resize;
+}
+
+.ba-label{
+  position:absolute;
+  top:16px;
+  z-index:6;
+  padding:8px 13px;
+  border-radius:100px;
+  font-size:11px;
+  letter-spacing:2.5px;
+  color:#fff;
+  background:rgba(70,45,31,.72);
+  backdrop-filter:blur(10px);
+  opacity:0;
+  transform:translateY(-8px);
+  transition:.35s ease;
+  pointer-events:none;
+}
+
+.ba-before{
+  left:14px;
+}
+
+.ba-after{
+  right:14px;
+}
+
+.before-after-card:hover .ba-label{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.main-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:64px;
+  width:min(100%,360px);
+  height:84px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#76553f,#c2a081);
+  color:#fff;
+  font-size:18px;
+  font-weight:500;
+  transition:.45s ease;
+  box-shadow:0 18px 45px rgba(95,66,46,.22);
+}
+
+.main-btn:hover{
+  transform:translateY(-5px) scale(1.02);
+  box-shadow:0 22px 55px rgba(95,66,46,.34),0 0 32px rgba(194,160,129,.45);
+}
+
+/* ================= SOBRE ================= */
 
 .about{
-  padding:120px 0;
+  padding:90px 5% 95px;
+  background:var(--bg);
 }
 
-.about-grid{
+.about-container{
+  max-width:1160px;
+  margin:0 auto;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
+  grid-template-columns:.95fr 1fr;
+  gap:76px;
   align-items:center;
+}
+
+.about h2{
+  font-size:var(--title-size);
+  line-height:.9;
+  margin-bottom:34px;
+}
+
+.about p{
+  font-size:var(--desc-size);
+  line-height:1.35;
+  font-weight:300;
+  margin-bottom:20px;
+  max-width:540px;
 }
 
 .about-image{
   position:relative;
+  max-width:520px;
+  justify-self:end;
+  animation:softFloat 5s ease-in-out infinite;
 }
 
 .about-image img{
-  border-radius:50px 0 50px 0;
+  width:100%;
+  border-radius:105px 0 105px 0;
+  object-fit:cover;
+  box-shadow:0 28px 55px rgba(55,32,20,.16);
 }
 
-.cro{
+.cro-badge{
   position:absolute;
-  top:-30px;
+  z-index:4;
+  top:-34px;
   left:50%;
   transform:translateX(-50%);
-  background:linear-gradient(180deg,#d6b08a,#6d4527);
-  padding:20px 40px;
-  border-radius:24px;
-  color:white;
-  font-size:28px;
-  border:2px solid white;
+  min-width:255px;
+  height:70px;
+  padding:0 32px;
+  border-radius:22px;
+  background:linear-gradient(180deg,#d8ad8a 0%,#8c674d 54%,#5a3b28 100%);
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:inset 0 1px 12px rgba(255,255,255,.35),0 18px 35px rgba(54,32,20,.24);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--title-font);
+  font-size:31px;
+  color:#fff;
+  white-space:nowrap;
 }
 
-/* SERVIÇOS */
+@keyframes softFloat{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
+}
+
+/* ================= SERVIÇOS ================= */
 
 .services{
-  padding-bottom:120px;
+  padding:40px 5% 105px;
+  background:var(--bg);
 }
 
-.cards{
+.services-container{
+  max-width:1100px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.services h2{
+  font-size:var(--title-size);
+  line-height:.95;
+  max-width:980px;
+  margin:0 auto;
+}
+
+.services-desc{
+  max-width:780px;
+  margin:26px auto 62px;
+  font-size:var(--desc-size);
+  line-height:1.35;
+  font-weight:300;
+}
+
+.services-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:24px;
-  margin-top:70px;
+  gap:10px;
 }
 
-.card{
-  border:2px solid #7d5738;
-  border-radius:24px;
-  padding:40px 30px;
-  text-align:center;
-  transition:.4s;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  background:white;
-}
-
-.card img{
-  width:90px;
-  margin:auto;
-  margin-bottom:24px;
-}
-
-.card h3{
-  font-family:'Sorts Mill Goudy', serif;
-  color:#684227;
-  font-size:38px;
-  line-height:1;
-  margin-bottom:20px;
-}
-
-.card p{
-  line-height:1.4;
-}
-
-/* PARA QUEM É */
-
-.forwho{
-  padding:120px 0;
-}
-
-.forwho-box{
-  background:linear-gradient(135deg,#b17b4a,#59371f);
-  border-radius:34px;
-  padding:70px;
-  color:white;
-}
-
-.forwho-box h2{
-  font-family:'Sorts Mill Goudy', serif;
-  font-size:70px;
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.for-item{
-  background:#ececec;
-  color:#5a3b24;
-  padding:28px 34px;
-  border-radius:100px;
-  margin-bottom:20px;
-  font-size:24px;
-}
-
-/* PROCESSO */
-
-.process{
-  padding-bottom:120px;
-}
-
-.process-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
-
-.process-steps{
+.service-card{
+  min-height:280px;
+  padding:24px 18px 20px;
+  border:2px solid var(--brown);
+  border-radius:14px;
+  background:#eee;
   display:flex;
   flex-direction:column;
-  gap:18px;
-}
-
-.process-step{
-  background:#e1e1e1;
-  padding:28px;
-  border-radius:100px;
-  text-align:center;
-  font-size:24px;
-}
-
-/* DEPOIMENTOS */
-
-.testimonials{
-  padding-bottom:120px;
+  align-items:center;
+  transition:.45s ease;
   overflow:hidden;
 }
 
-.carousel{
-  margin-top:60px;
-  position:relative;
+.service-card:hover{
+  transform:translateY(-8px);
+  background:#f6f1ec;
+  box-shadow:0 22px 45px rgba(74,48,35,.18),0 0 28px rgba(187,151,119,.28);
 }
 
-.carousel::before,
-.carousel::after{
+.service-card img{
+  width:82px;
+  height:82px;
+  object-fit:contain;
+  margin-bottom:22px;
+  transition:.45s ease;
+}
+
+.service-card:hover img{
+  transform:scale(1.08) rotate(-2deg);
+}
+
+.service-card h3{
+  font-size:31px;
+  line-height:.82;
+  margin-bottom:18px;
+}
+
+.service-card p{
+  font-size:13px;
+  line-height:1.25;
+  font-weight:300;
+  max-width:210px;
+}
+
+/* ================= PARA QUEM ================= */
+
+.target{
+  padding:90px 5% 70px;
+  background:var(--bg);
+}
+
+.target-card{
+  max-width:1120px;
+  margin:0 auto;
+  padding:72px 110px 58px;
+  border-radius:20px;
+  border:2px solid #22150f;
+  background:radial-gradient(circle at 50% 0%,rgba(191,146,102,.72),transparent 38%),linear-gradient(135deg,#8f6239 0%,#5a3924 72%);
+  text-align:center;
+  box-shadow:0 28px 65px rgba(60,37,24,.16);
+}
+
+.target-card h2{
+  color:#fff;
+  font-size:var(--title-size);
+  line-height:1;
+  margin-bottom:52px;
+}
+
+.target-list{
+  display:grid;
+  gap:14px;
+}
+
+.target-list div{
+  height:82px;
+  border-radius:999px;
+  background:#dedede;
+  color:var(--brown);
+  display:grid;
+  grid-template-columns:58px 1fr;
+  align-items:center;
+  padding:0 42px 0 34px;
+  font-size:18px;
+  line-height:1.25;
+  transition:.35s ease;
+}
+
+.target-list div:hover{
+  transform:translateX(8px);
+  background:#f1eee9;
+  box-shadow:0 14px 34px rgba(0,0,0,.18);
+}
+
+.target-list span{
+  font-size:28px;
+  font-weight:700;
+  color:var(--brown);
+  text-align:left;
+}
+
+.target-card p{
+  max-width:700px;
+  margin:48px auto 0;
+  font-size:17px;
+  line-height:1.35;
+  color:rgba(255,255,255,.88);
+  font-weight:300;
+}
+
+/* ================= TRABALHO ================= */
+
+.work{
+  padding:40px 5% 100px;
+  background:var(--bg);
+}
+
+.work-container{
+  max-width:1120px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:.95fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.work h2{
+  max-width:560px;
+  font-size:var(--title-size);
+  line-height:.88;
+}
+
+.work p{
+  max-width:540px;
+  margin-top:28px;
+  font-size:var(--desc-size);
+  line-height:1.35;
+  font-weight:300;
+}
+
+.work-pills{
+  display:grid;
+  gap:16px;
+}
+
+.work-pills div{
+  height:68px;
+  border-radius:999px;
+  background:#dedede;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  transition:.35s ease;
+}
+
+.work-pills div:hover{
+  transform:translateX(-8px);
+  background:linear-gradient(135deg,#e6e2dd,#c6b6a7);
+  box-shadow:0 18px 38px rgba(82,51,34,.16);
+}
+
+/* ================= DEPOIMENTOS ================= */
+
+.testimonials{
+  padding:20px 0 120px;
+  background:var(--bg);
+  overflow:hidden;
+}
+
+.testimonials-heading{
+  max-width:1120px;
+  margin:0 auto 58px;
+  padding:0 5%;
+  text-align:center;
+}
+
+.testimonials h2{
+  font-size:var(--title-size);
+  line-height:.95;
+}
+
+.testimonials-carousel{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+}
+
+.testimonials-carousel::before,
+.testimonials-carousel::after{
   content:"";
   position:absolute;
   top:0;
-  width:160px;
+  width:180px;
   height:100%;
-  z-index:5;
+  z-index:3;
   pointer-events:none;
 }
 
-.carousel::before{
+.testimonials-carousel::before{
   left:0;
-  background:linear-gradient(to right,var(--bg),transparent);
+  background:linear-gradient(90deg,var(--bg) 0%,rgba(248,247,244,.72) 38%,transparent 100%);
+  backdrop-filter:blur(2px);
 }
 
-.carousel::after{
+.testimonials-carousel::after{
   right:0;
-  background:linear-gradient(to left,var(--bg),transparent);
+  background:linear-gradient(270deg,var(--bg) 0%,rgba(248,247,244,.72) 38%,transparent 100%);
+  backdrop-filter:blur(2px);
 }
 
-.track{
+.testimonials-track{
   display:flex;
-  gap:24px;
+  gap:18px;
   width:max-content;
-  animation:scroll 24s linear infinite;
+  animation:testimonialMarquee 24s linear infinite;
 }
 
-.track img{
-  width:300px;
-  border-radius:18px;
+.testimonials-track:hover{
+  animation-play-state:paused;
 }
 
-@keyframes scroll{
-  from{
-    transform:translateX(0);
-  }
-  to{
-    transform:translateX(-50%);
-  }
+.testimonials-track img{
+  width:270px;
+  height:480px;
+  object-fit:cover;
+  flex:0 0 auto;
+  box-shadow:0 20px 45px rgba(0,0,0,.13);
+  transition:.4s ease;
 }
 
-/* POR QUE ESCOLHER */
+.testimonials-track img:hover{
+  transform:translateY(-8px) scale(1.025);
+}
+
+@keyframes testimonialMarquee{
+  from{transform:translateX(0);}
+  to{transform:translateX(calc(-50% - 9px));}
+}
+
+/* ================= POR QUE ================= */
 
 .why{
-  padding-bottom:120px;
+  padding:88px 5% 110px;
+  background:var(--bg);
+}
+
+.why-container{
+  max-width:1160px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.why h2{
+  font-size:var(--title-size);
+  margin-bottom:68px;
 }
 
 .why-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:22px;
-  margin-top:50px;
+  gap:18px;
 }
 
 .why-card{
-  background:linear-gradient(135deg,#b17b4a,#4b2e19);
-  min-height:220px;
-  border-radius:24px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:30px;
-  transition:.4s;
+  height:170px;
+  border-radius:13px;
+  border:2px solid #2c1b12;
+  background:radial-gradient(circle at top,rgba(184,127,76,.72),transparent 48%),linear-gradient(135deg,#8d5f37,#563620);
   cursor:pointer;
-  position:relative;
-}
-
-.why-card h3{
-  color:white;
-  font-family:'Sorts Mill Goudy', serif;
-  font-size:40px;
-  line-height:1;
-}
-
-.why-card:hover{
-  background:white;
-  border:2px solid #6a4427;
-}
-
-.why-card:hover h3{
-  color:#6a4427;
-}
-
-/* CTA */
-
-.cta{
-  padding-bottom:120px;
-  text-align:center;
-}
-
-.cta h2{
-  font-family:'Sorts Mill Goudy', serif;
-  font-size: clamp(48px,5vw,86px);
-  line-height:1;
-  color:#5a3923;
-}
-
-.cta p{
-  margin-top:20px;
-  font-size:24px;
-}
-
-/* FAQ */
-
-.faq{
-  background:#dfdfdf;
-  padding:120px 0;
-}
-
-.faq-list{
-  margin-top:60px;
-}
-
-.faq-item{
-  border:2px solid #6a4427;
-  border-radius:100px;
-  margin-bottom:24px;
+  padding:20px;
+  transition:.4s ease;
   overflow:hidden;
-  background:white;
 }
 
-.faq-question{
-  padding:28px 34px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  cursor:pointer;
-  font-size:24px;
-}
-
-.faq-answer{
-  display:none;
-  padding:0 34px 30px;
-  line-height:1.6;
-}
-
-.faq-item.active .faq-answer{
+.why-card span{
   display:block;
+  font-family:var(--title-font);
+  font-size:29px;
+  line-height:.86;
+  color:#fff;
+  transition:.3s ease;
 }
 
-/* FOOTER */
-
-footer{
-  background:#5c381f;
-  color:white;
-  text-align:center;
-  padding:60px 20px;
+.why-card p{
+  max-height:0;
+  opacity:0;
+  margin:0;
+  font-size:14px;
+  line-height:1.25;
+  color:var(--brown);
+  transition:.35s ease;
 }
 
-footer h3{
-  font-family:'Sorts Mill Goudy', serif;
-  font-size:36px;
+.why-card.active,
+.why-card:hover{
+  background:var(--bg);
+  border-color:var(--brown);
+  box-shadow:0 20px 38px rgba(74,48,35,.16);
+}
+
+.why-card.active span,
+.why-card:hover span{
+  color:var(--brown);
   margin-bottom:16px;
 }
 
-footer p{
-  line-height:1.7;
+.why-card.active p,
+.why-card:hover p{
+  max-height:90px;
+  opacity:1;
 }
 
-/* BOTAO IA */
+/* ================= CTA ================= */
 
-.ia-button{
-  position:fixed;
-  right:26px;
-  bottom:26px;
-  z-index:999;
+.final-cta{
+  margin-top:88px;
 }
 
-.ia-toggle{
-  width:82px;
-  height:82px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#25D366,#128C7E);
+.final-cta h3{
+  font-size:var(--title-size);
+  line-height:.95;
+}
+
+.final-cta p{
+  max-width:780px;
+  margin:18px auto 42px;
+  font-size:var(--desc-size);
+  line-height:1.35;
+  font-weight:300;
+}
+
+/* ================= FAQ ================= */
+
+.faq{
+  background:#d9d9d9;
+  padding:96px 5% 120px;
+}
+
+.faq-container{
+  max-width:1120px;
+  margin:0 auto;
+}
+
+.faq h2{
+  font-size:var(--title-size);
+  text-align:center;
+  margin-bottom:62px;
+}
+
+.faq-list{
+  display:grid;
+  gap:18px;
+}
+
+.faq-item{
+  border:3px solid var(--brown);
+  border-radius:999px;
+  overflow:hidden;
+  transition:.3s ease;
+}
+
+.faq-item button{
+  position:relative;
+  width:100%;
+  height:78px;
   border:none;
-  color:white;
-  font-size:34px;
+  background:transparent;
+  padding:0 70px 0 44px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   cursor:pointer;
-  box-shadow:0 20px 40px rgba(0,0,0,.25);
+  font-size:22px;
+  color:#111;
 }
 
-.ia-box{
+.faq-item button span{
+  position:absolute;
+  right:54px;
+  font-size:42px;
+  color:var(--brown);
+  font-weight:800;
+  transition:.3s ease;
+}
+
+.faq-item p{
+  max-height:0;
+  opacity:0;
+  margin:0 auto;
+  padding:0 54px;
+  text-align:center;
+  font-size:16px;
+  line-height:1.35;
+  color:#3b2a21;
+  transition:.35s ease;
+}
+
+.faq-item.active{
+  border-radius:36px;
+  background:rgba(255,255,255,.24);
+}
+
+.faq-item.active button span{
+  transform:rotate(180deg);
+}
+
+.faq-item.active p{
+  max-height:130px;
+  opacity:1;
+  padding-bottom:28px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+  background:#54351f;
+  padding:78px 5% 70px;
+  text-align:center;
+}
+
+.footer p{
+  margin-bottom:28px;
+  font-size:18px;
+  line-height:1.35;
+  color:#fff;
+  font-weight:300;
+}
+
+/* ================= WHATSAPP IA ================= */
+
+.ai-whatsapp{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:9999;
+}
+
+.ai-trigger{
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  background:linear-gradient(135deg,#25d366,#0d8b42);
+  box-shadow:0 18px 40px rgba(0,0,0,.22),0 0 35px rgba(37,211,102,.5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.4s ease;
+}
+
+.ai-trigger:hover{
+  transform:scale(1.08);
+}
+
+.ai-trigger img{
+  width:36px;
+}
+
+.ai-chat{
   position:absolute;
   right:0;
-  bottom:100px;
-  width:340px;
-  background:white;
-  border-radius:26px;
+  bottom:98px;
+  width:370px;
+  background:#fff;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 25px 70px rgba(0,0,0,.2);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(20px);
+  transition:.4s ease;
+}
+
+.ai-chat.active{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.ai-top{
   padding:24px;
-  display:none;
-  box-shadow:0 30px 60px rgba(0,0,0,.2);
+  background:linear-gradient(135deg,#25d366,#0d8b42);
+  color:#fff;
 }
 
-.ia-box.active{
-  display:block;
+.ai-top h3{
+  font-size:34px;
+  line-height:1;
+  color:#fff;
+  margin-bottom:8px;
 }
 
-.ia-box h4{
-  font-size:22px;
-  margin-bottom:18px;
+.ai-top p{
+  font-size:14px;
+  line-height:1.35;
+  font-weight:300;
 }
 
-.ia-option{
-  display:block;
-  margin-bottom:12px;
-  padding:18px;
-  border-radius:16px;
+.ai-options{
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.ai-options button{
+  border:1px solid rgba(90,57,40,.12);
   background:#f4f4f4;
-  color:#333;
-  transition:.3s;
+  border-radius:16px;
+  padding:17px;
+  text-align:left;
+  cursor:pointer;
+  transition:.3s ease;
 }
 
-.ia-option:hover{
-  background:#6a4427;
-  color:white;
+.ai-options button:hover{
+  background:#eee8e2;
+  transform:translateX(4px);
 }
 
-/* RESPONSIVO */
+.ai-options strong{
+  display:block;
+  font-family:var(--title-font);
+  font-size:23px;
+  line-height:1;
+  color:var(--brown);
+  margin-bottom:6px;
+  font-weight:400;
+}
 
-@media(max-width:992px){
+.ai-options span{
+  display:block;
+  font-size:13px;
+  line-height:1.35;
+  color:#444;
+}
 
-  .about-grid,
-  .process-grid,
-  .cards,
-  .results-grid,
-  .why-grid{
-    grid-template-columns:1fr;
-  }
+/* ================= MOBILE ================= */
 
-  .hero{
-    background-image:url("assets/PARTE 1 SITE DOUTORA  MOBILE(1).webp");
-    background-position:center top;
-  }
+@media(max-width:768px){
 
-  .nav{
+  .header{
     display:none;
   }
 
+  .hero{
+    min-height:100vh;
+    background-image:url("assets/PARTE 1 SITE DOUTORA  MOBILE(1).webp");
+    background-position:center top;
+    background-size:cover;
+  }
+
   .hero-content{
+    width:100%;
+    padding:0 24px 68px;
     align-items:flex-end;
-    padding-bottom:100px;
+  }
+
+  .hero-text{
+    width:100%;
+    padding-top:520px;
+  }
+
+  .hero-mini{
+    margin-bottom:18px;
+  }
+
+  .hero-mini span{
+    height:40px;
+  }
+
+  .hero-mini p{
+    font-size:12px;
+    letter-spacing:3px;
   }
 
   .hero h1{
-    font-size:64px;
+    font-size:58px;
+    line-height:.88;
+    margin-bottom:18px;
   }
 
-  .hero p{
-    font-size:18px;
+  .hero-desc{
+    font-size:15px;
+    line-height:1.35;
+    max-width:340px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    gap:12px;
+    margin-top:30px;
   }
 
   .btn{
     width:100%;
+    height:70px;
+    font-size:16px;
+  }
+
+  .results,
+  .about,
+  .services,
+  .target,
+  .work,
+  .why,
+  .faq{
+    padding-left:22px;
+    padding-right:22px;
+  }
+
+  .results{
+    padding-top:74px;
+    padding-bottom:78px;
+  }
+
+  .results-container,
+  .services-container,
+  .why-container,
+  .faq-container{
+    text-align:left;
+  }
+
+  .section-kicker{
+    font-size:12px;
+    letter-spacing:6px;
+    margin-bottom:16px;
+  }
+
+  .results h2,
+  .about h2,
+  .services h2,
+  .target-card h2,
+  .work h2,
+  .testimonials h2,
+  .why h2,
+  .faq h2,
+  .final-cta h3{
+    font-size:var(--title-mobile);
+    line-height:.9;
+    text-align:left;
+  }
+
+  .results-desc,
+  .about p,
+  .services-desc,
+  .target-card p,
+  .work p,
+  .final-cta p{
+    font-size:var(--desc-mobile);
+    line-height:1.35;
+  }
+
+  .results-grid{
+    display:flex;
+    flex-direction:column;
+    gap:34px;
+  }
+
+  .before-after-card{
+    width:100%;
+    aspect-ratio:.73 / 1;
+  }
+
+  .ba-label{
+    opacity:1;
+    transform:translateY(0);
+    font-size:10px;
+  }
+
+  .main-btn{
+    width:100%;
+    height:72px;
+    margin-top:38px;
+  }
+
+  .about{
+    padding-top:42px;
+    padding-bottom:68px;
+  }
+
+  .about-container{
+    display:flex;
+    flex-direction:column-reverse;
+    gap:38px;
+  }
+
+  .about-image,
+  .about-image img{
+    max-width:100%;
+    border-radius:70px 0 70px 0;
+  }
+
+  .cro-badge{
+    top:-32px;
+    min-width:200px;
+    height:64px;
+    border-radius:21px;
+    font-size:24px;
+  }
+
+  .services-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+
+  .service-card{
+    min-height:205px;
+    padding:18px 12px 16px;
     text-align:center;
-    font-size:20px;
   }
 
-  .section-title{
-    font-size:58px;
+  .service-card img{
+    width:58px;
+    height:58px;
+    margin-bottom:18px;
   }
 
-  .cards{
-    gap:18px;
+  .service-card h3{
+    font-size:25px;
   }
 
-  .card h3{
-    font-size:28px;
+  .service-card p{
+    font-size:10px;
+  }
+
+  .target-card{
+    padding:34px 14px 38px;
+  }
+
+  .target-card h2{
+    text-align:center;
+    color:#fff;
+    margin-bottom:28px;
+  }
+
+  .target-list div{
+    height:62px;
+    grid-template-columns:1fr;
+    padding:0 18px;
+    text-align:center;
+    font-size:14px;
+  }
+
+  .target-list span{
+    display:none;
+  }
+
+  .work-container{
+    display:block;
+  }
+
+  .work-pills{
+    margin-top:22px;
+  }
+
+  .work-pills div{
+    height:54px;
+    font-size:15px;
+  }
+
+  .testimonials{
+    padding:24px 0 92px;
+  }
+
+  .testimonials-heading{
+    padding:0 28px;
+    text-align:left;
+  }
+
+  .testimonials-carousel::before,
+  .testimonials-carousel::after{
+    width:46px;
+    backdrop-filter:blur(3px);
+  }
+
+  .testimonials-track{
+    gap:14px;
+    animation-duration:20s;
+  }
+
+  .testimonials-track img{
+    width:260px;
+    height:462px;
   }
 
   .why-grid{
-    gap:18px;
+    grid-template-columns:1fr;
+    gap:10px;
   }
 
   .why-card{
-    min-height:180px;
+    height:177px;
   }
 
-  .faq-question{
-    font-size:18px;
+  .why-card span{
+    font-size:32px;
+    text-align:center;
   }
 
+  .why-card p{
+    text-align:center;
+    font-size:14px;
+  }
+
+  .faq h2{
+    margin-bottom:42px;
+  }
+
+  .faq-item{
+    border-width:2px;
+  }
+
+  .faq-item button{
+    height:60px;
+    padding:0 50px 0 22px;
+    font-size:14px;
+  }
+
+  .faq-item button span{
+    right:22px;
+    font-size:34px;
+  }
+
+  .faq-item p{
+    font-size:13px;
+    padding:0 24px;
+  }
+
+  .faq-item.active{
+    border-radius:28px;
+  }
+
+  .faq-item.active p{
+    padding-bottom:22px;
+  }
+
+  .footer{
+    padding:54px 22px 48px;
+  }
+
+  .footer p{
+    font-size:15px;
+  }
+
+  .ai-whatsapp{
+    right:18px;
+    bottom:18px;
+  }
+
+  .ai-trigger{
+    width:66px;
+    height:66px;
+  }
+
+  .ai-trigger img{
+    width:31px;
+  }
+
+  .ai-chat{
+    width:calc(100vw - 36px);
+    right:-2px;
+    bottom:86px;
+    border-radius:24px;
+  }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<main>
 
-<section class="hero">
+<section class="hero" id="inicio">
+  <header class="header">
+    <nav class="nav">
+      <a href="#sobre">Sobre mim</a>
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#depoimentos">Depoimentos</a>
+    </nav>
+    <a class="contact-pill" href="https://wa.me/5541991545744" target="_blank">Contato</a>
+  </header>
 
-<header>
-<div class="container">
-<nav class="nav">
-<a href="#">SOBRE MIM</a>
-<a href="#">TRATAMENTOS</a>
-<a href="#">RESULTADOS</a>
-<a href="#">DEPOIMENTOS</a>
-<a href="#" class="nav-btn">CONTATO</a>
-</nav>
-</div>
-</header>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-mini">
+        <span></span>
+        <p>Odontologia Estética</p>
+      </div>
 
-<div class="hero-content">
-<div class="container">
+      <h1>Tratamentos que<br>revelam sua essência!</h1>
 
-<div class="hero-text">
+      <p class="hero-desc">
+        Naturalidade, sofisticação e precisão em cada detalhe do seu sorriso.
+        Um atendimento pensado para valorizar sua autoestima de forma leve,
+        moderna e personalizada.
+      </p>
 
-<div class="hero-mini">
-<span></span>
-<p>ODONTOLOGIA ESTÉTICA</p>
-</div>
-
-<h1>
-Tratamentos que revelam sua essência!
-</h1>
-
-<p>
-Naturalidade, sofisticação e precisão em cada detalhe do seu sorriso.
-Um atendimento pensado para valorizar sua autoestima de forma leve,
-moderna e personalizada.
-</p>
-
-<div class="hero-buttons">
-<a class="btn btn-primary">AGENDAR CONSULTA</a>
-<a class="btn btn-secondary">CONHEÇA MEU TRABALHO</a>
-</div>
-
-</div>
-</div>
-</div>
-
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://wa.me/5541991545744" target="_blank">Agende sua consulta</a>
+        <a class="btn btn-secondary" href="#depoimentos">Conheça meu trabalho</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- RESULTADOS -->
+<section class="results" id="resultados">
+  <div class="results-container">
+    <span class="section-kicker">Resultado</span>
+    <h2>Transformações naturais e sofisticadas.</h2>
+    <p class="results-desc">
+      Cada resultado é planejado para harmonizar estética, funcionalidade e personalidade,
+      sempre respeitando as características de cada paciente.
+    </p>
 
-<section class="results">
-<div class="container center">
+    <div class="results-grid">
 
-<p class="section-tag">RESULTADOS</p>
+      <div class="before-after-card">
+        <span class="ba-label ba-before">ANTES</span>
+        <span class="ba-label ba-after">DEPOIS</span>
+        <div class="before-after-wrapper">
+          <img src="assets/ANTES 1(1).png" class="ba-img ba-before-img" alt="Antes 1">
+          <img src="assets/DEPOIS  1(1).png" class="ba-img ba-after-img" alt="Depois 1">
+          <div class="ba-divider"></div>
+          <button class="ba-handle">‹ ›</button>
+          <input type="range" min="0" max="100" value="50" class="ba-range">
+        </div>
+      </div>
 
-<h2 class="section-title">
-Transformações naturais e sofisticadas.
-</h2>
+      <div class="before-after-card">
+        <span class="ba-label ba-before">ANTES</span>
+        <span class="ba-label ba-after">DEPOIS</span>
+        <div class="before-after-wrapper">
+          <img src="assets/ANTES 2(1).png" class="ba-img ba-before-img" alt="Antes 2">
+          <img src="assets/DEPOIS 2(1).webp" class="ba-img ba-after-img" alt="Depois 2">
+          <div class="ba-divider"></div>
+          <button class="ba-handle">‹ ›</button>
+          <input type="range" min="0" max="100" value="50" class="ba-range">
+        </div>
+      </div>
 
-<p class="section-desc center">
-Cada resultado é planejado para harmonizar estética,
-funcionalidade e personalidade.
-</p>
+      <div class="before-after-card">
+        <span class="ba-label ba-before">ANTES</span>
+        <span class="ba-label ba-after">DEPOIS</span>
+        <div class="before-after-wrapper">
+          <img src="assets/ANTES 3(2).webp" class="ba-img ba-before-img" alt="Antes 3">
+          <img src="assets/DEPOIS 3(2).webp" class="ba-img ba-after-img" alt="Depois 3">
+          <div class="ba-divider"></div>
+          <button class="ba-handle">‹ ›</button>
+          <input type="range" min="0" max="100" value="50" class="ba-range">
+        </div>
+      </div>
 
-<div class="results-grid">
+      <div class="before-after-card">
+        <span class="ba-label ba-before">ANTES</span>
+        <span class="ba-label ba-after">DEPOIS</span>
+        <div class="before-after-wrapper">
+          <img src="assets/ANTES 4(2).webp" class="ba-img ba-before-img" alt="Antes 4">
+          <img src="assets/DEPOIS 4(2).webp" class="ba-img ba-after-img" alt="Depois 4">
+          <div class="ba-divider"></div>
+          <button class="ba-handle">‹ ›</button>
+          <input type="range" min="0" max="100" value="50" class="ba-range">
+        </div>
+      </div>
 
-<div class="before-after">
-<img src="assets/antes1.webp">
-<div class="before">
-<img src="assets/depois1.webp">
-</div>
-<div class="slider-line"></div>
-<div class="slider-button"></div>
-</div>
+    </div>
 
-<div class="before-after">
-<img src="assets/antes2.webp">
-<div class="before">
-<img src="assets/depois2.webp">
-</div>
-<div class="slider-line"></div>
-<div class="slider-button"></div>
-</div>
-
-<div class="before-after">
-<img src="assets/antes3.webp">
-<div class="before">
-<img src="assets/depois3.webp">
-</div>
-<div class="slider-line"></div>
-<div class="slider-button"></div>
-</div>
-
-<div class="before-after">
-<img src="assets/antes4.webp">
-<div class="before">
-<img src="assets/depois4.webp">
-</div>
-<div class="slider-line"></div>
-<div class="slider-button"></div>
-</div>
-
-</div>
-
-</div>
+    <a href="#contato" class="main-btn">Ver todos os casos</a>
+  </div>
 </section>
 
-<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="about-container">
+    <div>
+      <span class="section-kicker">Dra. Yohana Castro</span>
+      <h2>Sobre mim</h2>
+      <p>Desde cedo, sempre existiu uma paixão muito forte por pessoas, comunicação e transformação.</p>
+      <p>A odontologia surgiu inicialmente por influência familiar, mas foi ao longo da trajetória profissional que nasceu uma verdadeira conexão com a área estética e com o impacto que ela pode gerar na autoestima de cada paciente.</p>
+      <p>Após atuar como cirurgiã-dentista clínica geral, o interesse pela harmonização facial e pela odontologia estética despertou uma nova visão sobre a profissão: unir técnica, naturalidade e confiança em cada atendimento.</p>
+      <p>A busca constante por aperfeiçoamento, estudo e evolução profissional faz parte dessa caminhada até hoje.</p>
+    </div>
 
-<section class="about">
-<div class="container">
-
-<div class="about-grid">
-
-<div>
-
-<p class="section-tag">DRA. YOHANA CASTRO</p>
-
-<h2 class="section-title">
-Sobre mim
-</h2>
-
-<p class="section-desc">
-Desde cedo, sempre existiu uma paixão muito forte por pessoas,
-comunicação e transformação.
-<br><br>
-A odontologia estética despertou uma nova visão sobre a profissão:
-unir técnica, naturalidade e confiança.
-</p>
-
-</div>
-
-<div class="about-image">
-
-<div class="cro">
-CRO/PR 27091
-</div>
-
-<img src="assets/sobre.webp">
-
-</div>
-
-</div>
-
-</div>
+    <div class="about-image">
+      <div class="cro-badge">CRO/PR 27091</div>
+      <img src="assets/SOBRE NOS(4).webp" alt="Dra. Yohana Castro">
+    </div>
+  </div>
 </section>
 
-<!-- SERVIÇOS -->
+<section class="services" id="tratamentos">
+  <div class="services-container">
+    <span class="section-kicker">Serviços</span>
+    <h2>Tratamentos voltados para rejuvenescimento e harmonização facial.</h2>
+    <p class="services-desc">Tecnologia, precisão e planejamento individual para resultados modernos e naturais.</p>
 
-<section class="services">
-<div class="container center">
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="assets/ICONE 1.webp" alt="Bioestimuladores">
+        <h3>Bioestimuladores<br>de colágeno</h3>
+        <p>Estimula a produção natural de colágeno, melhora firmeza e auxilia na prevenção da flacidez facial.</p>
+      </div>
 
-<p class="section-tag">SERVIÇOS</p>
+      <div class="service-card">
+        <img src="assets/ICONE 2.webp" alt="Preenchimento">
+        <h3>Preenchimento<br>com ácido hialurônico</h3>
+        <p>Procedimento voltado para reposição de volume facial e definição de contornos.</p>
+      </div>
 
-<h2 class="section-title">
-Tratamentos voltados para rejuvenescimento e harmonização facial.
-</h2>
+      <div class="service-card">
+        <img src="assets/ICONE 3.webp" alt="Botox">
+        <h3>Toxina botulínica<br>Botox</h3>
+        <p>Auxilia na prevenção e suavização de linhas de expressão.</p>
+      </div>
 
-<p class="section-desc center">
-Tecnologia, precisão e planejamento individual.
-</p>
-
-<div class="cards">
-
-<div class="card">
-<img src="assets/icon1.png">
-<h3>Bioestimuladores</h3>
-<p>Estimula colágeno e melhora firmeza facial.</p>
-</div>
-
-<div class="card">
-<img src="assets/icon2.png">
-<h3>Preenchimento</h3>
-<p>Volume e definição facial natural.</p>
-</div>
-
-<div class="card">
-<img src="assets/icon3.png">
-<h3>Botox</h3>
-<p>Suavização elegante das linhas faciais.</p>
-</div>
-
-<div class="card">
-<img src="assets/icon4.png">
-<h3>Ultrassom</h3>
-<p>Reposicionamento e contorno facial.</p>
-</div>
-
-</div>
-
-</div>
+      <div class="service-card">
+        <img src="assets/ICONE 4.webp" alt="Ultrassom">
+        <h3>Ultrassom micro<br>e macrofocado</h3>
+        <p>Melhora sustentação, firmeza e efeito lifting sem cirurgia.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- PARA QUEM -->
+<section class="target">
+  <div class="target-card">
+    <h2>Para quem é</h2>
 
-<section class="forwho">
-<div class="container">
+    <div class="target-list">
+      <div><span>✓</span>Para quem sente incômodo com linhas de expressão</div>
+      <div><span>✓</span>Para quem deseja melhorar firmeza e flacidez facial</div>
+      <div><span>✓</span>Para quem busca mais definição e harmonização facial</div>
+      <div><span>✓</span>Para quem deseja prevenir sinais do envelhecimento</div>
+      <div><span>✓</span>Para quem procura resultados naturais</div>
+      <div><span>✓</span>Para quem busca mais autoestima e confiança</div>
+    </div>
 
-<div class="forwho-box">
-
-<h2>Para quem é</h2>
-
-<div class="for-item">
-Para quem sente incômodo com linhas de expressão
-</div>
-
-<div class="for-item">
-Para quem deseja melhorar firmeza facial
-</div>
-
-<div class="for-item">
-Para quem busca harmonização facial natural
-</div>
-
-<div class="for-item">
-Para quem busca autoestima e confiança
-</div>
-
-</div>
-
-</div>
+    <p>“Cada tratamento deve fazer sentido para quem você é, e não seguir padrões prontos.”</p>
+  </div>
 </section>
 
-<!-- PROCESSO -->
+<section class="work">
+  <div class="work-container">
+    <div>
+      <span class="section-kicker">Um pouco do nosso trabalho</span>
+      <h2>Cada procedimento começa com um olhar individual.</h2>
+      <p>A harmonização facial exige mais do que técnica. Exige escuta, planejamento e sensibilidade para entender o que realmente combina com cada paciente.</p>
+    </div>
 
-<section class="process">
-<div class="container">
-
-<div class="process-grid">
-
-<div>
-
-<p class="section-tag">UM POUCO DO NOSSO TRABALHO</p>
-
-<h2 class="section-title">
-Cada procedimento começa com um olhar individual.
-</h2>
-
-<p class="section-desc">
-A harmonização facial exige mais do que técnica.
-Exige escuta, planejamento e sensibilidade.
-</p>
-
-</div>
-
-<div class="process-steps">
-
-<div class="process-step">Avaliação personalizada</div>
-<div class="process-step">Planejamento estratégico</div>
-<div class="process-step">Execução com precisão</div>
-<div class="process-step">Acompanhamento</div>
-
-</div>
-
-</div>
-
-</div>
+    <div class="work-pills">
+      <div>Avaliação personalizada</div>
+      <div>Planejamento estratégico</div>
+      <div>Execução com precisão</div>
+      <div>Acompanhamento</div>
+    </div>
+  </div>
 </section>
 
-<!-- DEPOIMENTOS -->
+<section class="testimonials" id="depoimentos">
+  <div class="testimonials-heading">
+    <span class="section-kicker">Depoimentos</span>
+    <h2>Quem é atendido por mim não se arrepende</h2>
+  </div>
 
-<section class="testimonials">
-<div class="container center">
+  <div class="testimonials-carousel">
+    <div class="testimonials-track">
+      <img src="assets/DEPOIMENTO 1(2).webp" alt="Depoimento 1">
+      <img src="assets/DEPOIMENTO 2(1).webp" alt="Depoimento 2">
+      <img src="assets/DEPOIMENTO 3(2).webp" alt="Depoimento 3">
+      <img src="assets/DEPOIMENTO 4(1).webp" alt="Depoimento 4">
 
-<p class="section-tag">DEPOIMENTOS</p>
-
-<h2 class="section-title">
-Quem é atendido por mim não se arrepende
-</h2>
-
-<div class="carousel">
-
-<div class="track">
-
-<img src="assets/depo1.webp">
-<img src="assets/depo2.webp">
-<img src="assets/depo3.webp">
-<img src="assets/depo4.webp">
-
-<img src="assets/depo1.webp">
-<img src="assets/depo2.webp">
-<img src="assets/depo3.webp">
-<img src="assets/depo4.webp">
-
-</div>
-
-</div>
-
-</div>
+      <img src="assets/DEPOIMENTO 1(2).webp" alt="Depoimento 1">
+      <img src="assets/DEPOIMENTO 2(1).webp" alt="Depoimento 2">
+      <img src="assets/DEPOIMENTO 3(2).webp" alt="Depoimento 3">
+      <img src="assets/DEPOIMENTO 4(1).webp" alt="Depoimento 4">
+    </div>
+  </div>
 </section>
-
-<!-- POR QUE -->
 
 <section class="why">
-<div class="container center">
+  <div class="why-container">
+    <h2>Por que me escolher</h2>
 
-<h2 class="section-title">
-Por que me escolher
-</h2>
+    <div class="why-grid">
+      <button class="why-card">
+        <span>Atendimento<br>Humanizado</span>
+        <p>Escuta, acolhimento e planejamento para cada paciente.</p>
+      </button>
 
-<div class="why-grid">
+      <button class="why-card">
+        <span>Resultados sem<br>exageros</span>
+        <p>Tratamentos pensados para valorizar sua beleza natural.</p>
+      </button>
 
-<div class="why-card">
-<h3>Atendimento Humanizado</h3>
-</div>
+      <button class="why-card">
+        <span>Técnicas<br>atualizadas</span>
+        <p>Procedimentos modernos com foco em segurança e precisão.</p>
+      </button>
 
-<div class="why-card">
-<h3>Resultados sem exageros</h3>
-</div>
+      <button class="why-card">
+        <span>Ambiente<br>acolhedor</span>
+        <p>Uma experiência confortável do atendimento ao pós-procedimento.</p>
+      </button>
+    </div>
 
-<div class="why-card">
-<h3>Técnicas atualizadas</h3>
-</div>
-
-<div class="why-card">
-<h3>Ambiente acolhedor</h3>
-</div>
-
-</div>
-
-</div>
+    <div class="final-cta">
+      <h3>Seu rosto não precisa de padrões.</h3>
+      <p>Precisa de um plano pensado para você. Descubra quais tratamentos fazem sentido para seus objetivos e para a sua beleza natural.</p>
+      <a href="https://wa.me/5541991545744" target="_blank" class="main-btn">Agendar sua consulta</a>
+    </div>
+  </div>
 </section>
-
-<!-- CTA -->
-
-<section class="cta">
-<div class="container">
-
-<h2>
-Seu rosto não precisa de padrões.
-</h2>
-
-<p>
-Descubra quais tratamentos fazem sentido para sua beleza natural.
-</p>
-
-<div class="hero-buttons" style="justify-content:center;">
-<a class="btn btn-primary">AGENDAR CONSULTA</a>
-</div>
-
-</div>
-</section>
-
-<!-- FAQ -->
 
 <section class="faq">
-<div class="container">
+  <div class="faq-container">
+    <h2>Perguntas Frequentes</h2>
 
-<h2 class="section-title center">
-Perguntas Frequentes
-</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button>Os resultados ficam naturais?<span>⌄</span></button>
+        <p>Sim. O objetivo é valorizar seus traços com equilíbrio e sem exageros.</p>
+      </div>
 
-<div class="faq-list">
+      <div class="faq-item">
+        <button>Qual procedimento é ideal para mim?<span>⌄</span></button>
+        <p>Isso depende da avaliação individual e dos seus objetivos.</p>
+      </div>
 
-<div class="faq-item">
-<div class="faq-question">
-<span>Os resultados ficam naturais?</span>
-<span>⌄</span>
-</div>
-<div class="faq-answer">
-Sim. O objetivo é preservar naturalidade e identidade facial.
-</div>
-</div>
+      <div class="faq-item">
+        <button>Botox deixa o rosto paralisado?<span>⌄</span></button>
+        <p>Quando bem aplicado, não. A proposta é suavizar expressões mantendo naturalidade.</p>
+      </div>
 
-<div class="faq-item">
-<div class="faq-question">
-<span>Qual procedimento é ideal?</span>
-<span>⌄</span>
-</div>
-<div class="faq-answer">
-Tudo começa com uma avaliação individual.
-</div>
-</div>
+      <div class="faq-item">
+        <button>Preenchimento aumenta muito o rosto?<span>⌄</span></button>
+        <p>Não necessariamente. Pode ser usado de forma sutil para harmonizar e repor volume.</p>
+      </div>
 
-<div class="faq-item">
-<div class="faq-question">
-<span>Botox paralisa?</span>
-<span>⌄</span>
-</div>
-<div class="faq-answer">
-Não quando aplicado corretamente e com equilíbrio.
-</div>
-</div>
-
-</div>
-
-</div>
+      <div class="faq-item">
+        <button>Bioestimulador aparece na hora?<span>⌄</span></button>
+        <p>O resultado é progressivo, estimulando colágeno ao longo do tempo.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
-
-<footer>
-
-<h3>INFORMAÇÕES DE CONTATO</h3>
-
-<p>
-WhatsApp: (41) 99999-9999
-<br>
-Avenida República Argentina 1336
-</p>
-
+<footer class="footer" id="contato">
+  <p>INFORMAÇÕES DE CONTATO<br>WhatsApp: (41) 9 9154-5744</p>
+  <p>Endereço: Avenida República Argentina 1336, sala 516</p>
 </footer>
 
-<!-- BOTAO IA -->
+</main>
 
-<div class="ia-button">
+<div class="ai-whatsapp">
+  <div class="ai-chat" id="aiChat">
+    <div class="ai-top">
+      <h3>Assistente IA</h3>
+      <p>Escolha o que mais te incomoda e fale direto pelo WhatsApp com uma mensagem pronta.</p>
+    </div>
 
-<button class="ia-toggle" onclick="toggleIA()">
-💬
-</button>
+    <div class="ai-options">
+      <button onclick="sendWhats('linhas de expressão e rejuvenescimento facial')">
+        <strong>Linhas de expressão</strong>
+        <span>Quero suavizar marcas e deixar o rosto mais leve.</span>
+      </button>
 
-<div class="ia-box" id="iaBox">
+      <button onclick="sendWhats('harmonização facial natural')">
+        <strong>Harmonização facial</strong>
+        <span>Quero melhorar definição sem exageros.</span>
+      </button>
 
-<h4>Como posso te ajudar?</h4>
+      <button onclick="sendWhats('flacidez e firmeza da pele')">
+        <strong>Flacidez facial</strong>
+        <span>Quero melhorar firmeza e sustentação.</span>
+      </button>
 
-<a class="ia-option"
-href="https://wa.me/5541999999999?text=Olá,%20tenho%20incômodo%20com%20linhas%20de%20expressão">
-Linhas de expressão
-</a>
+      <button onclick="sendWhats('bioestimulador de colágeno e prevenção do envelhecimento')">
+        <strong>Estimular colágeno</strong>
+        <span>Quero prevenir envelhecimento e melhorar textura.</span>
+      </button>
+    </div>
+  </div>
 
-<a class="ia-option"
-href="https://wa.me/5541999999999?text=Olá,%20quero%20melhorar%20firmeza%20facial">
-Flacidez facial
-</a>
-
-<a class="ia-option"
-href="https://wa.me/5541999999999?text=Olá,%20quero%20harmonização%20facial">
-Harmonização facial
-</a>
-
-<a class="ia-option"
-href="https://wa.me/5541999999999?text=Olá,%20quero%20agendar%20uma%20consulta">
-Agendar consulta
-</a>
-
-</div>
-
+  <button class="ai-trigger" id="openAI">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </button>
 </div>
 
 <script>
+document.querySelectorAll(".before-after-card").forEach((card) => {
+  const range = card.querySelector(".ba-range");
+  const afterImg = card.querySelector(".ba-after-img");
+  const divider = card.querySelector(".ba-divider");
+  const handle = card.querySelector(".ba-handle");
 
-function toggleIA(){
-  document.getElementById("iaBox").classList.toggle("active");
-}
+  function updateSlider(value) {
+    afterImg.style.clipPath = `inset(0 0 0 ${value}%)`;
+    divider.style.left = `${value}%`;
+    handle.style.left = `${value}%`;
+  }
 
-document.querySelectorAll('.faq-question').forEach(item=>{
-  item.addEventListener('click',()=>{
-    item.parentElement.classList.toggle('active');
+  range.addEventListener("input", (e) => {
+    updateSlider(e.target.value);
+  });
+
+  updateSlider(range.value);
+});
+
+document.querySelectorAll(".why-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    document.querySelectorAll(".why-card").forEach((item) => {
+      if (item !== card) item.classList.remove("active");
+    });
+    card.classList.toggle("active");
   });
 });
 
+document.querySelectorAll(".faq-item button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const item = button.parentElement;
+    document.querySelectorAll(".faq-item").forEach((faq) => {
+      if (faq !== item) faq.classList.remove("active");
+    });
+    item.classList.toggle("active");
+  });
+});
+
+const openAI = document.getElementById("openAI");
+const aiChat = document.getElementById("aiChat");
+
+openAI.addEventListener("click", () => {
+  aiChat.classList.toggle("active");
+});
+
+function sendWhats(problem) {
+  const number = "5541991545744";
+  const message = `Olá Dra. Yohana, vi o site e gostaria de entender melhor sobre tratamentos para ${problem}.`;
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
+}
 </script>
 
 </body>
