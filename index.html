@@ -474,3 +474,455 @@ document.querySelectorAll(".before-after-card").forEach((card) => {
   updateSlider(range.value);
 });
 </script>
+
+<!-- ===================== SESSÃO 03 — SOBRE MIM ===================== -->
+<section class="about-section" id="sobre">
+  <div class="about-container">
+    <div class="about-text">
+      <span class="about-kicker">DR. YOHANA CASTRO</span>
+
+      <h2>Sobre mim</h2>
+
+      <p>
+        Desde cedo, sempre existiu uma paixão muito forte por pessoas,
+        comunicação e transformação.
+      </p>
+
+      <p>
+        A odontologia surgiu inicialmente por influência familiar, mas foi ao
+        longo da trajetória profissional que nasceu uma verdadeira conexão com
+        a área estética e com o impacto que ela pode gerar na autoestima de
+        cada paciente.
+      </p>
+
+      <p>
+        Após atuar como cirurgiã-dentista clínica geral, o interesse pela
+        harmonização facial e pela odontologia estética despertou uma nova
+        visão sobre a profissão: unir técnica, naturalidade e confiança em cada
+        atendimento.
+      </p>
+
+      <p>
+        A busca constante por aperfeiçoamento, estudo e evolução profissional
+        faz parte dessa caminhada até hoje, sempre com o objetivo de
+        proporcionar uma experiência mais humana, acolhedora e personalizada.
+      </p>
+    </div>
+
+    <div class="about-image-box">
+      <div class="cro-badge">CRO/PR 27091</div>
+      <img src="assets/SOBRE NOS(3).webp" alt="Dra. Yohana Castro" />
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SESSÃO 04 — SERVIÇOS ===================== -->
+<section class="services-section" id="tratamentos">
+  <div class="services-container">
+    <span class="services-kicker">SERVIÇOS</span>
+
+    <h2>Tratamentos voltados para rejuvenescimento e harmonização facial.</h2>
+
+    <p class="services-subtitle">
+      Tecnologia, precisão e planejamento individual para resultados modernos e naturais.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="assets/ICONE 1.webp" alt="Bioestimuladores de colágeno" />
+        <h3>Bioestimuladores<br>de colágeno</h3>
+        <p>
+          Estimula a produção natural de colágeno, melhora firmeza,
+          textura e auxilia na prevenção da flacidez facial.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img src="assets/ICONE 2.webp" alt="Preenchimento com ácido hialurônico" />
+        <h3>Preenchimento<br>com ácido<br>hialurônico</h3>
+        <p>
+          Tecnologia utilizada para estímulo profundo de colágeno,
+          melhora da flacidez e efeito lifting sem cirurgia.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img src="assets/ICONE 3.webp" alt="Toxina botulínica" />
+        <h3>Toxina botulínica<br>(Botox)</h3>
+        <p>
+          Auxilia na prevenção e suavização de linhas de expressão,
+          proporcionando aspecto mais descansado e leve.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img src="assets/ICONE 4.webp" alt="Ultrassom micro e macrofocado" />
+        <h3>Ultrassom micro<br>e macrofocado</h3>
+        <p>
+          Procedimento voltado para reposição de volume facial e definição
+          de contornos de forma equilibrada e sofisticada.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ===================== SESSÃO 03 — SOBRE MIM ===================== */
+
+.about-section {
+  width: 100%;
+  background: #f8f7f4;
+  padding: 90px 5% 95px;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1fr;
+  gap: 76px;
+  align-items: center;
+}
+
+.about-kicker,
+.services-kicker {
+  display: block;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 7px;
+  color: #2d211a;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.about-text h2,
+.services-container h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  color: #4a3023;
+}
+
+.about-text h2 {
+  font-size: clamp(56px, 6vw, 82px);
+  line-height: 0.9;
+  margin-bottom: 36px;
+}
+
+.about-text p {
+  margin: 0 0 24px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 25px;
+  line-height: 0.92;
+  color: #161616;
+  max-width: 540px;
+}
+
+.about-image-box {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  justify-self: end;
+  border-radius: 105px 0 105px 0;
+  overflow: visible;
+  animation: softFloat 5s ease-in-out infinite;
+}
+
+.about-image-box img {
+  display: block;
+  width: 100%;
+  border-radius: 105px 0 105px 0;
+  object-fit: cover;
+  box-shadow: 0 28px 55px rgba(55, 32, 20, 0.16);
+}
+
+.cro-badge {
+  position: absolute;
+  z-index: 4;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 255px;
+  height: 70px;
+  padding: 0 32px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #d8ad8a 0%, #8c674d 54%, #5a3b28 100%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    inset 0 1px 12px rgba(255,255,255,.35),
+    0 18px 35px rgba(54, 32, 20, 0.24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 31px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.about-text h2:hover,
+.services-container h2:hover,
+.about-text p:hover,
+.service-card:hover h3 {
+  text-shadow: 0 0 24px rgba(151, 111, 82, 0.24);
+}
+
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ===================== SESSÃO 04 — SERVIÇOS ===================== */
+
+.services-section {
+  width: 100%;
+  background: #f8f7f4;
+  padding: 40px 5% 105px;
+  overflow: hidden;
+}
+
+.services-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-kicker {
+  margin-bottom: 22px;
+}
+
+.services-container h2 {
+  max-width: 980px;
+  margin: 0 auto;
+  font-size: clamp(52px, 5.2vw, 74px);
+  line-height: 0.95;
+}
+
+.services-subtitle {
+  margin: 26px auto 62px;
+  max-width: 930px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 31px;
+  line-height: 1;
+  color: #1f1f1f;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.service-card {
+  min-height: 280px;
+  padding: 24px 18px 20px;
+  border: 2px solid #5a3928;
+  border-radius: 14px;
+  background: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all 0.45s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: -45%;
+  background: radial-gradient(circle, rgba(255,255,255,.75), transparent 46%);
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: all 0.7s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  background: #f6f1ec;
+  box-shadow:
+    0 22px 45px rgba(74, 48, 35, 0.18),
+    0 0 28px rgba(187, 151, 119, 0.28);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+  transform: translateX(45%);
+}
+
+.service-card img {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.45s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.08) rotate(-2deg);
+  filter: drop-shadow(0 8px 12px rgba(91, 60, 39, 0.22));
+}
+
+.service-card h3 {
+  margin: 0 0 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 31px;
+  font-weight: 500;
+  line-height: 0.82;
+  color: #5a3928;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card p {
+  margin: 0;
+  max-width: 210px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 0.95;
+  color: #1f1f1f;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================== MOBILE ===================== */
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 42px 14px 68px;
+  }
+
+  .about-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 38px;
+    align-items: stretch;
+  }
+
+  .about-image-box {
+    max-width: 100%;
+    border-radius: 70px 0 70px 0;
+  }
+
+  .about-image-box img {
+    border-radius: 70px 0 70px 0;
+  }
+
+  .cro-badge {
+    top: -32px;
+    min-width: 200px;
+    height: 64px;
+    border-radius: 21px;
+    font-size: 24px;
+  }
+
+  .about-kicker,
+  .services-kicker {
+    font-size: 14px;
+    letter-spacing: 6px;
+    margin-bottom: 18px;
+  }
+
+  .about-text {
+    padding: 0 6px;
+  }
+
+  .about-text h2 {
+    font-size: 49px;
+    line-height: 0.9;
+    margin-bottom: 30px;
+  }
+
+  .about-text p {
+    font-size: 18px;
+    line-height: 0.88;
+    margin-bottom: 17px;
+    max-width: 100%;
+  }
+
+  .services-section {
+    padding: 50px 10px 70px;
+  }
+
+  .services-container {
+    text-align: left;
+  }
+
+  .services-kicker {
+    display: none;
+  }
+
+  .services-container h2 {
+    font-size: 42px;
+    line-height: 0.93;
+    max-width: 360px;
+    margin: 0;
+  }
+
+  .services-subtitle {
+    margin: 20px 0 34px;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 0.96;
+    max-width: 350px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .service-card {
+    min-height: 205px;
+    padding: 18px 12px 16px;
+    border-radius: 13px;
+    text-align: center;
+  }
+
+  .service-card img {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 18px;
+  }
+
+  .service-card h3 {
+    font-size: 25px;
+    line-height: 0.82;
+    margin-bottom: 14px;
+  }
+
+  .service-card p {
+    font-size: 10px;
+    line-height: 0.92;
+    max-width: 145px;
+  }
+}
+
+@media (max-width: 390px) {
+  .services-container h2 {
+    font-size: 38px;
+  }
+
+  .about-text h2 {
+    font-size: 46px;
+  }
+
+  .service-card h3 {
+    font-size: 23px;
+  }
+
+  .service-card {
+    min-height: 198px;
+  }
+}
+</style>
