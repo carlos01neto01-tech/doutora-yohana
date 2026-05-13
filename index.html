@@ -14,55 +14,22 @@
   --bg:#f7f5f2;
   --gray:#dedede;
   --brown:#5a3928;
-  --brown-dark:#3b2519;
-  --gold:#c2a081;
   --text:#151515;
-  --white:#fff;
-
   --title-font:"Sorts Mill Goudy", serif;
   --text-font:"Alexandria", sans-serif;
-
   --title-size:clamp(46px,5vw,72px);
   --title-mobile:43px;
   --desc-size:18px;
   --desc-mobile:15px;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--text-font);
-  overflow-x:hidden;
-}
-
-img{
-  display:block;
-  max-width:100%;
-}
-
-a{
-  text-decoration:none;
-}
-
-button{
-  font-family:var(--text-font);
-}
-
-h1,h2,h3{
-  font-family:var(--title-font);
-  font-weight:400;
-  color:var(--brown);
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--text-font);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{text-decoration:none}
+button{font-family:var(--text-font)}
+h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 
 .section-kicker{
   display:block;
@@ -73,13 +40,13 @@ h1,h2,h3{
   margin-bottom:18px;
 }
 
-/* ================= HERO AJUSTADO ================= */
+/* HERO */
 
 .hero{
   min-height:100vh;
   background-image:url("assets/hero-desktop.webp");
-  background-size:88%;
-  background-position:center 48%;
+  background-size:cover;
+  background-position:center center;
   background-repeat:no-repeat;
   background-color:#f7f5f2;
   position:relative;
@@ -90,7 +57,7 @@ h1,h2,h3{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom,rgba(247,245,242,0) 68%,var(--bg) 100%);
+  background:linear-gradient(to bottom,rgba(247,245,242,0) 72%,#f7f5f2 100%);
   pointer-events:none;
 }
 
@@ -120,10 +87,7 @@ h1,h2,h3{
   transition:.35s ease;
 }
 
-.nav a:hover{
-  color:var(--brown);
-  text-shadow:0 0 18px rgba(90,57,40,.25);
-}
+.nav a:hover{color:var(--brown)}
 
 .contact-pill{
   width:205px;
@@ -156,7 +120,7 @@ h1,h2,h3{
 
 .hero-text{
   max-width:590px;
-  margin-top:70px;
+  margin-top:80px;
 }
 
 .hero-mini{
@@ -212,21 +176,6 @@ h1,h2,h3{
   transition:.45s ease;
 }
 
-.btn::before{
-  content:"";
-  position:absolute;
-  inset:-50%;
-  background:radial-gradient(circle,rgba(255,255,255,.75),transparent 42%);
-  opacity:0;
-  transform:translateX(-70%);
-  transition:.7s ease;
-}
-
-.btn:hover::before{
-  opacity:1;
-  transform:translateX(70%);
-}
-
 .btn:hover{
   transform:translateY(-5px) scale(1.02);
 }
@@ -244,7 +193,7 @@ h1,h2,h3{
   border:1px solid rgba(255,255,255,.75);
 }
 
-/* ================= RESULTADOS ================= */
+/* RESULTADOS */
 
 .results{
   background:var(--bg);
@@ -286,11 +235,6 @@ h1,h2,h3{
   transition:.45s ease;
 }
 
-.before-after-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 24px 45px rgba(66,40,26,.18);
-}
-
 .before-after-wrapper{
   position:relative;
   width:100%;
@@ -308,14 +252,8 @@ h1,h2,h3{
   pointer-events:none;
 }
 
-.ba-before-img{
-  z-index:1;
-}
-
-.ba-after-img{
-  z-index:2;
-  clip-path:inset(0 0 0 50%);
-}
+.ba-before-img{z-index:1}
+.ba-after-img{z-index:2;clip-path:inset(0 0 0 50%)}
 
 .ba-divider{
   position:absolute;
@@ -326,7 +264,6 @@ h1,h2,h3{
   width:2px;
   background:rgba(255,255,255,.32);
   transform:translateX(-50%);
-  box-shadow:0 0 22px rgba(255,255,255,.4);
 }
 
 .ba-handle{
@@ -344,13 +281,6 @@ h1,h2,h3{
   font-size:18px;
   letter-spacing:-2px;
   cursor:grab;
-  box-shadow:0 12px 30px rgba(0,0,0,.22),0 0 0 8px rgba(96,66,47,.12);
-  transition:.35s ease;
-}
-
-.before-after-card:hover .ba-handle{
-  background:linear-gradient(135deg,#6a4832,#b99778);
-  box-shadow:0 14px 36px rgba(0,0,0,.28),0 0 28px rgba(185,151,120,.65),0 0 0 10px rgba(185,151,120,.14);
 }
 
 .ba-range{
@@ -374,24 +304,10 @@ h1,h2,h3{
   color:#fff;
   background:rgba(70,45,31,.72);
   backdrop-filter:blur(10px);
-  opacity:0;
-  transform:translateY(-8px);
-  transition:.35s ease;
-  pointer-events:none;
 }
 
-.ba-before{
-  left:14px;
-}
-
-.ba-after{
-  right:14px;
-}
-
-.before-after-card:hover .ba-label{
-  opacity:1;
-  transform:translateY(0);
-}
+.ba-before{left:14px}
+.ba-after{right:14px}
 
 .main-btn{
   display:inline-flex;
@@ -409,12 +325,7 @@ h1,h2,h3{
   box-shadow:0 18px 45px rgba(95,66,46,.22);
 }
 
-.main-btn:hover{
-  transform:translateY(-5px) scale(1.02);
-  box-shadow:0 22px 55px rgba(95,66,46,.34),0 0 32px rgba(194,160,129,.45);
-}
-
-/* ================= SOBRE ================= */
+/* SOBRE */
 
 .about{
   padding:90px 5% 95px;
@@ -448,7 +359,6 @@ h1,h2,h3{
   position:relative;
   max-width:520px;
   justify-self:end;
-  animation:softFloat 5s ease-in-out infinite;
 }
 
 .about-image img{
@@ -470,22 +380,15 @@ h1,h2,h3{
   border-radius:22px;
   background:linear-gradient(180deg,#d8ad8a 0%,#8c674d 54%,#5a3b28 100%);
   border:1px solid rgba(255,255,255,.85);
-  box-shadow:inset 0 1px 12px rgba(255,255,255,.35),0 18px 35px rgba(54,32,20,.24);
   display:flex;
   align-items:center;
   justify-content:center;
   font-family:var(--title-font);
   font-size:31px;
   color:#fff;
-  white-space:nowrap;
 }
 
-@keyframes softFloat{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-8px);}
-}
-
-/* ================= SERVIÇOS ================= */
+/* SERVIÇOS */
 
 .services{
   padding:40px 5% 105px;
@@ -528,14 +431,6 @@ h1,h2,h3{
   display:flex;
   flex-direction:column;
   align-items:center;
-  transition:.45s ease;
-  overflow:hidden;
-}
-
-.service-card:hover{
-  transform:translateY(-8px);
-  background:#f6f1ec;
-  box-shadow:0 22px 45px rgba(74,48,35,.18),0 0 28px rgba(187,151,119,.28);
 }
 
 .service-card img{
@@ -543,11 +438,6 @@ h1,h2,h3{
   height:82px;
   object-fit:contain;
   margin-bottom:22px;
-  transition:.45s ease;
-}
-
-.service-card:hover img{
-  transform:scale(1.08) rotate(-2deg);
 }
 
 .service-card h3{
@@ -563,7 +453,7 @@ h1,h2,h3{
   max-width:210px;
 }
 
-/* ================= PARA QUEM ================= */
+/* PARA QUEM */
 
 .target{
   padding:90px 5% 70px;
@@ -578,7 +468,6 @@ h1,h2,h3{
   border:2px solid #22150f;
   background:radial-gradient(circle at 50% 0%,rgba(191,146,102,.72),transparent 38%),linear-gradient(135deg,#8f6239 0%,#5a3924 72%);
   text-align:center;
-  box-shadow:0 28px 65px rgba(60,37,24,.16);
 }
 
 .target-card h2{
@@ -604,13 +493,6 @@ h1,h2,h3{
   padding:0 42px 0 34px;
   font-size:18px;
   line-height:1.25;
-  transition:.35s ease;
-}
-
-.target-list div:hover{
-  transform:translateX(8px);
-  background:#f1eee9;
-  box-shadow:0 14px 34px rgba(0,0,0,.18);
 }
 
 .target-list span{
@@ -629,7 +511,7 @@ h1,h2,h3{
   font-weight:300;
 }
 
-/* ================= TRABALHO ================= */
+/* TRABALHO */
 
 .work{
   padding:40px 5% 100px;
@@ -672,16 +554,9 @@ h1,h2,h3{
   align-items:center;
   justify-content:center;
   font-size:18px;
-  transition:.35s ease;
 }
 
-.work-pills div:hover{
-  transform:translateX(-8px);
-  background:linear-gradient(135deg,#e6e2dd,#c6b6a7);
-  box-shadow:0 18px 38px rgba(82,51,34,.16);
-}
-
-/* ================= DEPOIMENTOS ================= */
+/* DEPOIMENTOS */
 
 .testimonials{
   padding:20px 0 120px;
@@ -707,29 +582,6 @@ h1,h2,h3{
   overflow:hidden;
 }
 
-.testimonials-carousel::before,
-.testimonials-carousel::after{
-  content:"";
-  position:absolute;
-  top:0;
-  width:180px;
-  height:100%;
-  z-index:3;
-  pointer-events:none;
-}
-
-.testimonials-carousel::before{
-  left:0;
-  background:linear-gradient(90deg,var(--bg) 0%,rgba(248,247,244,.72) 38%,transparent 100%);
-  backdrop-filter:blur(2px);
-}
-
-.testimonials-carousel::after{
-  right:0;
-  background:linear-gradient(270deg,var(--bg) 0%,rgba(248,247,244,.72) 38%,transparent 100%);
-  backdrop-filter:blur(2px);
-}
-
 .testimonials-track{
   display:flex;
   gap:18px;
@@ -737,29 +589,19 @@ h1,h2,h3{
   animation:testimonialMarquee 24s linear infinite;
 }
 
-.testimonials-track:hover{
-  animation-play-state:paused;
-}
-
 .testimonials-track img{
   width:270px;
   height:480px;
   object-fit:cover;
   flex:0 0 auto;
-  box-shadow:0 20px 45px rgba(0,0,0,.13);
-  transition:.4s ease;
-}
-
-.testimonials-track img:hover{
-  transform:translateY(-8px) scale(1.025);
 }
 
 @keyframes testimonialMarquee{
-  from{transform:translateX(0);}
-  to{transform:translateX(calc(-50% - 9px));}
+  from{transform:translateX(0)}
+  to{transform:translateX(calc(-50% - 9px))}
 }
 
-/* ================= POR QUE ================= */
+/* POR QUE */
 
 .why{
   padding:88px 5% 110px;
@@ -790,7 +632,6 @@ h1,h2,h3{
   background:radial-gradient(circle at top,rgba(184,127,76,.72),transparent 48%),linear-gradient(135deg,#8d5f37,#563620);
   cursor:pointer;
   padding:20px;
-  transition:.4s ease;
   overflow:hidden;
 }
 
@@ -800,7 +641,6 @@ h1,h2,h3{
   font-size:29px;
   line-height:.86;
   color:#fff;
-  transition:.3s ease;
 }
 
 .why-card p{
@@ -813,26 +653,22 @@ h1,h2,h3{
   transition:.35s ease;
 }
 
-.why-card.active,
-.why-card:hover{
+.why-card.active{
   background:var(--bg);
   border-color:var(--brown);
-  box-shadow:0 20px 38px rgba(74,48,35,.16);
 }
 
-.why-card.active span,
-.why-card:hover span{
+.why-card.active span{
   color:var(--brown);
   margin-bottom:16px;
 }
 
-.why-card.active p,
-.why-card:hover p{
+.why-card.active p{
   max-height:90px;
   opacity:1;
 }
 
-/* ================= CTA ================= */
+/* CTA */
 
 .final-cta{
   margin-top:88px;
@@ -851,7 +687,7 @@ h1,h2,h3{
   font-weight:300;
 }
 
-/* ================= FAQ ================= */
+/* FAQ */
 
 .faq{
   background:#d9d9d9;
@@ -878,7 +714,6 @@ h1,h2,h3{
   border:3px solid var(--brown);
   border-radius:999px;
   overflow:hidden;
-  transition:.3s ease;
 }
 
 .faq-item button{
@@ -901,8 +736,6 @@ h1,h2,h3{
   right:54px;
   font-size:42px;
   color:var(--brown);
-  font-weight:800;
-  transition:.3s ease;
 }
 
 .faq-item p{
@@ -922,17 +755,13 @@ h1,h2,h3{
   background:rgba(255,255,255,.24);
 }
 
-.faq-item.active button span{
-  transform:rotate(180deg);
-}
-
 .faq-item.active p{
   max-height:130px;
   opacity:1;
   padding-bottom:28px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 .footer{
   background:#54351f;
@@ -945,10 +774,9 @@ h1,h2,h3{
   font-size:18px;
   line-height:1.35;
   color:#fff;
-  font-weight:300;
 }
 
-/* ================= WHATSAPP IA ================= */
+/* WHATSAPP IA */
 
 .ai-whatsapp{
   position:fixed;
@@ -968,16 +796,9 @@ h1,h2,h3{
   display:flex;
   align-items:center;
   justify-content:center;
-  transition:.4s ease;
 }
 
-.ai-trigger:hover{
-  transform:scale(1.08);
-}
-
-.ai-trigger img{
-  width:36px;
-}
+.ai-trigger img{width:36px}
 
 .ai-chat{
   position:absolute;
@@ -1008,15 +829,12 @@ h1,h2,h3{
 
 .ai-top h3{
   font-size:34px;
-  line-height:1;
   color:#fff;
-  margin-bottom:8px;
 }
 
 .ai-top p{
   font-size:14px;
   line-height:1.35;
-  font-weight:300;
 }
 
 .ai-options{
@@ -1033,49 +851,38 @@ h1,h2,h3{
   padding:17px;
   text-align:left;
   cursor:pointer;
-  transition:.3s ease;
-}
-
-.ai-options button:hover{
-  background:#eee8e2;
-  transform:translateX(4px);
 }
 
 .ai-options strong{
   display:block;
   font-family:var(--title-font);
   font-size:23px;
-  line-height:1;
   color:var(--brown);
   margin-bottom:6px;
-  font-weight:400;
 }
 
 .ai-options span{
-  display:block;
   font-size:13px;
   line-height:1.35;
   color:#444;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:768px){
-
-  .header{
-    display:none;
-  }
+  .header{display:none}
 
   .hero{
     min-height:100vh;
-    background-image:url("assets/PARTE 1 SITE DOUTORA  MOBILE(1).webp");
+    background-image:url("assets/hero-mobile.webp");
+    background-size:cover;
     background-position:center top;
-    background-size:100%;
     background-repeat:no-repeat;
   }
 
   .hero-content{
     width:100%;
+    min-height:100vh;
     padding:0 24px 68px;
     align-items:flex-end;
   }
@@ -1086,23 +893,9 @@ h1,h2,h3{
     margin-top:0;
   }
 
-  .hero-mini{
-    margin-bottom:18px;
-  }
-
-  .hero-mini span{
-    height:40px;
-  }
-
-  .hero-mini p{
-    font-size:12px;
-    letter-spacing:3px;
-  }
-
   .hero h1{
     font-size:58px;
     line-height:.88;
-    margin-bottom:18px;
   }
 
   .hero-desc{
@@ -1123,57 +916,9 @@ h1,h2,h3{
     font-size:16px;
   }
 
-  .results,
-  .about,
-  .services,
-  .target,
-  .work,
-  .why,
-  .faq{
+  .results,.about,.services,.target,.work,.why,.faq{
     padding-left:22px;
     padding-right:22px;
-  }
-
-  .results{
-    padding-top:74px;
-    padding-bottom:78px;
-  }
-
-  .results-container,
-  .services-container,
-  .why-container,
-  .faq-container{
-    text-align:left;
-  }
-
-  .section-kicker{
-    font-size:12px;
-    letter-spacing:6px;
-    margin-bottom:16px;
-  }
-
-  .results h2,
-  .about h2,
-  .services h2,
-  .target-card h2,
-  .work h2,
-  .testimonials h2,
-  .why h2,
-  .faq h2,
-  .final-cta h3{
-    font-size:var(--title-mobile);
-    line-height:.9;
-    text-align:left;
-  }
-
-  .results-desc,
-  .about p,
-  .services-desc,
-  .target-card p,
-  .work p,
-  .final-cta p{
-    font-size:var(--desc-mobile);
-    line-height:1.35;
   }
 
   .results-grid{
@@ -1182,46 +927,10 @@ h1,h2,h3{
     gap:34px;
   }
 
-  .before-after-card{
-    width:100%;
-    aspect-ratio:.73 / 1;
-  }
-
-  .ba-label{
-    opacity:1;
-    transform:translateY(0);
-    font-size:10px;
-  }
-
-  .main-btn{
-    width:100%;
-    height:72px;
-    margin-top:38px;
-  }
-
-  .about{
-    padding-top:42px;
-    padding-bottom:68px;
-  }
-
   .about-container{
     display:flex;
     flex-direction:column-reverse;
     gap:38px;
-  }
-
-  .about-image,
-  .about-image img{
-    max-width:100%;
-    border-radius:70px 0 70px 0;
-  }
-
-  .cro-badge{
-    top:-32px;
-    min-width:200px;
-    height:64px;
-    border-radius:21px;
-    font-size:24px;
   }
 
   .services-grid{
@@ -1229,34 +938,8 @@ h1,h2,h3{
     gap:14px;
   }
 
-  .service-card{
-    min-height:205px;
-    padding:18px 12px 16px;
-    text-align:center;
-  }
-
-  .service-card img{
-    width:58px;
-    height:58px;
-    margin-bottom:18px;
-  }
-
-  .service-card h3{
-    font-size:25px;
-  }
-
-  .service-card p{
-    font-size:10px;
-  }
-
   .target-card{
     padding:34px 14px 38px;
-  }
-
-  .target-card h2{
-    text-align:center;
-    color:#fff;
-    margin-bottom:28px;
   }
 
   .target-list div{
@@ -1267,9 +950,7 @@ h1,h2,h3{
     font-size:14px;
   }
 
-  .target-list span{
-    display:none;
-  }
+  .target-list span{display:none}
 
   .work-container{
     display:block;
@@ -1279,114 +960,18 @@ h1,h2,h3{
     margin-top:22px;
   }
 
-  .work-pills div{
-    height:54px;
-    font-size:15px;
-  }
-
-  .testimonials{
-    padding:24px 0 92px;
-  }
-
-  .testimonials-heading{
-    padding:0 28px;
-    text-align:left;
-  }
-
-  .testimonials-carousel::before,
-  .testimonials-carousel::after{
-    width:46px;
-    backdrop-filter:blur(3px);
-  }
-
-  .testimonials-track{
-    gap:14px;
-    animation-duration:20s;
-  }
-
-  .testimonials-track img{
-    width:260px;
-    height:462px;
-  }
-
   .why-grid{
     grid-template-columns:1fr;
-    gap:10px;
-  }
-
-  .why-card{
-    height:177px;
-  }
-
-  .why-card span{
-    font-size:32px;
-    text-align:center;
-  }
-
-  .why-card p{
-    text-align:center;
-    font-size:14px;
-  }
-
-  .faq h2{
-    margin-bottom:42px;
-  }
-
-  .faq-item{
-    border-width:2px;
   }
 
   .faq-item button{
     height:60px;
-    padding:0 50px 0 22px;
     font-size:14px;
-  }
-
-  .faq-item button span{
-    right:22px;
-    font-size:34px;
-  }
-
-  .faq-item p{
-    font-size:13px;
-    padding:0 24px;
-  }
-
-  .faq-item.active{
-    border-radius:28px;
-  }
-
-  .faq-item.active p{
-    padding-bottom:22px;
-  }
-
-  .footer{
-    padding:54px 22px 48px;
-  }
-
-  .footer p{
-    font-size:15px;
-  }
-
-  .ai-whatsapp{
-    right:18px;
-    bottom:18px;
-  }
-
-  .ai-trigger{
-    width:66px;
-    height:66px;
-  }
-
-  .ai-trigger img{
-    width:31px;
   }
 
   .ai-chat{
     width:calc(100vw - 36px);
     right:-2px;
-    bottom:86px;
-    border-radius:24px;
   }
 }
 </style>
@@ -1440,13 +1025,12 @@ h1,h2,h3{
     </p>
 
     <div class="results-grid">
-
       <div class="before-after-card">
         <span class="ba-label ba-before">ANTES</span>
         <span class="ba-label ba-after">DEPOIS</span>
         <div class="before-after-wrapper">
-          <img src="assets/ANTES 1(1).png" class="ba-img ba-before-img" alt="Antes 1">
-          <img src="assets/DEPOIS  1(1).png" class="ba-img ba-after-img" alt="Depois 1">
+          <img src="assets/ANTES 1(1).png" class="ba-img ba-before-img">
+          <img src="assets/DEPOIS  1(1).png" class="ba-img ba-after-img">
           <div class="ba-divider"></div>
           <button class="ba-handle">‹ ›</button>
           <input type="range" min="0" max="100" value="50" class="ba-range">
@@ -1457,8 +1041,8 @@ h1,h2,h3{
         <span class="ba-label ba-before">ANTES</span>
         <span class="ba-label ba-after">DEPOIS</span>
         <div class="before-after-wrapper">
-          <img src="assets/ANTES 2(1).png" class="ba-img ba-before-img" alt="Antes 2">
-          <img src="assets/DEPOIS 2(1).webp" class="ba-img ba-after-img" alt="Depois 2">
+          <img src="assets/ANTES 2(1).png" class="ba-img ba-before-img">
+          <img src="assets/DEPOIS 2(1).webp" class="ba-img ba-after-img">
           <div class="ba-divider"></div>
           <button class="ba-handle">‹ ›</button>
           <input type="range" min="0" max="100" value="50" class="ba-range">
@@ -1469,8 +1053,8 @@ h1,h2,h3{
         <span class="ba-label ba-before">ANTES</span>
         <span class="ba-label ba-after">DEPOIS</span>
         <div class="before-after-wrapper">
-          <img src="assets/ANTES 3(2).webp" class="ba-img ba-before-img" alt="Antes 3">
-          <img src="assets/DEPOIS 3(2).webp" class="ba-img ba-after-img" alt="Depois 3">
+          <img src="assets/ANTES 3(2).webp" class="ba-img ba-before-img">
+          <img src="assets/DEPOIS 3(2).webp" class="ba-img ba-after-img">
           <div class="ba-divider"></div>
           <button class="ba-handle">‹ ›</button>
           <input type="range" min="0" max="100" value="50" class="ba-range">
@@ -1481,14 +1065,13 @@ h1,h2,h3{
         <span class="ba-label ba-before">ANTES</span>
         <span class="ba-label ba-after">DEPOIS</span>
         <div class="before-after-wrapper">
-          <img src="assets/ANTES 4(2).webp" class="ba-img ba-before-img" alt="Antes 4">
-          <img src="assets/DEPOIS 4(2).webp" class="ba-img ba-after-img" alt="Depois 4">
+          <img src="assets/ANTES 4(2).webp" class="ba-img ba-before-img">
+          <img src="assets/DEPOIS 4(2).webp" class="ba-img ba-after-img">
           <div class="ba-divider"></div>
           <button class="ba-handle">‹ ›</button>
           <input type="range" min="0" max="100" value="50" class="ba-range">
         </div>
       </div>
-
     </div>
 
     <a href="#contato" class="main-btn">Ver todos os casos</a>
@@ -1501,8 +1084,8 @@ h1,h2,h3{
       <span class="section-kicker">Dra. Yohana Castro</span>
       <h2>Sobre mim</h2>
       <p>Desde cedo, sempre existiu uma paixão muito forte por pessoas, comunicação e transformação.</p>
-      <p>A odontologia surgiu inicialmente por influência familiar, mas foi ao longo da trajetória profissional que nasceu uma verdadeira conexão com a área estética e com o impacto que ela pode gerar na autoestima de cada paciente.</p>
-      <p>Após atuar como cirurgiã-dentista clínica geral, o interesse pela harmonização facial e pela odontologia estética despertou uma nova visão sobre a profissão: unir técnica, naturalidade e confiança em cada atendimento.</p>
+      <p>A odontologia surgiu inicialmente por influência familiar, mas foi ao longo da trajetória profissional que nasceu uma verdadeira conexão com a área estética.</p>
+      <p>Após atuar como cirurgiã-dentista clínica geral, o interesse pela harmonização facial e pela odontologia estética despertou uma nova visão sobre a profissão.</p>
       <p>A busca constante por aperfeiçoamento, estudo e evolução profissional faz parte dessa caminhada até hoje.</p>
     </div>
 
@@ -1521,25 +1104,25 @@ h1,h2,h3{
 
     <div class="services-grid">
       <div class="service-card">
-        <img src="assets/ICONE 1.webp" alt="Bioestimuladores">
+        <img src="assets/ICONE 1.webp">
         <h3>Bioestimuladores<br>de colágeno</h3>
         <p>Estimula a produção natural de colágeno, melhora firmeza e auxilia na prevenção da flacidez facial.</p>
       </div>
 
       <div class="service-card">
-        <img src="assets/ICONE 2.webp" alt="Preenchimento">
+        <img src="assets/ICONE 2.webp">
         <h3>Preenchimento<br>com ácido hialurônico</h3>
         <p>Procedimento voltado para reposição de volume facial e definição de contornos.</p>
       </div>
 
       <div class="service-card">
-        <img src="assets/ICONE 3.webp" alt="Botox">
+        <img src="assets/ICONE 3.webp">
         <h3>Toxina botulínica<br>Botox</h3>
         <p>Auxilia na prevenção e suavização de linhas de expressão.</p>
       </div>
 
       <div class="service-card">
-        <img src="assets/ICONE 4.webp" alt="Ultrassom">
+        <img src="assets/ICONE 4.webp">
         <h3>Ultrassom micro<br>e macrofocado</h3>
         <p>Melhora sustentação, firmeza e efeito lifting sem cirurgia.</p>
       </div>
@@ -1569,7 +1152,7 @@ h1,h2,h3{
     <div>
       <span class="section-kicker">Um pouco do nosso trabalho</span>
       <h2>Cada procedimento começa com um olhar individual.</h2>
-      <p>A harmonização facial exige mais do que técnica. Exige escuta, planejamento e sensibilidade para entender o que realmente combina com cada paciente.</p>
+      <p>A harmonização facial exige mais do que técnica. Exige escuta, planejamento e sensibilidade.</p>
     </div>
 
     <div class="work-pills">
@@ -1589,15 +1172,14 @@ h1,h2,h3{
 
   <div class="testimonials-carousel">
     <div class="testimonials-track">
-      <img src="assets/DEPOIMENTO 1(2).webp" alt="Depoimento 1">
-      <img src="assets/DEPOIMENTO 2(1).webp" alt="Depoimento 2">
-      <img src="assets/DEPOIMENTO 3(2).webp" alt="Depoimento 3">
-      <img src="assets/DEPOIMENTO 4(1).webp" alt="Depoimento 4">
-
-      <img src="assets/DEPOIMENTO 1(2).webp" alt="Depoimento 1">
-      <img src="assets/DEPOIMENTO 2(1).webp" alt="Depoimento 2">
-      <img src="assets/DEPOIMENTO 3(2).webp" alt="Depoimento 3">
-      <img src="assets/DEPOIMENTO 4(1).webp" alt="Depoimento 4">
+      <img src="assets/DEPOIMENTO 1(2).webp">
+      <img src="assets/DEPOIMENTO 2(1).webp">
+      <img src="assets/DEPOIMENTO 3(2).webp">
+      <img src="assets/DEPOIMENTO 4(1).webp">
+      <img src="assets/DEPOIMENTO 1(2).webp">
+      <img src="assets/DEPOIMENTO 2(1).webp">
+      <img src="assets/DEPOIMENTO 3(2).webp">
+      <img src="assets/DEPOIMENTO 4(1).webp">
     </div>
   </div>
 </section>
@@ -1607,30 +1189,15 @@ h1,h2,h3{
     <h2>Por que me escolher</h2>
 
     <div class="why-grid">
-      <button class="why-card">
-        <span>Atendimento<br>Humanizado</span>
-        <p>Escuta, acolhimento e planejamento para cada paciente.</p>
-      </button>
-
-      <button class="why-card">
-        <span>Resultados sem<br>exageros</span>
-        <p>Tratamentos pensados para valorizar sua beleza natural.</p>
-      </button>
-
-      <button class="why-card">
-        <span>Técnicas<br>atualizadas</span>
-        <p>Procedimentos modernos com foco em segurança e precisão.</p>
-      </button>
-
-      <button class="why-card">
-        <span>Ambiente<br>acolhedor</span>
-        <p>Uma experiência confortável do atendimento ao pós-procedimento.</p>
-      </button>
+      <button class="why-card"><span>Atendimento<br>Humanizado</span><p>Escuta, acolhimento e planejamento para cada paciente.</p></button>
+      <button class="why-card"><span>Resultados sem<br>exageros</span><p>Tratamentos pensados para valorizar sua beleza natural.</p></button>
+      <button class="why-card"><span>Técnicas<br>atualizadas</span><p>Procedimentos modernos com foco em segurança e precisão.</p></button>
+      <button class="why-card"><span>Ambiente<br>acolhedor</span><p>Uma experiência confortável do atendimento ao pós-procedimento.</p></button>
     </div>
 
     <div class="final-cta">
       <h3>Seu rosto não precisa de padrões.</h3>
-      <p>Precisa de um plano pensado para você. Descubra quais tratamentos fazem sentido para seus objetivos e para a sua beleza natural.</p>
+      <p>Precisa de um plano pensado para você. Descubra quais tratamentos fazem sentido para seus objetivos.</p>
       <a href="https://wa.me/5541991545744" target="_blank" class="main-btn">Agendar sua consulta</a>
     </div>
   </div>
@@ -1641,30 +1208,11 @@ h1,h2,h3{
     <h2>Perguntas Frequentes</h2>
 
     <div class="faq-list">
-      <div class="faq-item">
-        <button>Os resultados ficam naturais?<span>⌄</span></button>
-        <p>Sim. O objetivo é valorizar seus traços com equilíbrio e sem exageros.</p>
-      </div>
-
-      <div class="faq-item">
-        <button>Qual procedimento é ideal para mim?<span>⌄</span></button>
-        <p>Isso depende da avaliação individual e dos seus objetivos.</p>
-      </div>
-
-      <div class="faq-item">
-        <button>Botox deixa o rosto paralisado?<span>⌄</span></button>
-        <p>Quando bem aplicado, não. A proposta é suavizar expressões mantendo naturalidade.</p>
-      </div>
-
-      <div class="faq-item">
-        <button>Preenchimento aumenta muito o rosto?<span>⌄</span></button>
-        <p>Não necessariamente. Pode ser usado de forma sutil para harmonizar e repor volume.</p>
-      </div>
-
-      <div class="faq-item">
-        <button>Bioestimulador aparece na hora?<span>⌄</span></button>
-        <p>O resultado é progressivo, estimulando colágeno ao longo do tempo.</p>
-      </div>
+      <div class="faq-item"><button>Os resultados ficam naturais?<span>⌄</span></button><p>Sim. O objetivo é valorizar seus traços com equilíbrio e sem exageros.</p></div>
+      <div class="faq-item"><button>Qual procedimento é ideal para mim?<span>⌄</span></button><p>Isso depende da avaliação individual e dos seus objetivos.</p></div>
+      <div class="faq-item"><button>Botox deixa o rosto paralisado?<span>⌄</span></button><p>Quando bem aplicado, não. A proposta é suavizar expressões mantendo naturalidade.</p></div>
+      <div class="faq-item"><button>Preenchimento aumenta muito o rosto?<span>⌄</span></button><p>Não necessariamente. Pode ser usado de forma sutil para harmonizar e repor volume.</p></div>
+      <div class="faq-item"><button>Bioestimulador aparece na hora?<span>⌄</span></button><p>O resultado é progressivo, estimulando colágeno ao longo do tempo.</p></div>
     </div>
   </div>
 </section>
@@ -1680,29 +1228,14 @@ h1,h2,h3{
   <div class="ai-chat" id="aiChat">
     <div class="ai-top">
       <h3>Assistente IA</h3>
-      <p>Escolha o que mais te incomoda e fale direto pelo WhatsApp com uma mensagem pronta.</p>
+      <p>Escolha o que mais te incomoda e fale direto pelo WhatsApp.</p>
     </div>
 
     <div class="ai-options">
-      <button onclick="sendWhats('linhas de expressão e rejuvenescimento facial')">
-        <strong>Linhas de expressão</strong>
-        <span>Quero suavizar marcas e deixar o rosto mais leve.</span>
-      </button>
-
-      <button onclick="sendWhats('harmonização facial natural')">
-        <strong>Harmonização facial</strong>
-        <span>Quero melhorar definição sem exageros.</span>
-      </button>
-
-      <button onclick="sendWhats('flacidez e firmeza da pele')">
-        <strong>Flacidez facial</strong>
-        <span>Quero melhorar firmeza e sustentação.</span>
-      </button>
-
-      <button onclick="sendWhats('bioestimulador de colágeno e prevenção do envelhecimento')">
-        <strong>Estimular colágeno</strong>
-        <span>Quero prevenir envelhecimento e melhorar textura.</span>
-      </button>
+      <button onclick="sendWhats('linhas de expressão e rejuvenescimento facial')"><strong>Linhas de expressão</strong><span>Quero suavizar marcas e deixar o rosto mais leve.</span></button>
+      <button onclick="sendWhats('harmonização facial natural')"><strong>Harmonização facial</strong><span>Quero melhorar definição sem exageros.</span></button>
+      <button onclick="sendWhats('flacidez e firmeza da pele')"><strong>Flacidez facial</strong><span>Quero melhorar firmeza e sustentação.</span></button>
+      <button onclick="sendWhats('bioestimulador de colágeno e prevenção do envelhecimento')"><strong>Estimular colágeno</strong><span>Quero prevenir envelhecimento e melhorar textura.</span></button>
     </div>
   </div>
 
@@ -1724,10 +1257,7 @@ document.querySelectorAll(".before-after-card").forEach((card) => {
     handle.style.left = `${value}%`;
   }
 
-  range.addEventListener("input", (e) => {
-    updateSlider(e.target.value);
-  });
-
+  range.addEventListener("input", (e) => updateSlider(e.target.value));
   updateSlider(range.value);
 });
 
@@ -1750,11 +1280,8 @@ document.querySelectorAll(".faq-item button").forEach((button) => {
   });
 });
 
-const openAI = document.getElementById("openAI");
-const aiChat = document.getElementById("aiChat");
-
-openAI.addEventListener("click", () => {
-  aiChat.classList.toggle("active");
+document.getElementById("openAI").addEventListener("click", () => {
+  document.getElementById("aiChat").classList.toggle("active");
 });
 
 function sendWhats(problem) {
