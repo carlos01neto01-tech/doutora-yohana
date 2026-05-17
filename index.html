@@ -1133,14 +1133,20 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 }
 </style>
 
-<style id="ajustes-finais-mobile-preservando-desktop">
-/* HEADER MOBILE */
+<style id="ajuste-mobile-final-secoes-1-5-servicos-chat">
 .mobile-header,
 .mobile-menu{
   display:none;
 }
 
-/* LIGHT SWEEP NOS BOTÕES */
+/* Mantém animação light sweep dos botões */
+.btn,
+.main-btn,
+.contact-pill{
+  position:relative;
+  overflow:hidden;
+}
+
 .btn::before,
 .main-btn::before,
 .contact-pill::before{
@@ -1162,14 +1168,6 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   left:130%;
 }
 
-.btn,
-.main-btn,
-.contact-pill{
-  position:relative;
-  overflow:hidden;
-}
-
-/* MOBILE */
 @media(max-width:768px){
 
   .header{
@@ -1211,7 +1209,6 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   }
 
   .mobile-toggle span{
-    display:block;
     width:100%;
     height:3px;
     background:var(--brown);
@@ -1249,9 +1246,9 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     letter-spacing:1px;
   }
 
-  /* TÍTULOS MENORES E LEGÍVEIS NO MOBILE */
+  /* TÍTULOS MOBILE MENORES */
   .hero h1{
-    font-size:38px!important;
+    font-size:34px!important;
     line-height:.98!important;
   }
 
@@ -1263,32 +1260,14 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   .why h2,
   .faq h2,
   .final-cta h3{
-    font-size:36px!important;
-    line-height:1!important;
+    font-size:32px!important;
+    line-height:1.03!important;
     max-width:100%!important;
-    word-break:normal!important;
-    overflow-wrap:normal!important;
   }
 
   .target-card h2{
-    font-size:44px!important;
-    line-height:.95!important;
-    margin-bottom:30px!important;
-  }
-
-  .service-card h3{
-    font-size:24px!important;
-    line-height:1!important;
-  }
-
-  .why-card span{
-    font-size:26px!important;
-    line-height:1!important;
-  }
-
-  .ai-top h3{
-    font-size:26px!important;
-    line-height:1.05!important;
+    font-size:40px!important;
+    line-height:.98!important;
   }
 
   .results-desc,
@@ -1306,7 +1285,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     letter-spacing:4px!important;
   }
 
-  /* SESSÃO 1 - SEM QUADRADO, IMAGEM CHEIA E TEXTO ABAIXO */
+  /* SESSÃO 1 */
   .hero{
     min-height:auto!important;
     background:none!important;
@@ -1334,8 +1313,8 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   .hero-content::before{
     content:"";
     width:100%;
-    height:58vh;
-    min-height:430px;
+    height:55vh;
+    min-height:400px;
     background-image:url("assets/PARTE 1 SITE DOUTORA MOBILE.webp");
     background-size:cover;
     background-position:center top;
@@ -1347,7 +1326,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     width:100%!important;
     max-width:100%!important;
     margin:0!important;
-    padding:30px 24px 50px!important;
+    padding:28px 24px 46px!important;
     background:#cfb49a!important;
     box-shadow:none!important;
     border-radius:0!important;
@@ -1355,12 +1334,12 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 
   .hero-mini{
     gap:12px!important;
-    margin-bottom:20px!important;
+    margin-bottom:18px!important;
   }
 
   .hero-mini span{
     width:5px!important;
-    height:48px!important;
+    height:44px!important;
   }
 
   .hero-mini p{
@@ -1373,12 +1352,12 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     display:flex!important;
     flex-direction:column!important;
     gap:14px!important;
-    margin-top:30px!important;
+    margin-top:28px!important;
   }
 
   .btn{
     width:100%!important;
-    height:66px!important;
+    height:64px!important;
     font-size:15px!important;
     border:2px solid rgba(255,255,255,.9)!important;
     transition:transform .45s ease, box-shadow .45s ease, background .45s ease!important;
@@ -1388,13 +1367,46 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     transform:translateY(-4px) scale(1.01)!important;
   }
 
-  .main-btn{
-    height:68px!important;
-    font-size:15px!important;
-    transition:transform .45s ease, box-shadow .45s ease!important;
+  /* SERVIÇOS - UM POR VEZ, SEM CORTAR */
+  .services{
+    padding-left:22px!important;
+    padding-right:22px!important;
   }
 
-  /* SESSÃO 5 - ALINHADA, MAS SEM TÍTULO GIGANTE */
+  .services-grid{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+    width:100%!important;
+    overflow:visible!important;
+  }
+
+  .service-card{
+    width:100%!important;
+    min-height:auto!important;
+    padding:30px 20px 28px!important;
+    border-radius:18px!important;
+  }
+
+  .service-card img{
+    width:74px!important;
+    height:74px!important;
+    margin-bottom:22px!important;
+  }
+
+  .service-card h3{
+    font-size:30px!important;
+    line-height:1!important;
+    margin-bottom:18px!important;
+  }
+
+  .service-card p{
+    font-size:15px!important;
+    line-height:1.38!important;
+    max-width:100%!important;
+  }
+
+  /* SESSÃO 5 */
   .target{
     padding:78px 22px!important;
     background:#f7f5f2!important;
@@ -1404,7 +1416,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     max-width:100%!important;
     width:100%!important;
     margin:0 auto!important;
-    padding:40px 18px 38px!important;
+    padding:38px 18px 38px!important;
     border-radius:28px!important;
     border:2px solid #22150f!important;
     background:
@@ -1449,7 +1461,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     text-align:center!important;
   }
 
-  /* CHAT WHATSAPP - CAIXA LEGÍVEL */
+  /* CHAT WHATSAPP */
   .ai-whatsapp{
     right:18px!important;
     bottom:18px!important;
@@ -1471,6 +1483,11 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 
   .ai-top{
     padding:16px!important;
+  }
+
+  .ai-top h3{
+    font-size:26px!important;
+    line-height:1.05!important;
   }
 
   .ai-top p{
@@ -1509,33 +1526,8 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   }
 
   .hero-content::before{
-    height:55vh!important;
-    min-height:400px!important;
-  }
-
-  .hero h1{
-    font-size:34px!important;
-  }
-
-  .results h2,
-  .about h2,
-  .services h2,
-  .work h2,
-  .testimonials h2,
-  .why h2,
-  .faq h2,
-  .final-cta h3{
-    font-size:32px!important;
-  }
-
-  .target-card h2{
-    font-size:40px!important;
-  }
-}
-
-@media(max-width:380px){
-  .hero-content::before{
-    min-height:370px!important;
+    height:54vh!important;
+    min-height:380px!important;
   }
 
   .hero h1{
@@ -1555,6 +1547,10 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 
   .target-card h2{
     font-size:38px!important;
+  }
+
+  .service-card h3{
+    font-size:28px!important;
   }
 }
 </style>
