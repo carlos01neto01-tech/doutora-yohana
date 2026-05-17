@@ -899,88 +899,6 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   color:#444;
 }
 
-
-/* HEADER MOBILE FIXO */
-.mobile-header,
-.mobile-menu{
-  display:none;
-}
-
-@media(max-width:768px){
-  .mobile-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:72px;
-    background:#f7f5f2;
-    z-index:99999;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 22px;
-    border-bottom:1px solid rgba(0,0,0,.06);
-  }
-
-  .mobile-logo{
-    font-family:var(--title-font);
-    font-size:34px;
-    line-height:1;
-    color:var(--brown);
-  }
-
-  .mobile-toggle{
-    width:48px;
-    height:48px;
-    border:none;
-    background:transparent;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    gap:7px;
-    cursor:pointer;
-  }
-
-  .mobile-toggle span{
-    display:block;
-    width:100%;
-    height:3px;
-    background:var(--brown);
-    border-radius:20px;
-  }
-
-  .mobile-menu{
-    position:fixed;
-    top:72px;
-    left:0;
-    width:100%;
-    background:#f7f5f2;
-    z-index:99998;
-    padding:28px 24px 34px;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-    opacity:0;
-    visibility:hidden;
-    transform:translateY(-14px);
-    transition:.35s ease;
-    border-bottom:1px solid rgba(0,0,0,.06);
-  }
-
-  .mobile-menu.active{
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
-  }
-
-  .mobile-menu a{
-    color:var(--brown);
-    font-size:15px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-  }
-}
-
 /* MOBILE */
 
 @media(max-width:768px){
@@ -1215,14 +1133,180 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 }
 </style>
 
-<style id="ajustes-apenas-sessao-1-5-chat">
+<style id="ajustes-finais-mobile-preservando-desktop">
+/* HEADER MOBILE */
+.mobile-header,
+.mobile-menu{
+  display:none;
+}
+
+/* LIGHT SWEEP NOS BOTÕES */
+.btn::before,
+.main-btn::before,
+.contact-pill::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:70%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.45),transparent);
+  transform:skewX(-20deg);
+  transition:left .75s ease;
+  pointer-events:none;
+}
+
+.btn:hover::before,
+.main-btn:hover::before,
+.contact-pill:hover::before{
+  left:130%;
+}
+
+.btn,
+.main-btn,
+.contact-pill{
+  position:relative;
+  overflow:hidden;
+}
+
+/* MOBILE */
 @media(max-width:768px){
 
   .header{
     display:none!important;
   }
 
-  /* SESSÃO 1 - HERO MOBILE IGUAL REFERÊNCIA */
+  .mobile-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:72px;
+    background:#f7f5f2;
+    z-index:99999;
+    display:flex!important;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 22px;
+    border-bottom:1px solid rgba(0,0,0,.06);
+  }
+
+  .mobile-logo{
+    font-family:var(--title-font);
+    font-size:30px;
+    line-height:1;
+    color:var(--brown);
+  }
+
+  .mobile-toggle{
+    width:46px;
+    height:46px;
+    border:none;
+    background:transparent;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:7px;
+    cursor:pointer;
+  }
+
+  .mobile-toggle span{
+    display:block;
+    width:100%;
+    height:3px;
+    background:var(--brown);
+    border-radius:20px;
+  }
+
+  .mobile-menu{
+    position:fixed;
+    top:72px;
+    left:0;
+    width:100%;
+    background:#f7f5f2;
+    z-index:99998;
+    padding:26px 24px 32px;
+    display:flex!important;
+    flex-direction:column;
+    gap:18px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-14px);
+    transition:.35s ease;
+    border-bottom:1px solid rgba(0,0,0,.06);
+  }
+
+  .mobile-menu.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+
+  .mobile-menu a{
+    color:var(--brown);
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+
+  /* TÍTULOS MENORES E LEGÍVEIS NO MOBILE */
+  .hero h1{
+    font-size:38px!important;
+    line-height:.98!important;
+  }
+
+  .results h2,
+  .about h2,
+  .services h2,
+  .work h2,
+  .testimonials h2,
+  .why h2,
+  .faq h2,
+  .final-cta h3{
+    font-size:36px!important;
+    line-height:1!important;
+    max-width:100%!important;
+    word-break:normal!important;
+    overflow-wrap:normal!important;
+  }
+
+  .target-card h2{
+    font-size:44px!important;
+    line-height:.95!important;
+    margin-bottom:30px!important;
+  }
+
+  .service-card h3{
+    font-size:24px!important;
+    line-height:1!important;
+  }
+
+  .why-card span{
+    font-size:26px!important;
+    line-height:1!important;
+  }
+
+  .ai-top h3{
+    font-size:26px!important;
+    line-height:1.05!important;
+  }
+
+  .results-desc,
+  .about p,
+  .services-desc,
+  .work p,
+  .final-cta p,
+  .hero-desc{
+    font-size:15px!important;
+    line-height:1.45!important;
+  }
+
+  .section-kicker{
+    font-size:11px!important;
+    letter-spacing:4px!important;
+  }
+
+  /* SESSÃO 1 - SEM QUADRADO, IMAGEM CHEIA E TEXTO ABAIXO */
   .hero{
     min-height:auto!important;
     background:none!important;
@@ -1251,7 +1335,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     content:"";
     width:100%;
     height:58vh;
-    min-height:460px;
+    min-height:430px;
     background-image:url("assets/PARTE 1 SITE DOUTORA MOBILE.webp");
     background-size:cover;
     background-position:center top;
@@ -1263,7 +1347,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     width:100%!important;
     max-width:100%!important;
     margin:0!important;
-    padding:32px 24px 54px!important;
+    padding:30px 24px 50px!important;
     background:#cfb49a!important;
     box-shadow:none!important;
     border-radius:0!important;
@@ -1271,29 +1355,17 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 
   .hero-mini{
     gap:12px!important;
-    margin-bottom:22px!important;
+    margin-bottom:20px!important;
   }
 
   .hero-mini span{
     width:5px!important;
-    height:54px!important;
+    height:48px!important;
   }
 
   .hero-mini p{
-    font-size:13px!important;
-    letter-spacing:5px!important;
-  }
-
-  .hero h1{
-    font-size:42px!important;
-    line-height:.95!important;
-    margin-bottom:20px!important;
-  }
-
-  .hero-desc{
-    max-width:100%!important;
-    font-size:17px!important;
-    line-height:1.28!important;
+    font-size:12px!important;
+    letter-spacing:4px!important;
   }
 
   .hero-buttons{
@@ -1301,19 +1373,30 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     display:flex!important;
     flex-direction:column!important;
     gap:14px!important;
-    margin-top:34px!important;
+    margin-top:30px!important;
   }
 
   .btn{
     width:100%!important;
-    height:70px!important;
-    font-size:16px!important;
-    border:2px solid rgba(255,255,255,.95)!important;
+    height:66px!important;
+    font-size:15px!important;
+    border:2px solid rgba(255,255,255,.9)!important;
+    transition:transform .45s ease, box-shadow .45s ease, background .45s ease!important;
   }
 
-  /* SESSÃO 5 - PARA QUEM É IGUAL REFERÊNCIA */
+  .btn:hover{
+    transform:translateY(-4px) scale(1.01)!important;
+  }
+
+  .main-btn{
+    height:68px!important;
+    font-size:15px!important;
+    transition:transform .45s ease, box-shadow .45s ease!important;
+  }
+
+  /* SESSÃO 5 - ALINHADA, MAS SEM TÍTULO GIGANTE */
   .target{
-    padding:80px 22px!important;
+    padding:78px 22px!important;
     background:#f7f5f2!important;
   }
 
@@ -1321,20 +1404,12 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     max-width:100%!important;
     width:100%!important;
     margin:0 auto!important;
-    padding:44px 18px 42px!important;
+    padding:40px 18px 38px!important;
     border-radius:28px!important;
     border:2px solid #22150f!important;
     background:
-      radial-gradient(circle at bottom,rgba(0,0,0,.32),transparent 45%),
+      radial-gradient(circle at bottom,rgba(0,0,0,.28),transparent 45%),
       linear-gradient(135deg,#a36e42 0%,#5a3924 78%)!important;
-    text-align:center!important;
-  }
-
-  .target-card h2{
-    color:#fff!important;
-    font-size:56px!important;
-    line-height:.92!important;
-    margin:0 auto 34px!important;
     text-align:center!important;
   }
 
@@ -1346,7 +1421,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 
   .target-list div{
     width:100%!important;
-    min-height:76px!important;
+    min-height:68px!important;
     height:auto!important;
     border-radius:999px!important;
     background:#e7e7e7!important;
@@ -1354,10 +1429,10 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     display:flex!important;
     align-items:center!important;
     justify-content:center!important;
-    padding:18px 22px!important;
+    padding:16px 22px!important;
     text-align:center!important;
-    font-size:15px!important;
-    line-height:1.22!important;
+    font-size:14px!important;
+    line-height:1.25!important;
     font-family:var(--title-font)!important;
   }
 
@@ -1367,36 +1442,44 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 
   .target-card p{
     max-width:100%!important;
-    margin:34px auto 0!important;
+    margin:30px auto 0!important;
     color:rgba(255,255,255,.9)!important;
-    font-size:18px!important;
-    line-height:1.1!important;
+    font-size:16px!important;
+    line-height:1.15!important;
     text-align:center!important;
   }
 
-  /* CHAT WHATSAPP - CABER TEXTO NO MOBILE */
+  /* CHAT WHATSAPP - CAIXA LEGÍVEL */
   .ai-whatsapp{
     right:18px!important;
     bottom:18px!important;
   }
 
   .ai-trigger{
-    width:68px!important;
-    height:68px!important;
+    width:66px!important;
+    height:66px!important;
   }
 
   .ai-chat{
-    position:absolute!important;
     width:calc(100vw - 32px)!important;
-    max-height:70vh!important;
+    max-height:72vh!important;
     right:-10px!important;
-    bottom:86px!important;
+    bottom:84px!important;
     border-radius:24px!important;
     overflow:hidden!important;
   }
 
+  .ai-top{
+    padding:16px!important;
+  }
+
+  .ai-top p{
+    font-size:13px!important;
+    line-height:1.35!important;
+  }
+
   .ai-options{
-    max-height:46vh!important;
+    max-height:48vh!important;
     overflow-y:auto!important;
     padding:16px!important;
     gap:10px!important;
@@ -1408,7 +1491,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   }
 
   .ai-options strong{
-    font-size:22px!important;
+    font-size:21px!important;
     line-height:1!important;
     margin-bottom:6px!important;
   }
@@ -1418,60 +1501,60 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     font-size:13px!important;
     line-height:1.3!important;
   }
-
-  .ai-top{
-    padding:18px!important;
-  }
-
-  .ai-top h3{
-    font-size:28px!important;
-    line-height:1!important;
-  }
-
-  .ai-top p{
-    font-size:13px!important;
-  }
 }
 
 @media(max-width:420px){
+  .mobile-logo{
+    font-size:28px!important;
+  }
+
   .hero-content::before{
-    height:56vh;
-    min-height:430px;
+    height:55vh!important;
+    min-height:400px!important;
   }
 
   .hero h1{
-    font-size:39px!important;
+    font-size:34px!important;
+  }
+
+  .results h2,
+  .about h2,
+  .services h2,
+  .work h2,
+  .testimonials h2,
+  .why h2,
+  .faq h2,
+  .final-cta h3{
+    font-size:32px!important;
   }
 
   .target-card h2{
-    font-size:52px!important;
-  }
-
-  .target-list div{
-    min-height:72px!important;
-    font-size:14px!important;
-  }
-
-  .target-card p{
-    font-size:17px!important;
+    font-size:40px!important;
   }
 }
 
 @media(max-width:380px){
   .hero-content::before{
-    min-height:400px;
+    min-height:370px!important;
   }
 
   .hero h1{
-    font-size:36px!important;
+    font-size:32px!important;
   }
 
-  .hero-desc{
-    font-size:15px!important;
+  .results h2,
+  .about h2,
+  .services h2,
+  .work h2,
+  .testimonials h2,
+  .why h2,
+  .faq h2,
+  .final-cta h3{
+    font-size:30px!important;
   }
 
   .target-card h2{
-    font-size:48px!important;
+    font-size:38px!important;
   }
 }
 </style>
