@@ -1290,7 +1290,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     min-height:auto!important;
     background:none!important;
     background-image:none!important;
-    background-color:#ffebdd!important;
+    background-color:#cfb49a!important;
     padding-top:72px!important;
     overflow:hidden!important;
   }
@@ -1327,7 +1327,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     max-width:100%!important;
     margin:0!important;
     padding:28px 24px 46px!important;
-    background:#ffebdd!important;
+    background:#cfb49a!important;
     box-shadow:none!important;
     border-radius:0!important;
   }
@@ -1556,22 +1556,93 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 </style>
 
 
-<style id="ajuste-cor-hero-mobile-ffebdd">
-@media(max-width:768px){
-  .hero{
-    background:#ffebdd!important;
-  }
+<style id="service-marquee-style">
 
-  .hero-text{
-    background:#ffebdd!important;
-    border-radius:0!important;
-    box-shadow:none!important;
-  }
-
-  .hero-content::before{
-    background-color:#ffebdd!important;
-  }
+.service-marquee{
+  width:100%;
+  overflow:hidden;
+  background:#5a3928;
+  padding:20px 0;
+  position:relative;
+  z-index:5;
 }
+
+.service-marquee::before,
+.service-marquee::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:120px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.service-marquee::before{
+  left:0;
+  background:linear-gradient(to right,#5a3928,transparent);
+}
+
+.service-marquee::after{
+  right:0;
+  background:linear-gradient(to left,#5a3928,transparent);
+}
+
+.service-marquee-track{
+  width:max-content;
+  display:flex;
+  align-items:center;
+  gap:26px;
+  animation:marqueeMove 26s linear infinite;
+}
+
+.service-marquee span{
+  color:#fff;
+  font-size:14px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  white-space:nowrap;
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+
+.service-marquee span::after{
+  content:"•";
+  color:#d6b08c;
+  margin-left:26px;
+  font-size:18px;
+}
+
+@keyframes marqueeMove{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+@media(max-width:768px){
+
+  .service-marquee{
+    padding:16px 0;
+  }
+
+  .service-marquee span{
+    font-size:11px;
+    letter-spacing:2px;
+    gap:18px;
+  }
+
+  .service-marquee span::after{
+    margin-left:18px;
+    font-size:14px;
+  }
+
+  .service-marquee-track{
+    gap:18px;
+    animation-duration:20s;
+  }
+
+}
+
 </style>
 
 </head>
@@ -1632,6 +1703,36 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     </div>
   </div>
 </section>
+
+<section class="service-marquee">
+  <div class="service-marquee-track">
+
+    <span>Naturalidade</span>
+    <span>Harmonização Facial</span>
+    <span>Autoestima</span>
+    <span>Rejuvenescimento</span>
+    <span>Elegância</span>
+    <span>Odontologia Estética</span>
+    <span>Bioestimuladores</span>
+    <span>Preenchimento Labial</span>
+    <span>Botox</span>
+    <span>Resultados Naturais</span>
+
+    <span>Naturalidade</span>
+    <span>Harmonização Facial</span>
+    <span>Autoestima</span>
+    <span>Rejuvenescimento</span>
+    <span>Elegância</span>
+    <span>Odontologia Estética</span>
+    <span>Bioestimuladores</span>
+    <span>Preenchimento Labial</span>
+    <span>Botox</span>
+    <span>Resultados Naturais</span>
+
+  </div>
+</section>
+
+
 
 <section class="results reveal" id="resultados">
   <div class="results-container">
