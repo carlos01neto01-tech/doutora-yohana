@@ -1,6 +1,6 @@
 :root{
-  --brown:#573726;
-  --brown-2:#7b5a42;
+  --brown:#ffebdd;
+  --brown-2:ffebdd
   --gold:#b99679;
   --cream:#f8f3ed;
   --soft:#dedbd7;
