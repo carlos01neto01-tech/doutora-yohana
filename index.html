@@ -1664,12 +1664,176 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 }
 </style>
 
+
+<style id="header-mobile-logo-glass-final">
+@media(max-width:768px){
+
+  .header{
+    display:none!important;
+  }
+
+  .mobile-header{
+    position:fixed!important;
+    top:0!important;
+    left:0!important;
+    width:100%!important;
+    height:78px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    padding:0 22px!important;
+    z-index:99999!important;
+
+    background:rgba(255,245,236,.72)!important;
+    backdrop-filter:blur(18px)!important;
+    -webkit-backdrop-filter:blur(18px)!important;
+
+    border-bottom:1px solid rgba(255,255,255,.55)!important;
+    box-shadow:
+      0 10px 30px rgba(0,0,0,.08),
+      inset 0 1px 0 rgba(255,255,255,.35)!important;
+  }
+
+  .mobile-brand{
+    display:flex!important;
+    align-items:center!important;
+    gap:14px!important;
+    min-width:0!important;
+  }
+
+  .mobile-header-logo{
+    width:52px!important;
+    height:auto!important;
+    object-fit:contain!important;
+    flex-shrink:0!important;
+    filter:drop-shadow(0 4px 10px rgba(0,0,0,.08))!important;
+  }
+
+  .mobile-brand-text{
+    font-family:var(--title-font)!important;
+    font-size:30px!important;
+    line-height:1!important;
+    color:#6c4322!important;
+    letter-spacing:.2px!important;
+    white-space:nowrap!important;
+  }
+
+  .mobile-logo{
+    display:none!important;
+  }
+
+  .mobile-toggle{
+    width:46px!important;
+    height:46px!important;
+    border:none!important;
+    background:transparent!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:center!important;
+    gap:7px!important;
+    cursor:pointer!important;
+    flex-shrink:0!important;
+  }
+
+  .mobile-toggle span{
+    width:100%!important;
+    height:3px!important;
+    background:#6c4322!important;
+    border-radius:999px!important;
+    transition:.35s ease!important;
+  }
+
+  .mobile-menu{
+    position:fixed!important;
+    top:78px!important;
+    left:0!important;
+    width:100%!important;
+    background:rgba(255,245,236,.88)!important;
+    backdrop-filter:blur(22px)!important;
+    -webkit-backdrop-filter:blur(22px)!important;
+    border-bottom:1px solid rgba(255,255,255,.4)!important;
+    box-shadow:0 18px 35px rgba(0,0,0,.08)!important;
+    padding:26px 24px 34px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    gap:18px!important;
+    z-index:99998!important;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-14px);
+    transition:.4s ease!important;
+  }
+
+  .mobile-menu.active{
+    opacity:1!important;
+    visibility:visible!important;
+    transform:translateY(0)!important;
+  }
+
+  .mobile-menu a{
+    color:#6c4322!important;
+    text-transform:uppercase!important;
+    letter-spacing:1px!important;
+    font-size:15px!important;
+  }
+
+  .hero{
+    padding-top:78px!important;
+  }
+}
+
+@media(max-width:420px){
+  .mobile-header{
+    height:74px!important;
+    padding:0 18px!important;
+  }
+
+  .mobile-header-logo{
+    width:46px!important;
+  }
+
+  .mobile-brand{
+    gap:12px!important;
+  }
+
+  .mobile-brand-text{
+    font-size:26px!important;
+  }
+
+  .mobile-menu{
+    top:74px!important;
+  }
+
+  .hero{
+    padding-top:74px!important;
+  }
+}
+
+@media(max-width:360px){
+  .mobile-brand-text{
+    font-size:23px!important;
+  }
+
+  .mobile-header-logo{
+    width:42px!important;
+  }
+}
+</style>
+
 </head>
 
 <body>
 
 <div class="mobile-header">
-  <div class="mobile-logo">Yohana Castro</div>
+  <div class="mobile-brand">
+    <img 
+      src="assets/LOGO(3).webp" 
+      alt="Logo Yohana Castro"
+      class="mobile-header-logo"
+    />
+    <div class="mobile-brand-text">Yohana Castro</div>
+  </div>
+
   <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu">
     <span></span>
     <span></span>
@@ -1836,8 +2000,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 <section class="services reveal" id="tratamentos">
   <div class="services-container">
     <span class="section-kicker">Serviços</span>
-    <h2>Tratamentos 
-      voltados para rejuvenescimento e harmonização facial.</h2>
+    <h2>Tratamentos voltados para rejuvenescimento e harmonização facial.</h2>
     <p class="services-desc">Tecnologia, precisão e planejamento individual para resultados modernos e naturais.</p>
 
     <div class="services-grid">
