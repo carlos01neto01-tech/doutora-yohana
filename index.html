@@ -2223,25 +2223,4 @@ if(mobileToggle && mobileMenu){
 
 </body>
 </html>
-HTMLEOF
 
-echo "Verificando todas as ocorrências do número antigo (não deve aparecer nenhuma):"
-grep -n "5541991545744" /home/claude/site.html | wc -l
-
-echo "Verificando todas as ocorrências do número novo:"
-grep -n "554199487848" /home/claude/site.html
-
-echo "Verificando o número formatado no rodapé:"
-grep -n "9948-7848\|9154-5744" /home/claude/site.html
-Saída
-
-Verificando todas as ocorrências do número antigo (não deve aparecer nenhuma):
-0
-Verificando todas as ocorrências do número novo:
-1863:    <a class="contact-pill" href="https://wa.me/554199487848" target="_blank">Contato</a>
-1882:        <a class="btn btn-primary" href="https://wa.me/554199487848" target="_blank">Agende sua consulta</a>
-2101:      <a href="https://wa.me/554199487848" target="_blank" class="main-btn">Agendar sua consulta</a>
-2188:  const number = "554199487848";
-Verificando o número formatado no rodapé:
-2121:  <p>INFORMAÇÕES DE CONTATO<br>WhatsApp: (41) 9 9948-7848</p>
-Concluído
