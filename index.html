@@ -1860,7 +1860,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
       <a href="#resultados">Resultados</a>
       <a href="#depoimentos">Depoimentos</a>
     </nav>
-    <a class="contact-pill" href="https://wa.me/5541991545744" target="_blank">Contato</a>
+    <a class="contact-pill" href="https://wa.me/554199487848" target="_blank">Contato</a>
   </header>
 
   <div class="hero-content">
@@ -1879,7 +1879,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
       </p>
 
       <div class="hero-buttons">
-        <a class="btn btn-primary" href="https://wa.me/5541991545744" target="_blank">Agende sua consulta</a>
+        <a class="btn btn-primary" href="https://wa.me/554199487848" target="_blank">Agende sua consulta</a>
         <a class="btn btn-secondary" href="#depoimentos">Conheça meu trabalho</a>
       </div>
     </div>
@@ -2043,7 +2043,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
       <div><span>✓</span>Para quem busca mais autoestima e confiança</div>
     </div>
 
-    <p>“Cada tratamento deve fazer sentido para quem você é, e não seguir padrões prontos.”</p>
+    <p>"Cada tratamento deve fazer sentido para quem você é, e não seguir padrões prontos."</p>
   </div>
 </section>
 
@@ -2098,7 +2098,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     <div class="final-cta">
       <h3>Seu rosto não precisa de padrões.</h3>
       <p>Precisa de um plano pensado para você. Descubra quais tratamentos fazem sentido para seus objetivos.</p>
-      <a href="https://wa.me/5541991545744" target="_blank" class="main-btn">Agendar sua consulta</a>
+      <a href="https://wa.me/554199487848" target="_blank" class="main-btn">Agendar sua consulta</a>
     </div>
   </div>
 </section>
@@ -2118,7 +2118,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 </section>
 
 <footer class="footer" id="contato">
-  <p>INFORMAÇÕES DE CONTATO<br>WhatsApp: (41) 9 9154-5744</p>
+  <p>INFORMAÇÕES DE CONTATO<br>WhatsApp: (41) 9 9948-7848</p>
   <p>Endereço: Avenida República Argentina 1336, sala 516</p>
 </footer>
 
@@ -2185,7 +2185,7 @@ document.getElementById("openAI").addEventListener("click", () => {
 });
 
 function sendWhats(problem) {
-  const number = "5541991545744";
+  const number = "554199487848";
   const message = `Olá Dra. Yohana, vi o site e gostaria de entender melhor sobre tratamentos para ${problem}.`;
   window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
 }
@@ -2223,3 +2223,25 @@ if(mobileToggle && mobileMenu){
 
 </body>
 </html>
+HTMLEOF
+
+echo "Verificando todas as ocorrências do número antigo (não deve aparecer nenhuma):"
+grep -n "5541991545744" /home/claude/site.html | wc -l
+
+echo "Verificando todas as ocorrências do número novo:"
+grep -n "554199487848" /home/claude/site.html
+
+echo "Verificando o número formatado no rodapé:"
+grep -n "9948-7848\|9154-5744" /home/claude/site.html
+Saída
+
+Verificando todas as ocorrências do número antigo (não deve aparecer nenhuma):
+0
+Verificando todas as ocorrências do número novo:
+1863:    <a class="contact-pill" href="https://wa.me/554199487848" target="_blank">Contato</a>
+1882:        <a class="btn btn-primary" href="https://wa.me/554199487848" target="_blank">Agende sua consulta</a>
+2101:      <a href="https://wa.me/554199487848" target="_blank" class="main-btn">Agendar sua consulta</a>
+2188:  const number = "554199487848";
+Verificando o número formatado no rodapé:
+2121:  <p>INFORMAÇÕES DE CONTATO<br>WhatsApp: (41) 9 9948-7848</p>
+Concluído
