@@ -1945,7 +1945,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
         <span class="ba-label ba-after">DEPOIS</span>
         <div class="before-after-wrapper">
           <img src="assets/ANTES 1.png" class="ba-img ba-before-img">
-          <img src="assets/DEPOIS 1.webp" class="ba-img ba-after-img">
+          <img src="assets/DEPOIS 1.png" class="ba-img ba-after-img" alt="Depois do primeiro caso" onerror="this.onerror=null;this.src='assets/DEPOIS 1.webp';">
           <div class="ba-divider"></div>
           <button class="ba-handle">‹ ›</button>
           <input type="range" min="0" max="100" value="50" class="ba-range">
@@ -2190,6 +2190,8 @@ document.querySelectorAll(".before-after-card").forEach((card) => {
   const divider = card.querySelector(".ba-divider");
   const handle = card.querySelector(".ba-handle");
 
+  if (!range || !afterImg || !divider || !handle) return;
+
   function updateSlider(value) {
     afterImg.style.clipPath = `inset(0 0 0 ${value}%)`;
     divider.style.left = `${value}%`;
@@ -2197,7 +2199,7 @@ document.querySelectorAll(".before-after-card").forEach((card) => {
   }
 
   range.addEventListener("input", (e) => updateSlider(e.target.value));
-  updateSlider(range.value);
+  updateSlider(range.value || 50);
 });
 
 document.querySelectorAll(".why-card").forEach((card) => {
