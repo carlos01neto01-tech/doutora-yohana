@@ -360,7 +360,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   max-width:1160px;
   margin:0 auto;
   display:grid;
-  grid-template-columns:.95fr 1fr;
+  grid-template-columns:minmax(0,1fr) minmax(360px,520px);
   gap:76px;
   align-items:center;
 }
@@ -371,6 +371,10 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   margin-bottom:34px;
 }
 
+.about-text{
+  min-width:0;
+}
+
 .about p{
   font-size:var(--desc-size);
   line-height:1.35;
@@ -379,9 +383,19 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   max-width:540px;
 }
 
+.about p:last-child{
+  margin-bottom:0;
+}
+
+.about strong{
+  font-weight:600;
+  color:var(--brown);
+}
+
 .about-image{
   position:relative;
   max-width:520px;
+  width:100%;
   justify-self:end;
 }
 
@@ -1981,15 +1995,39 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 
 <section class="about reveal" id="sobre">
   <div class="about-container">
-    <div>
+    <div class="about-text">
       <span class="section-kicker">Dra. Yohana Castro</span>
       <h2>Sobre mim</h2>
-   Desde cedo, sempre existiu uma paixão muito forte por pessoas, comunicação e transformação.
-   A odontologia surgiu inicialmente por influência familiar, mas foi ao longo da trajetória profissional que nasceu uma verdadeira conexão com a área estética.
-   Após atuar como cirurgiã-dentista clínica geral, o interesse pela harmonização facial e pela odontologia estética despertou uma nova visão sobre a profissão: a possibilidade de unir ciência, técnica e sensibilidade para valorizar a beleza de forma natural e segura.
-   A busca constante por aperfeiçoamento, estudo e evolução profissional faz parte dessa caminhada até hoje. Em junho de 2022, participei do International Meeting on Facial Harmonization, realizado na Harvard University, na região de Boston, nos Estados Unidos, e promovido pela American Society of Anatomy.
-   O encontro reuniu profissionais de diferentes países para aprofundar conhecimentos em anatomia facial aplicada, planejamento estético e técnicas avançadas de harmonização facial.
-   Essa experiência internacional ampliou minha visão sobre segurança, anatomia e naturalidade nos tratamentos, fortalecendo ainda mais o compromisso de oferecer aos pacientes abordagens modernas, personalizadas e embasadas cientificamente.
+
+      <p>
+        Desde cedo, sempre existiu uma <strong>paixão muito forte por pessoas, comunicação e transformação</strong>.
+        A odontologia surgiu inicialmente por influência familiar, mas foi ao longo da trajetória profissional que nasceu uma
+        <strong>verdadeira conexão com a área estética</strong>.
+      </p>
+
+      <p>
+        Após atuar como cirurgiã-dentista clínica geral, o interesse pela harmonização facial e pela odontologia estética despertou
+        uma nova visão sobre a profissão: a possibilidade de <strong>unir ciência, técnica e sensibilidade para valorizar a beleza de forma natural e segura</strong>.
+      </p>
+
+      <p>
+        A busca constante por aperfeiçoamento, estudo e evolução profissional faz parte dessa caminhada até hoje.
+        Em junho de 2022, participei do <strong>International Meeting on Facial Harmonization</strong>, realizado na
+        <strong>Harvard University</strong>, na região de Boston, nos Estados Unidos, e promovido pela
+        <strong>American Society of Anatomy</strong>.
+      </p>
+
+      <p>
+        O encontro reuniu profissionais de diferentes países para aprofundar conhecimentos em anatomia facial aplicada,
+        planejamento estético e técnicas avançadas de harmonização facial.
+      </p>
+
+      <p>
+        Essa experiência internacional ampliou minha visão sobre <strong>segurança, anatomia e naturalidade nos tratamentos</strong>,
+        fortalecendo ainda mais o compromisso de oferecer aos pacientes
+        <strong>abordagens modernas, personalizadas e embasadas cientificamente</strong>.
+      </p>
+    </div>
 
     <div class="about-image">
       <img src="assets/SOBRE NOS.webp" alt="Dra. Yohana Castro">
@@ -2224,4 +2262,3 @@ if(mobileToggle && mobileMenu){
 
 </body>
 </html>
-
