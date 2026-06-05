@@ -243,7 +243,7 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 
 .results-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(4,minmax(0,1fr));
   gap:14px;
 }
 
@@ -252,6 +252,8 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   overflow:hidden;
   background:#eee;
   aspect-ratio:.74 / 1;
+  width:100%;
+  min-width:0;
   transition:.45s ease;
 }
 
@@ -270,6 +272,13 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
   object-fit:cover;
   user-select:none;
   pointer-events:none;
+  font-size:0;
+  color:transparent;
+}
+
+.ba-img-error{
+  opacity:0;
+  visibility:hidden;
 }
 
 .ba-before-img{z-index:1}
@@ -1834,6 +1843,28 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
 }
 </style>
 
+
+
+<script id="antes-depois-fallback-head">
+function carregarFallbackAntesDepois(img){
+  var fallbacks = (img.getAttribute('data-fallbacks') || '')
+    .split('|')
+    .map(function(item){ return item.trim(); })
+    .filter(Boolean);
+
+  var atual = Number(img.getAttribute('data-fallback-index') || '0');
+
+  if(atual < fallbacks.length){
+    img.setAttribute('data-fallback-index', String(atual + 1));
+    img.src = fallbacks[atual];
+    return;
+  }
+
+  img.onerror = null;
+  img.classList.add('ba-img-error');
+}
+</script>
+
 </head>
 
 <body>
@@ -1940,51 +1971,51 @@ h1,h2,h3{font-family:var(--title-font);font-weight:400;color:var(--brown)}
     </p>
 
     <div class="results-grid">
-      <div class="before-after-card">
+      <div class="before-after-card" aria-label="Antes e depois - Caso 1">
         <span class="ba-label ba-before">ANTES</span>
         <span class="ba-label ba-after">DEPOIS</span>
         <div class="before-after-wrapper">
-          <img src="assets/ANTES 1.webp" class="ba-img ba-before-img" alt="Antes do primeiro caso">
-          <img src="assets/DEPOIS 1.webp" class="ba-img ba-after-img" alt="Depois do primeiro caso">
+          <img src="assets/ANTES%201(1).webp" data-fallbacks="assets/ANTES 1(1).webp|assets/ANTES%201(1).webp|assets/ANTES 1.webp|assets/ANTES 1.png|assets/ANTES 1.PNG|assets/ANTES 1.WEBP|assets/ANTES 1.jpg|assets/ANTES 1.JPG|assets/ANTES 1.jpeg|assets/ANTES 1.JPEG|assets/ANTES_1.webp|assets/ANTES_1.png|assets/ANTES_1.PNG|assets/ANTES_1.WEBP|assets/ANTES_1.jpg|assets/ANTES_1.JPG|assets/ANTES-1.webp|assets/ANTES-1.png|assets/ANTES-1.PNG|assets/ANTES-1.WEBP|assets/ANTES-1.jpg|assets/ANTES-1.JPG|assets/ANTES 01.webp|assets/ANTES 01.png|assets/ANTES 01.PNG|assets/ANTES 01.WEBP|assets/ANTES 01.jpg|assets/ANTES 01.JPG" class="ba-img ba-before-img" alt="" onerror="carregarFallbackAntesDepois(this)">
+          <img src="assets/DEPOIS%20%201.webp" data-fallbacks="assets/DEPOIS  1.webp|assets/DEPOIS%20%201.webp|assets/DEPOIS 1.webp|assets/DEPOIS 1.png|assets/DEPOIS 1.PNG|assets/DEPOIS 1.WEBP|assets/DEPOIS 1.jpg|assets/DEPOIS 1.JPG|assets/DEPOIS 1.jpeg|assets/DEPOIS 1.JPEG|assets/DEPOIS_1.webp|assets/DEPOIS_1.png|assets/DEPOIS_1.PNG|assets/DEPOIS_1.WEBP|assets/DEPOIS_1.jpg|assets/DEPOIS_1.JPG|assets/DEPOIS-1.webp|assets/DEPOIS-1.png|assets/DEPOIS-1.PNG|assets/DEPOIS-1.WEBP|assets/DEPOIS-1.jpg|assets/DEPOIS-1.JPG|assets/DEPOIS 01.webp|assets/DEPOIS 01.png|assets/DEPOIS 01.PNG|assets/DEPOIS 01.WEBP|assets/DEPOIS 01.jpg|assets/DEPOIS 01.JPG" class="ba-img ba-after-img" alt="" onerror="carregarFallbackAntesDepois(this)">
           <div class="ba-divider"></div>
-          <button class="ba-handle">‹ ›</button>
-          <input type="range" min="0" max="100" value="50" class="ba-range">
+          <button class="ba-handle" type="button" aria-label="Arrastar comparação">‹ ›</button>
+          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Controle de antes e depois">
         </div>
       </div>
 
-      <div class="before-after-card">
+      <div class="before-after-card" aria-label="Antes e depois - Caso 2">
         <span class="ba-label ba-before">ANTES</span>
         <span class="ba-label ba-after">DEPOIS</span>
         <div class="before-after-wrapper">
-          <img src="assets/ANTES 2.png" class="ba-img ba-before-img">
-          <img src="assets/DEPOIS 2.webp" class="ba-img ba-after-img">
+          <img src="assets/ANTES 2.webp" data-fallbacks="assets/ANTES 2.png|assets/ANTES 2.PNG|assets/ANTES 2.WEBP|assets/ANTES 2.jpg|assets/ANTES 2.JPG|assets/ANTES 2.jpeg|assets/ANTES 2.JPEG|assets/ANTES_2.webp|assets/ANTES_2.png|assets/ANTES_2.PNG|assets/ANTES_2.WEBP|assets/ANTES_2.jpg|assets/ANTES_2.JPG|assets/ANTES-2.webp|assets/ANTES-2.png|assets/ANTES-2.PNG|assets/ANTES-2.WEBP|assets/ANTES-2.jpg|assets/ANTES-2.JPG|assets/ANTES 02.webp|assets/ANTES 02.png|assets/ANTES 02.PNG|assets/ANTES 02.WEBP|assets/ANTES 02.jpg|assets/ANTES 02.JPG" class="ba-img ba-before-img" alt="" onerror="carregarFallbackAntesDepois(this)">
+          <img src="assets/DEPOIS 2.webp" data-fallbacks="assets/DEPOIS 2.png|assets/DEPOIS 2.PNG|assets/DEPOIS 2.WEBP|assets/DEPOIS 2.jpg|assets/DEPOIS 2.JPG|assets/DEPOIS 2.jpeg|assets/DEPOIS 2.JPEG|assets/DEPOIS_2.webp|assets/DEPOIS_2.png|assets/DEPOIS_2.PNG|assets/DEPOIS_2.WEBP|assets/DEPOIS_2.jpg|assets/DEPOIS_2.JPG|assets/DEPOIS-2.webp|assets/DEPOIS-2.png|assets/DEPOIS-2.PNG|assets/DEPOIS-2.WEBP|assets/DEPOIS-2.jpg|assets/DEPOIS-2.JPG|assets/DEPOIS 02.webp|assets/DEPOIS 02.png|assets/DEPOIS 02.PNG|assets/DEPOIS 02.WEBP|assets/DEPOIS 02.jpg|assets/DEPOIS 02.JPG" class="ba-img ba-after-img" alt="" onerror="carregarFallbackAntesDepois(this)">
           <div class="ba-divider"></div>
-          <button class="ba-handle">‹ ›</button>
-          <input type="range" min="0" max="100" value="50" class="ba-range">
+          <button class="ba-handle" type="button" aria-label="Arrastar comparação">‹ ›</button>
+          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Controle de antes e depois">
         </div>
       </div>
 
-      <div class="before-after-card">
+      <div class="before-after-card" aria-label="Antes e depois - Caso 3">
         <span class="ba-label ba-before">ANTES</span>
         <span class="ba-label ba-after">DEPOIS</span>
         <div class="before-after-wrapper">
-          <img src="assets/ANTES 3.webp" class="ba-img ba-before-img">
-          <img src="assets/DEPOIS 3.webp" class="ba-img ba-after-img">
+          <img src="assets/ANTES 3.webp" data-fallbacks="assets/ANTES 3.png|assets/ANTES 3.PNG|assets/ANTES 3.WEBP|assets/ANTES 3.jpg|assets/ANTES 3.JPG|assets/ANTES 3.jpeg|assets/ANTES 3.JPEG|assets/ANTES_3.webp|assets/ANTES_3.png|assets/ANTES_3.PNG|assets/ANTES_3.WEBP|assets/ANTES_3.jpg|assets/ANTES_3.JPG|assets/ANTES-3.webp|assets/ANTES-3.png|assets/ANTES-3.PNG|assets/ANTES-3.WEBP|assets/ANTES-3.jpg|assets/ANTES-3.JPG|assets/ANTES 03.webp|assets/ANTES 03.png|assets/ANTES 03.PNG|assets/ANTES 03.WEBP|assets/ANTES 03.jpg|assets/ANTES 03.JPG" class="ba-img ba-before-img" alt="" onerror="carregarFallbackAntesDepois(this)">
+          <img src="assets/DEPOIS 3.webp" data-fallbacks="assets/DEPOIS 3.png|assets/DEPOIS 3.PNG|assets/DEPOIS 3.WEBP|assets/DEPOIS 3.jpg|assets/DEPOIS 3.JPG|assets/DEPOIS 3.jpeg|assets/DEPOIS 3.JPEG|assets/DEPOIS_3.webp|assets/DEPOIS_3.png|assets/DEPOIS_3.PNG|assets/DEPOIS_3.WEBP|assets/DEPOIS_3.jpg|assets/DEPOIS_3.JPG|assets/DEPOIS-3.webp|assets/DEPOIS-3.png|assets/DEPOIS-3.PNG|assets/DEPOIS-3.WEBP|assets/DEPOIS-3.jpg|assets/DEPOIS-3.JPG|assets/DEPOIS 03.webp|assets/DEPOIS 03.png|assets/DEPOIS 03.PNG|assets/DEPOIS 03.WEBP|assets/DEPOIS 03.jpg|assets/DEPOIS 03.JPG" class="ba-img ba-after-img" alt="" onerror="carregarFallbackAntesDepois(this)">
           <div class="ba-divider"></div>
-          <button class="ba-handle">‹ ›</button>
-          <input type="range" min="0" max="100" value="50" class="ba-range">
+          <button class="ba-handle" type="button" aria-label="Arrastar comparação">‹ ›</button>
+          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Controle de antes e depois">
         </div>
       </div>
 
-      <div class="before-after-card">
+      <div class="before-after-card" aria-label="Antes e depois - Caso 4">
         <span class="ba-label ba-before">ANTES</span>
         <span class="ba-label ba-after">DEPOIS</span>
         <div class="before-after-wrapper">
-          <img src="assets/ANTES 4.webp" class="ba-img ba-before-img">
-          <img src="assets/DEPOIS 4.webp" class="ba-img ba-after-img">
+          <img src="assets/ANTES 4.webp" data-fallbacks="assets/ANTES 4.png|assets/ANTES 4.PNG|assets/ANTES 4.WEBP|assets/ANTES 4.jpg|assets/ANTES 4.JPG|assets/ANTES 4.jpeg|assets/ANTES 4.JPEG|assets/ANTES_4.webp|assets/ANTES_4.png|assets/ANTES_4.PNG|assets/ANTES_4.WEBP|assets/ANTES_4.jpg|assets/ANTES_4.JPG|assets/ANTES-4.webp|assets/ANTES-4.png|assets/ANTES-4.PNG|assets/ANTES-4.WEBP|assets/ANTES-4.jpg|assets/ANTES-4.JPG|assets/ANTES 04.webp|assets/ANTES 04.png|assets/ANTES 04.PNG|assets/ANTES 04.WEBP|assets/ANTES 04.jpg|assets/ANTES 04.JPG" class="ba-img ba-before-img" alt="" onerror="carregarFallbackAntesDepois(this)">
+          <img src="assets/DEPOIS 4.webp" data-fallbacks="assets/DEPOIS 4.png|assets/DEPOIS 4.PNG|assets/DEPOIS 4.WEBP|assets/DEPOIS 4.jpg|assets/DEPOIS 4.JPG|assets/DEPOIS 4.jpeg|assets/DEPOIS 4.JPEG|assets/DEPOIS_4.webp|assets/DEPOIS_4.png|assets/DEPOIS_4.PNG|assets/DEPOIS_4.WEBP|assets/DEPOIS_4.jpg|assets/DEPOIS_4.JPG|assets/DEPOIS-4.webp|assets/DEPOIS-4.png|assets/DEPOIS-4.PNG|assets/DEPOIS-4.WEBP|assets/DEPOIS-4.jpg|assets/DEPOIS-4.JPG|assets/DEPOIS 04.webp|assets/DEPOIS 04.png|assets/DEPOIS 04.PNG|assets/DEPOIS 04.WEBP|assets/DEPOIS 04.jpg|assets/DEPOIS 04.JPG" class="ba-img ba-after-img" alt="" onerror="carregarFallbackAntesDepois(this)">
           <div class="ba-divider"></div>
-          <button class="ba-handle">‹ ›</button>
-          <input type="range" min="0" max="100" value="50" class="ba-range">
+          <button class="ba-handle" type="button" aria-label="Arrastar comparação">‹ ›</button>
+          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Controle de antes e depois">
         </div>
       </div>
     </div>
@@ -2190,6 +2221,8 @@ document.querySelectorAll(".before-after-card").forEach((card) => {
   const divider = card.querySelector(".ba-divider");
   const handle = card.querySelector(".ba-handle");
 
+  if(!range || !afterImg || !divider || !handle) return;
+
   function updateSlider(value) {
     afterImg.style.clipPath = `inset(0 0 0 ${value}%)`;
     divider.style.left = `${value}%`;
@@ -2197,7 +2230,8 @@ document.querySelectorAll(".before-after-card").forEach((card) => {
   }
 
   range.addEventListener("input", (e) => updateSlider(e.target.value));
-  updateSlider(range.value);
+  range.addEventListener("change", (e) => updateSlider(e.target.value));
+  updateSlider(range.value || 50);
 });
 
 document.querySelectorAll(".why-card").forEach((card) => {
